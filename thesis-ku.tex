@@ -1,0 +1,137 @@
+%% LyX 2.3.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,english,letterpaper]{kuthesis}
+\usepackage{mathptmx}
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{color}
+\usepackage{babel}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{esint}
+\usepackage[authoryear]{natbib}
+\doublespacing
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=true,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true]
+ {hyperref}
+\hypersetup{pdftitle={University of Kansas Thesis Template},
+ pdfauthor={Anonymous},
+ pdfsubject={A Thesis},
+ urlcolor={black},citecolor={black},allcolors={black}}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecommand{\LyX}{\texorpdfstring%
+  {L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+  {LyX}}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
+
+%used to align decimals in tables according to APA style
+\usepackage{dcolumn}
+\usepackage{booktabs}
+
+% Set the title and author info
+\title{Search for Weak Scale supersymmetric particles in compressed scenarios }
+\author{Justin Anguiano}
+
+% Following is OPTIONAL list of previous degrees earned. 
+% If there are more than 5 or so, then title pagelayout may become too crowded,
+% depending on the number of committee members. 
+\priorcreds{B.S. Engineering Physics, University of Kansas, 20XX}{M.S. Computational Physics and Astronomy, University of Kansas, 20XX}
+% It is acceptable to delete \priorcreds if it is not desired on title page
+
+
+\dept{Department of Physics and Astronomy}
+\degreetitle{Doctor of Philosophy}
+\papertype{Dissertation} %or Thesis (Choose whatever word you want to put on p.2)
+
+%% Committee member names are required for the title page. We make space
+%% for as many as 7 members, with various roles/titles.
+%% It is required to have 7 entries, even if some are empty for committee and role
+\committee{Member Name 1}{Member Name 2}{Member Name 3}{Member Name 4}{Member 5 has a long name}{Member 6}{}
+\role{Chairperson}{Co-Chair}{}{The One Who Never Answers Email}{}{External Reviewer}{}
+%At Most 7 members allowed, last here is blank on purpose to demonstrate
+%flexibility
+
+%%BOTH dates must be included. 
+\@printd@testrue
+\datedefended{July 02, 2019}
+\dateapproved{August 06, 2019}
+
+%% These settings are now in the kuthesis.cls file, but users are free
+% to customize. listings has great documentation online
+%% When listings are used, break lines
+%\lstset{
+ %    breaklines=true,  % sets automatic line breaking
+ %    breakindent=2em,
+ %    breakatwhitespace=true,  % sets if automatic breaks should
+ %   breakautoindent=true
+%}
+
+\@ifundefined{showcaptionsetup}{}{%
+ \PassOptionsToPackage{caption=false}{subfig}}
+\usepackage{subfig}
+\makeatother
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{\inputencoding{latin9}Listing}
+
+\begin{document}
+\begin{romanpages}
+
+\maketitle
+
+\begin{abstractlong}
+
+This is the abstract
+
+\end{abstractlong}
+
+\begin{acknowledgementslong}
+%%if you want a "quote" environment for acknowledgements,
+%% use acknowledgements instead of acknowledgementslong
+
+I would like to thank all of the little people who made this thesis
+possible. Sleepy, Dopey, Grumpy, you know who you are.
+
+\end{acknowledgementslong}
+
+\tableofcontents{}
+
+\listoffigures
+
+\listoftables
+
+\end{romanpages}
+
+
+\include{Chapter1/C1}
+
+%\section{Chapter 2 \lable{sec:ch2}}
+\include{Chapter2/C2}
+
+%\section{Chapter 1 \label{sec:ch1}}
+\include{Chapter3/C3}
+  
+\global\long\def\bibname{References}%
+
+\bibliographystyle{apalike2}
+\bibliography{Biblio/allcites}
+
+
+\appendix
+\include{Appendix1/Appendix1}
+\end{document}
