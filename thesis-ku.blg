@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis-ku.aux
+A level-1 auxiliary file: Chapter1/C1.aux
+A level-1 auxiliary file: Chapter2/C2.aux
+A level-1 auxiliary file: Chapter3/C3.aux
+A level-1 auxiliary file: Chapter4/C4.aux
+The style file: apalike2.bst
+A level-1 auxiliary file: Appendix1/Appendix1.aux
+Database file #1: Biblio/allcites.bib
+Name 3 in "Berryhill, Jeffrey and Daskalakis, Georgios and Halyo, Valerie, and Werner, Jeremy and Xie, Si" has a comma at the end for entry Berryhill_2010
+while executing---line 1191 of file apalike2.bst
+Name 3 in "Berryhill, Jeffrey and Daskalakis, Georgios and Halyo, Valerie, and Werner, Jeremy and Xie, Si" has a comma at the end for entry Berryhill_2010
+while executing---line 1266 of file apalike2.bst
+Warning--empty journal in Berryhill_2010
+You've used 1 entry,
+            2229 wiz_defined-function locations,
+            521 strings with 4276 characters,
+and the built_in function-call counts, 409 in all, are:
+= -- 33
+> -- 28
+< -- 0
++ -- 10
+- -- 10
+* -- 36
+:= -- 81
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 10
+chr.to.int$ -- 1
+cite$ -- 2
+duplicate$ -- 13
+empty$ -- 21
+format.name$ -- 11
+if$ -- 71
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 1
+newline$ -- 7
+num.names$ -- 3
+pop$ -- 12
+preamble$ -- 1
+purify$ -- 10
+quote$ -- 0
+skip$ -- 11
+stack$ -- 0
+substring$ -- 12
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 6
+warning$ -- 1
+while$ -- 2
+width$ -- 0
+write$ -- 12
+(There were 2 error messages)
