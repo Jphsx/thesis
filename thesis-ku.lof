@@ -3,4 +3,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Tag-and-Probe efficiencies for the Medium Id in 2017. The left plots show the barrel while the right plots show the endcaps. The top fits use $J/\psi $ resonance while the bottom use the Z resonance. \relax }}{11}{figure.caption.5}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces The fitted muon isolation and SIP3D efficiencies for 2017. Includes both data and MC which are separated between barrel and endcap. \relax }}{12}{figure.caption.6}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces The combined efficiency components from equations \ref {eq:effcomp_J} and \ref {eq:effcomp_Z} and Very Loose for 2017. The low-\ensuremath {p_{\mathrm {T}}}\xspace region ($<20$ GeV) includes the contributions from $J/\psi $ as well as the isolation and SIP3D extrapolations. Propagated errors are treated as uncorrelated.\relax }}{13}{figure.caption.7}%
 \addvspace {10\p@ }

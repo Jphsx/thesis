@@ -12,7 +12,8 @@
 \contentsline {section}{\numberline {3.3} signal models}{3}{section.3.3}%
 \contentsline {chapter}{\numberline {4}The Tag-and-Probe}{4}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Introduction and Methodology}{4}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Electron Tag-and-Probe }{7}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Muon Tag-and-Probe}{7}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Lepton Systematics}{7}{section.4.4}%
-\contentsline {chapter}{\numberline {A}My Appendix, Next to my Spleen}{9}{appendix.A}%
+\contentsline {section}{\numberline {4.2}Lepton Object Definitions}{6}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Electron Tag-and-Probe }{7}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Muon Tag-and-Probe}{7}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Lepton Systematics}{10}{section.4.5}%
+\contentsline {chapter}{\numberline {A}My Appendix, Next to my Spleen}{15}{appendix.A}%
