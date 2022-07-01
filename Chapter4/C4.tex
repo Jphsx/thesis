@@ -186,57 +186,79 @@ efficiency plots, I'll have to actually make these myself....
 
 \section{Muon Tag-and-Probe}
 
-For the muon tag and probe we measure efficiencies above 20 GeV using the Z and below 20 GeV using J/$\psi$ there are central and forward $\eta$ bins which are divided at the endcaps at $\eta = 2.1$ The bins edges follow the recommendation from the muon object group and are as follows:\\
-CITE JPSI production in bjets
-
-There are three sets of binnings: The low pt jpsi binning $J/\psi^{Low}$ used to measure muon id below 20 GeV, the high pt Z binning $Z^{High}$ used to measure all efficiencies above 20 GeV, and the low pt Z binning $Z^{Low}$ used to extrapolate isolation and IP efficiencies down to 3 GeV.
+The muon Tag-and-Probe efficiencies are measured above 20 GeV using the Z. Muons below 20 GeV utilize the $J/\psi$ for Id measurements. The $\eta$ bins are divided into a central and forward regions around the endcaps at $|\eta| = 2.1$. In total there are three sets of binnings: The low \pt $J/\psi$ binning $J/\psi^{L}$ used to measure muon Id below 20 GeV, the high \pt Z binning $Z^{H}$ used to measure all efficiencies above 20 GeV, and the low \pt Z binning $Z^{L}$ used to extrapolate isolation and IP efficiencies down to 3 GeV.
 The explicit bin edges are:
 \begin{itemize}
-\item $J/\psi^{Low}$  
+\item $J/\psi^{L}$  
 	\begin{itemize}
 		\item[] $p_T \in [3.0, 4.0,  5.0, 6.0, 7.0, 9.0, 14.0,  20.0]$
 		\item[]  $\eta| \in [0, 1.2, 2.4]$
 	\end{itemize}
-\item $Z^{High}$
+\item $Z^{H}$
 	\begin{itemize}
 		\item[] $ p_T \in [10, 20, 30, 40, 60, 100]$
 		\item[] $|\eta| \in [ 0, 1.2, 2.4]$
 	\end{itemize}
-\item $Z^{Low}$
+\item $Z^{L}$
 	\begin{itemize}
 		\item[] $ p_T \in [6,8,10,14,18,22,28,32,38,44,50]$ 
 		\item[] $|\eta| \in [0, 1.2, 2.4]$
 	\end{itemize}
 \end{itemize}
-The exact criteria chosen for the tag and probe also follows the recommendations from the muon group.\\
-Tag:\\
-$J/\Psi: isGlobalMuon, \, \, p_T>5 \text{GeV} , \, \, numberOfMatchedStations > 1, \,\, \text{Matches trigger object in hltIterL3MuonCandidates}$\\
-Probe:\\
-$J/\Psi: \text{Matches trigger object in hltTracksIter or hltMuTrackJpsiEffCtfTrackCands}$\\j
-Pair:\\
-$J: 2.8 < m_{\ell\ell} < 3.4 \, \, , | z_{\ell_1} - z_{\ell_2} | < 1 \text{cm}$
+
+The isolation and IP criteria are not measured using $J/\psi$ because about $30\%$ of prompt $J/\psi$ are produced from higher mass states $\chi_c$ and $\Psi(2S)$  which implies these $J/\psi$ will be produced inside jets and therefore not necessarily isolated \cite{Lansberg:2006dh}. Similary about $10\%$ of all $J/\psi$ are produced int b-jets and thus potentially neither prompt or isolated \cite{LHCb:2013itw}.
+
+The exact criteria chosen for the tag and probe vary between physics processes but are identical across the two $Z$ ranges. The selections follow the standards defined from the centrally produced muon Tag-and-Probe efficiencies.\\
+
+\begin{tabular}{|c|c|c|}
+\hline 
+\multicolumn{3}{|c|}{$J/\psi$} \\ 
+\hline 
+\textbf{Tag} & \multicolumn{2}{c|}{ isGlobalMuon } \\
+	& \multicolumn{2}{c|}{ $\pt > 5$ GeV} \\ 
+	& \multicolumn{2}{c|}{ numberOfMatchedStations $> 1$} \\
+	& \multicolumn{2}{c|}{ Matches hltIterL3MuonCandidates} \\
+\hline 
+\textbf{Probe} & \multicolumn{2}{c|}{Matches hltTracksIter} \\ 
+	  & \multicolumn{2}{c|}{ or } \\
+	  & \multicolumn{2}{c|}{Matches hltMuTrackJpsiEffCtfTrackCands } \\
+\hline 
+\textbf{Pair} & \multicolumn{2}{c|}{$ 2.8 < m_{\ell\ell} < 3.4$} \\
+	 & \multicolumn{2}{c|}{$ | z_{\ell_1} - z_{\ell_2} | < 1 $ cm } \\
+\hline 
+\multicolumn{3}{|c|}{$Z$} \\ 
+\hline 
+\textbf{Tag} & \multicolumn{2}{c|}{tight ID} \\
+			& \multicolumn{2}{c|}{$\pt > 15$ GeV} \\
+			& \multicolumn{2}{c|}{ $(\sum p_T^{ch-had})/p_T < 0.2$ } \\
+\hline 
+\textbf{Probe} & \multicolumn{2}{c|}{No Requirement} \\ 
+\hline 
+\textbf{Pair} & \multicolumn{2}{c|}{$m_{\ell\ell} > 60$ GeV} \\ 
+			  & \multicolumn{2}{c|}{$|z_{\ell_1} - z_{\ell_2}| < 4$ cm} \\
+\hline 
+\end{tabular} 
 
 
-Tag:\\
-$Z: p_T>15 \text{GeV}, \, \, \text{passes tightID}, \, \, (\sum p_T^{chg-hadron})/p_T < 0.2$\\
-Probe:\\
-$Z: No requirement$\\
-Pair:\\
-$Z: m_{\ell\ell} > 60 \text{GeV} \, \, , |z_{\ell_1} - z_{\ell_2}| < 4 \text{cm}$
+
+
+For MC there is an inherit difference in the objects selected. Data will also have an implicit selection due to triggering. To account trigger bias and better simulate the behavior of data, tags are required to pass a trigger in the denominator of efficiency for all criteria. The triggers available vary from year to year and are as follows:\\
+
+\begin{tabular}{|c|c|c|}
+\hline 
+Year & $J/\psi$ & $Z$ \\ 
+\hline 
+2016 & Mu7p5Tk2 &  IsoTkMu22 \\ 
+\hline 
+2017 & Mu7p5Tk2 & isoMu24eta2p1 \\ 
+\hline 
+2018 & Mu7p5Tk2 & isoMu24eta2p1 \\ 
+\hline 
+\end{tabular} 
 
 
 
-For MC there is an inherit difference in the objects selected. Data will also have an implicit selection due to triggering. To account trigger bias and better simulate the behavior of data, trigger bits are added to the denominator of efficiency for all criteria. The triggers available vary from year to year and are as follows:\\
-
-$2016 J Mu7p5Tk2$\\
-$2017 J Mu7p5Tk2$\\
-$2018 J Mu7p5Tk2$\\
-$2016 Z IsoTkMu22$\\
-$2017 Z isoMu24eta2p1$\\
-$2018 Z isoMu24eta2p1$\\
-
-
-The muon efficiencies are derived from two separate processes with the Tag-and-Probe method. For the range of muons with $3 \leq \pt < 20$ the Medium Id is measured directly from $J/\psi$. For higher momentum muons above 20 GeV, $Z$ is used to measure all the efficiency components of Equation \ref{eq:lepgsb}. The production of $J/\psi$ in  b-jets inhibits directly measuring efficiencies with vertexing or isolation, so, the vertexing and isolation efficiencies are extrapolated from Z fits to low \pt. Two different binnings and ranges are defined for the $Z$ measurements, they are denoted by $Z_H \in [20,100]$ GeV, which is used for the higher momentum direct efficiency measurements, and $Z_L \in [6,50]$ GeV , which is used for extrapolating efficiencies into the lower \pt range. The overall efficiency and scale factors for the three muon tiers are obtained by factorizing the efficiency into mutually exclusive components from the subsets defined in Equation \ref{eq:lepsubsets}. The efficiency factors depend on the range of \pt and are defined as:
+ The efficiency factors depend on the range of \pt and are defined as:
 
 
 \begin{itemize}
