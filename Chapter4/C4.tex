@@ -18,6 +18,25 @@
 \label{#5}
 \end{figure}}
 
+\newcommand\FigureThree[5]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=0.4\textwidth]{fig/Lep_Obj_plots/#1}
+\includegraphics[width=0.4\textwidth]{fig/Lep_Obj_plots/#2}\hfill
+\includegraphics[width=0.4\textwidth]{fig/Lep_Obj_plots/#3}\hfill
+\caption{#4}
+\label{#5}
+\end{figure}}
+
+\newcommand\FigureTwo[4]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=0.5\textwidth]{fig/Lep_Obj_plots/#1}\hfill
+\includegraphics[width=0.5\textwidth]{fig/Lep_Obj_plots/#2}\hfill
+\caption{#4}
+\label{#3}
+\end{figure}}
+
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 \setlength{\parskip}{\smallskipamount}
@@ -38,13 +57,13 @@
 \chapter{The Tag-and-Probe}
 
 \begin{chapterabstract}
-The tag-and-probe is a method used to measure the selection efficiencies of an object using data. In the context of this compressed SUSY analysis, the Tag-and-probe measures the efficiencies separately of each light lepton selection critera. The total lepton selection efficiency is then computed by combining factorized efficiency components. The same general method is used for both electrons and muons, however, Muons utilize  the $J/\psi$ di-muon trigger which allow direct efficiency measurements from data at lower $p_T$.
+The tag-and-probe is a method used to measure the selection efficiencies of an object using data. In the context of this compressed SUSY analysis, the Tag-and-probe measures the efficiencies separately of each light lepton selection critera. The total lepton selection efficiency is then computed by combining factorized efficiency components. The same general method is used for both electrons and muons, however, Muons utilize  the $J/\psi$ di-muon trigger which allow more precise efficiency measurements from data at lower $p_T$.
 \end{chapterabstract}
 
 \section{Introduction and Methodology}
 An important element of a lepton based search is properly modeling the efficiency of selected leptons. A purely Monte-Carlo driven approach is inadequate in perfectly describing nuances in data due to imperfections in modeling. Instead of trying to model exactly all physics and detector effects with simulation, the efficiencies can be directly measured from data by using the Tag-and-Probe method. 
 
-The Tag-and-Probe method is used to measure a selection criteria by using a well known resonance such as a $Z$, $J/\psi$, or $\Upsilon$ and counting the number of probes that pass that criteria. Each counted instance of the Tag-and-Probe consists of two selected leptons. One of the selected leptons is the tag and the other is the probe.  The tag passes tight selection requirement to give high confidence that it isn't a fake lepton. Fake leptons fall into two possible categories: reducible and irreducible. A reducible fake lepton is a particle that fakes the signature of a lepton such as a charged pion. An irreducible fake lepton is an actual lepton which coincidentally passes some selection criteria but is not the targeted leptons of interest e.g. an isolated muon from a jet accompanying a leptonic Z decay of interest.  The  second lepton in the Tag-and-Probe is the probe. The probe is subjected to the selection criteria whose efficiency is being measured. The invariant mass of pair of leptons is calculated and required to fall within a defined range around the resonance. A particular event may have multiple lepton pairs but the tag and the probe are not allowed to switch positions and be counted twice, this would lead to a bias in the efficiency measurement \cite(AN 111). To avoid bias the tag and probe are required to be oppositely charged and same flavor with the tag being randomly selected. If multiple pairs can formed in a single event no arbitration is used thus the pair that is not from the resonance will then contribute as combinitorial background. The selected probes can either pass or fail their selection leading to the formation of three distributions, one with a passing probe, one with a failing probe, and one with all probes. The probability of observing $k$ passing probes in $n$ Tag-and-Probe pair trials is dependent on the selection efficiency $\varepsilon$ and can be expressed as a binomial likelihood $P(k|\varepsilon,n) = \binom{n}{k}\varepsilon^k(1-\varepsilon)^{n-k}$. The MLE estimator for efficiency is then the fraction of passing probes from the total number of pairs, or $\varepsilon = k/n$. Technical documentation for the Tag-and-Probe in CMS is scarce, but, an early strategy for fitting efficiency is defined in \cite{Berryhill_2010}. The legacy code base as of \url{CMSSW_10_6_X}  uses a binned maximum likelihood between the observed passing probes and failing probes wher the efficiency extracted is an explicit fit parameter. The two simultaneously fit functions are:
+The Tag-and-Probe method is used to measure a selection criteria by using a well known resonance such as a $Z$, $J/\psi$, or $\Upsilon$ and counting the number of probes that pass that criteria. Each counted instance of the Tag-and-Probe consists of two selected leptons. One of the selected leptons is the tag and the other is the probe.  The tag passes tight selection requirement to give high confidence that it isn't a fake lepton. Fake leptons fall into two possible categories: reducible and irreducible. A reducible fake lepton is a particle that fakes the signature of a lepton such as a charged pion. An irreducible fake lepton is an actual lepton which coincidentally passes some selection criteria but is not the targeted leptons of interest e.g. an isolated muon from a jet accompanying a leptonic Z decay of interest.  The  second lepton in the Tag-and-Probe is the probe. The probe is subjected to the selection criteria whose efficiency is being measured. The invariant mass of pair of leptons is calculated and required to fall within a defined range around the resonance. A particular event may have multiple lepton pairs but the tag and the probe are not allowed to switch positions and be counted twice, as double counting would lead to a bias in the efficiency measurement \cite(AN111-2009). To avoid bias, the tag and probe are required to be the opposite charge and same flavor where the tag being randomly selected. If multiple lepton pairs occur in single event, no specific arbitration is used in selecting a single pair, all pairs are used and the pair that is not truly from the resonance will then contribute as combinitorial background. The selected probes can either pass or fail their selection which leads to the formation of three distributions, one with a passing probe, one with a failing probe, and one with all probes. An example of all three distributions is shown in Figure X. The probability of observing $k$ passing probes in $n$ Tag-and-Probe pair trials is dependent on the selection efficiency $\varepsilon$ and can be expressed as a binomial likelihood $P(k|\varepsilon,n) = \binom{n}{k}\varepsilon^k(1-\varepsilon)^{n-k}$. The MLE estimator for efficiency is then the fraction of passing probes from the total number of pairs, or $\varepsilon = k/n$. Technical documentation for the Tag-and-Probe in CMS is scarce, but, an early strategy for fitting efficiency is defined in \cite{Berryhill_2010}. The legacy code base as of \url{CMSSW_10_6_X}  uses a binned maximum likelihood between the observed passing probes and failing probes where the efficiency extracted is an explicit fit parameter. The two simultaneously fit functions are:
 \begin{equation}
 	N^{\text{Pass}} = N_{\text{Total}} (\varepsilon \cdot f^{\text{sig}}_{\text{All}} ) +  \varepsilon_{\text{bkg}} \cdot (1-f^{\text{sig} }_{\text{All}}) )
 \end{equation} 
@@ -55,18 +74,32 @@ The Tag-and-Probe method is used to measure a selection criteria by using a well
 $N^{\text{Pass/Fail}}$ is the total number of observed probes that either pass or fail the selection criteria while $N_{\text{Total}}$ is the total number of Tag-and-Probe pairs.
 The binomial estimator for efficiency, $\varepsilon$, enters the fit functions as the first term but is accompanied by a second term that describes the background contribution with its own efficiency $\varepsilon_{\text{bkg}}$.  The term $f^{\text{sig}}_{\text{All}}$ is the fraction of background subtracted signal events over the allowed dilepton mass range.  $f^{\text{sig}}_{\text{All}}$ depends on the defined signal and background pdfs. The nominal pdfs chosen for reported fits uses a Voigtian+Voigtian signal model combined with an Exponential background model. 
 
+
+\FigureThree{PassingProbes_Med16_lowpt.png}{FailingProbes_Med16_lowpt.png}{AllProbes_Med16_lowpt.png}{Example Tag-and-Probe Z di-muon fits for passing,failing, and all probes with the Medium Id, $|\eta|<1.2$, and $p_T < 20$ GeV   }{tnpexp}
+
+
+
 %The distributions are fit simultaneously with a combined signal and background model. To extract the probe criteria efficiecy we divide the resonance distributions by the all probes distribution. The uncertainty on an efficiency is a combination of a statistical and systematic uncertainties. The systematic uncertainties are defined by repeating the simultaneous fit with varying mass windows, number of bins, and fit models and measuring the maximum spread of the central values.
 
 
 %The fit code is located here: \url{https://github.com/cms-sw/cmssw/blob/CMSSW_10_6_X/PhysicsTools/TagAndProbe/src/TagProbeFitter.cc} around line 600. confirm this with the fit model from the electron paper. \cite{Berryhill_2010}
 
-
+\FloatBarrier
 \section{Lepton Object Definitions}
 
 
-Leptons are selected according to the minimium requirment 'VeryLoose', the criteria defining VeryLoose is defined in Table \ref{tab:veryloose}.  The set of VeryLoose leptons are further subdivided by quality into three mutually exclusive categories: Gold, Silver, and Bronze. Each category has a measure of three main quantities: the quality of the pre-determined ID (citation about ID here), the "promptness" or distance of the lepton production point from a primary interaction point, and the isolation. Promptness is measured by the significance of the 3D impact parameter whereas the isolation is a measure of the density of particles in a cone around the lepton. Two similar but complimentary, in terms of background rejection, isolations are used: PFIso and MiniIso. Both isolations are an energy sum of neighboring particles inside a cone. PFIso has a fixed cone size of 0.5? and miniIso cone sizes varies inversely with lepton \pt (cite MINIISO)
+Leptons are selected according to the minimium requirment ``VeryLoose'' and is defined in Table \ref{tab:veryloose}.  The set of VeryLoose leptons are further subdivided by quality into three mutually exclusive categories: Gold, Silver, and Bronze. Each category has a measure of three main quantities: the quality of the pre-determined ID (citation about ID here), the "promptness" or distance of the lepton production point from the primary vertex, and the isolation. Promptness is measured by the significance of the 3D impact parameter whereas the isolation is a measure of the density of particles in a cone around the lepton. Two similar but complimentary absolute isolations are used: PFIso and MiniIso. Both isolations are an energy sum of neighboring particles inside a cone, but, PFIso has a fixed cone size of $R=0.4$ cm  and miniIso cone sizes varies inversely with lepton \pt as shown in \ref{isoeq}.
+\begin{equation}
+\label{isoeq}
+R_{\text{miniIso}}=
+    \begin{cases}
+      0.2 & \pt^\ell < 50 \text{GeV}\\
+      \frac{10}{\pt^\ell} & 50 \text{GeV} \leq \pt^\ell \leq 200 \text{GeV} \\
+      0.05 & \pt^\ell > 200 \text{GeV}
+    \end{cases}
+\end{equation}
 
-For miniIso the EA corrections are applied from a centrally provided look up table in bins of pt and eta in the CMSSW Producer/Ntuplizing stage. CITE EA stuff?
+Mini isolation also includes effective area pile-up corrections provided in a look up table of bins of \pt and $\eta$ in the CMSSW Producer/Ntuplizing stage. The implementation of mini-isolation and their corrections utilize the same IsoValueMap producer as used in NANO AOD as of \url{CMSSW_10_6_X}.
 
 
 The explicit formulas for both electrons and muons can be generalized with the three factorized components previously mentioned:
@@ -86,7 +119,7 @@ The isolation and vertexing requirements are physically uncorrelated, but there 
 
 \begin{table}[htbp]
 \centering
-\caption{\label{tab:veryloose} The criteria define the minimum requirements for a lepton accepted. The electron and muon requirements are equivalent in terms of pseudorapidity, vertexing, and isolation but vary in \pt threshold and the MVA VLooseFO working point. The MVA VLooseFO ID is also dependent on year. TODO: REMAKE CAPTION }
+\caption{\label{tab:veryloose} The criteria define the minimum requirements for a lepton accepted. The electron and muon requirements are equivalent in terms of pseudorapidity, vertexing, and isolation but vary in \pt threshold and the MVA VLooseFO working point. The MVA VLooseFO ID also varies between years.}
 
 \begin{tabular}{c|c|c}
 \hline
@@ -112,9 +145,44 @@ MVA VLooseFO ID & \checkmark  & --\\
 \end{tabular}
 \end{table}
 
+
+The purpose of the various lepton quality categories is to boost the overall stats, this can help us sample various areas things to boost the efficiency for general signals. but also provide fake rich selection in control region that helps stabilize the overall fit and extract fake rates into the sensitive regions.  The differentn truth selected objects by lepton quality is shown in Figure \ref{andresPurity}. The gold region is a pure mainly populated by prompt leptons that are produced directly near the primary vertex, the prompt production of leptons also coincides to most of the targed electroweakino models. The silver selection accomodates both leptonically decaying taus and some isolated semileptonic b decays, this selection assists in recovering efficiency for stop production involving b decays as well as being the ideal region for stau production.  The bronze selection is rich and fakes and provides the best sample to extract overall fake rates to extrapolate into other regions. 
+
+
+
+\FigureThree{gold_ele_TTJets_Fall17.pdf}{silver_ele_TTJets_Fall17.pdf}{bronze_ele_TTJets_Fall17.pdf}{Gold, Silver and Bronzed MC truth matching in TTJets sample 2017. Signal is defined here as electrons following W decay.}{andresPurity}
+
+\FloatBarrier
 \section{Electron Tag-and-Probe }
 
-The electron tag and probe is done by using Z
+The electron tag and probe is done by using the Z resonance is used over the entire \pt range of selected electrons. 
+
+What are the binnings
+$Z$
+	\begin{itemize}
+		\item[] $ p_T \in [5, 10, 20, 30, 40, 70, 100]$
+		\item[] $|\eta| \in [ 0, 0.6, 1.4, 2.4]$
+	\end{itemize}
+
+
+what are the tag/probe/pair requirements
+tag: passes tight id \\ 
+also tag: $(abs(-log(tan(superCluster.position.theta/2)))<=2.1) and !(1.4442<=abs(-log(tan(superClusterPosition.theta/2)))<=1.566) and pt >= 30.0$ \\
+probe: $ecalEnergy*sin(superClusterPosition.theta)>5.0 and  (abs(-log(tan(superClusterPosition.theta/2)))<2.5)$
+supercluster: $abs(eta)<2.5 and  et>5.0$ \\
+pair: $50 \, GeV<m_{ee}<130 GeV$ \\
+
+The triggers selected are collections of HLT for electrons and are grouped by specific paths and filters. The tag electrons are matched to trigger objects in the path/filter combination and passed based on the OR of triggers in the collection. The probes are not subjected to trigger matching.\\
+
+What are the triggers paths\\ 
+2016 \url{HLT_Ele27_eta2p1_WPTight_Gsf_v*}\\
+2017 \url{HLT_Ele32_WPTight_Gsf_L1DoubleEG_v*}\\
+2018 \url{HLT_Ele32_WPTight_Gsf_v*}\\
+
+How to calculate gold silver and bronze
+The gold silver and bronze efficiencies are calculated  based one the same prescprtion defined in Equations \ref{eq:efflep_general}
+
+efficiency plots, I'll have to actually make these myself....
 
 \section{Muon Tag-and-Probe}
 
@@ -204,14 +272,7 @@ The very loose and the efficiency components combined into Gold, Silver, and Bro
 \epsilon_\mu = \epsilon_{\text{VeryLoose}} \times \epsilon_{\text{Gold/Silver/Bronze}}
 \end{equation}
 
-\newcommand\FigureTwo[4]{%
-\begin{figure}[!htbp]%
-\centering
-\includegraphics[width=0.5\textwidth]{fig/Lep_Obj_plots/#1}\hfill
-\includegraphics[width=0.5\textwidth]{fig/Lep_Obj_plots/#2}\hfill
-\caption{#4}
-\label{#3}
-\end{figure}}
+
 
 \FigureFour{canvas0J2017b.pdf}{canvas1J2017e.pdf}%
            {canvas0Z2017b.pdf}{canvas1Z2017e.pdf}%
