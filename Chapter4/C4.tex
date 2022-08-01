@@ -146,8 +146,8 @@ MVA VLooseFO ID & \checkmark  & --\\
 \end{table}
 
 
-The advantage of having various lepton quality categories allows for robust sensitivity to a wide range of singal processes. This strategy boosts the overall modeling statistics and provides control regions for multiple scenarios. %but also provide fake rich selection in control region that helps stabilize the overall fit and extract fake rates into the sensitive regions.  
-The different truth selected object populations are shown in Figure \ref{andresPurity}. The gold region is a pure mainly populated by prompt leptons that are produced within the primary vertex, the prompt production of leptons also coincides to most of the targed electroweakino models. The silver selection accomodates both leptonically decaying taus and some isolated semileptonic b decays, which assists in recovering efficiency with b decays in stop production as well as being the ideal region for stau's.  The bronze selection is rich and fakes and provides the best sample to extract overall fake rates to extrapolate into other regions. 
+The advantage of having various lepton quality categories allows for robust sensitivity to a wide range of signal processes. This strategy boosts the overall modeling statistics and provides control regions for multiple scenarios. %but also provide fake rich selection in control region that helps stabilize the overall fit and extract fake rates into the sensitive regions.  
+The populations of different truth selected objects are shown in Figure \ref{andresPurity}. The gold region is mainly populated by prompt and isolated leptons that are produced within the primary vertex. This region also coincides with the signature of many targeted electroweakino models. The silver selection accomodates both leptonically decaying taus and some isolated semileptonic b decays, which assists in recovering efficiency with b decays in stop production as well as being the ideal region for stau's.  The bronze selection is rich in fake leptons and provides the best regions to extract overall fake rates for other regions. 
 
 
 
@@ -156,14 +156,28 @@ The different truth selected object populations are shown in Figure \ref{andresP
 \FloatBarrier
 \section{Electron Tag-and-Probe }
 
-The electron tag and probe is done by using the Z resonance is used over the entire \pt range of selected electrons. 
+The electron tag and probe is done by using the Z resonance is used over the entire \pt range of selected electrons. The selected binnings follow the $\pt$ and $\eta$ binning conventions from the electron physics object group and are $ p_T \in [5, 10, 20, 30, 40, 70, 100]$ and $|\eta| \in [ 0, 0.6, 1.4, 2.4]$. The electron Tag-and-Probe tools uses a centrally curated CMSSW PhysicsTools in \url{CMSSW_10_2_X}. The Tag-and-Probe software pipeline consists of two steps with the first step is the Ntupilizing stage. Selected Tag-and-Probe pairs along with all potential variables of interest are loaded onto an ntuple using TnPTreeProducer. The samples used in the Ntuplizing stage are listed in Table \ref{tab:electronTnPSamples}. In the second software stage, a random subset of the ntuples are sampled with TnPTreeAnalyzer. The TnPTreeAnalyzer performs all of the fitting and efficiency measurements. 
 
-What are the binnings
-$Z$
-	\begin{itemize}
-		\item[] $ p_T \in [5, 10, 20, 30, 40, 70, 100]$
-		\item[] $|\eta| \in [ 0, 0.6, 1.4, 2.4]$
-	\end{itemize}
+
+\begin{table}
+\scriptsize
+\begin{tabular}{|c|c|c|}
+\hline 
+Type & Year & Sample Name \\ 
+\hline 
+Data & 2016 & \tiny \url{/SingleElectron/Run2016B-17Jul2018_ver2-v1/MINIAOD}  \\  
+Data & 2017 & \tiny \url{/SingleElectron/Run2017C-31Mar2018-v1/MINIAOD} \\  
+Data & 2018 & \tiny \url{/EGamma/Run2018A-PromptReco-v1/MINIAOD} \\ 
+\hline 
+MC & 2016 & \tiny \url{/DYJetsToLL_Pt-100To250_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext5-v2/MINIAODSIM} \\ 
+MC & 2017 & \tiny \url{/DYJetsToLL_Pt-100To250_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM} \\ 
+MC & 2018 & \tiny \url{/DYJetsToLL_Pt-100To250_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v1/MINIAODSIM} \\ 
+\hline
+\end{tabular} 
+\label{tab:electronTnPSamples}
+\end{table}
+
+
 
 
 what are the tag/probe/pair requirements
