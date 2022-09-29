@@ -14,36 +14,55 @@ Jeffrey Berryhill, Georgios Daskalakis, Valerie Halyo, Jeremy Werner, and
 \newblock Nov 2010.
 
 \bibitem{muMediumId}
-{Cristina Botta, Giovanni Petrucciani}.
-\newblock Proposal of a new “medium” muon id.
+Proposal of a new “medium” muon id.
+\newblock
+  \url{https://indico.cern.ch/event/357213/contributions/1769745/attachments/710701/975626/muonid-pog081214.pdf}.
+\newblock Presented 2014-08-12.
 
 \bibitem{eTightID}
-Kati~Lassila Perini.
-\newblock Electron identification based on simple cuts.
+Electron identification based on simple cuts.
+\newblock
+  \url{https://twiki.cern.ch/twiki/bin/view/CMSPublic/EgammaPublicData}.
+\newblock Late updated 2016-04-22.
 
 \bibitem{murun2baseline}
-Sergio~Sanchez Cruz.
-\newblock Baseline muon selections for run-ii.
+Baseline muon selections for run-ii.
+\newblock
+  \url{https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideMuonIdRun2#Particle_Flow_isolation}.
+\newblock Late updated 2022-01-19.
 
 \bibitem{miniIso}
-Manuel Franco Sevilla Ana Ovcharova Jeff~Richman Adam~Dishaw, Jack
-  Bradmiller-Feld.
-\newblock Alternatives to standard isolation for 13 tev.
+Alternatives to standard isolation for 13 tev.
+\newblock
+  \url{https://indico.cern.ch/event/368826/contributions/871862/attachments/733500/1006397/20150127_ald_susy_iso.pdf}.
+\newblock Presented 2015-01-27.
 
 \bibitem{ElTnPGit}
 Electron tag-and-probe producer git repository.
+\newblock \url{https://github.com/cms-egamma/EgammaAnalysis-TnPTreeProducer}.
+\newblock Last updated 2022-06-27.
 
 \bibitem{ElTnPAnaGit}
 Electron tag-and-probe analyzer git repository.
+\newblock \url{https://github.com/cms-egamma/egm_tnp_analysis}.
+\newblock Last updated 2022-09-01.
 
 \bibitem{MuTnPTwiki}
-Muon tag-and-probe producer twiki.
+Muon tag-and-probe producer.
+\newblock \url{https://twiki.cern.ch/twiki/bin/viewauth/CMS/MuonTagAndProbe}.
+\newblock Last updated 2012-02-11.
 
 \bibitem{MuTnPAnaTwiki}
-Tag-and-probe analyzer twiki.
+Tag-and-probe analyzer.
+\newblock
+  \url{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideTagProbeFitTreeAnalyzer}.
+\newblock Last updated 2010-06-03.
 
 \bibitem{MuTnPCentralSamps}
 Muon tag-and-probe instructions for run-ii.
+\newblock
+  \url{https://twiki.cern.ch/twiki/bin/viewauth/CMS/MuonTagAndProbeTreesRun2}.
+\newblock Late updated 2020-05-18.
 
 \bibitem{Lansberg:2006dh}
 J.~P. Lansberg.

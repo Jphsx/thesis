@@ -45,6 +45,15 @@
 \label{#3}
 \end{figure}}
 
+\newcommand\FigureStack[4]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=0.75\textwidth]{fig/Lep_Obj_plots/#1}\hfill\\
+\includegraphics[width=0.75\textwidth]{fig/Lep_Obj_plots/#2}\hfill
+\caption{#4}
+\label{#3}
+\end{figure}}
+
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 \setlength{\parskip}{\smallskipamount}
@@ -226,7 +235,7 @@ The measurments of the gold silver and bronze efficiencies components, based on 
 
 \FigureThree{h_2017_1_eleff.pdf}{h_2017_2_eleff.pdf}%
            {h_2017_3_eleff.pdf}%
-          {fig:el2deff}{2017 efficiencies}
+         {2017 efficiencies} {fig:el2deff}
 
 
 \FigureFour{h_2017_0_el.pdf}{h_2017_1_el.pdf}%
@@ -386,8 +395,86 @@ range of efficiencies for each ranking are $(70 - 80)\%$, $(5 - 15)\%$, and $(4 
 \FloatBarrier
 \section{Lepton Systematics and Scale Factors}
 
-The systematic error for the electron and muon efficiencies are derived by varying the Tag-and-Probe signal and background models, slimming and widening the mass window , and increasing and decreasing the number of bins used in the fit. The systematic error is defined as the maximum spread in efficiencies between the modeling variations with an example spread shown in Figure Z.  Rather than compute the systematic error for every bin, similarities between neighboring bins motivates using a simplified bin approach which was chosen qualitatively by the background shape. The same $\eta$ bins are utilized according to lepton flavor, but the \pt bins are consolidated into a high and low bin pivoting on $20$ GeV. A high and low systematic is derived for each selection criteria per flavor per year and is applied to the efficiencies that fall within the corresponding \pt and $\eta$ range. 
+The systematic error for the electron and muon efficiencies are derived by varying the Tag-and-Probe signal and background models, slimming and widening the mass window , and increasing and decreasing the number of bins used in the fit. The systematic error is defined as the maximum spread in efficiencies between the modeling variations with an example spread shown in Figure \ref{fig:systspread}.  Rather than compute the systematic error for every bin, similarities between neighboring bins motivates using a simplified bin approach which was chosen qualitatively by the background shape. The shape of the \pt based mass distributions is illustrated in Figure \ref{fig:systplots}. The same $\eta$ bins are utilized according to lepton flavor, but the \pt bins are consolidated into a high and low bin pivoting on $20$ GeV. A high and low systematic is derived for each selection criteria per flavor per year and is applied to the efficiencies that fall within the corresponding \pt and $\eta$ range. 
 %todo syst spread fig
 %todo syst tnp dist
+\FigureStack{muons_lowpt_syst.png}{muons_highpt_syst.png}%
+	{fig:systplots}{Tag-and-Probe di-muon mass distributions for both passing and failing probes. The top set of plots consist of probes below 20 GeV and the bottom set are about 20 GeV.}
+	
 
-Scale factors are derived bin by bin for each criteria per flavor per year by finding the ratio of efficiencies in data to Monte Carlo. The scale factor variance is propagated by combining both the statistical error from the Tag-and-Probe in quadrature with the systematic error. An example set of scale factors for 2017 muon criteria is shown in Figure Z.  Additional scale factors are also  needed adjusting the differences between samples which are either created with a full simulation or fast simulation. The Fast to Full factor is obtained by extracting the criteria efficiency ratio between  full and fast sim ttbar samples.
+
+Scale factors are derived bin by bin for each criteria per flavor per year by finding the ratio of efficiencies in data to Monte Carlo. The scale factor variance is propagated by combining both the statistical error from the Tag-and-Probe in quadrature with the systematic error. The full 2017 set of systematics electrons and muons is shown in Table \ref{tab:elesysts} and Table \ref{tab:musysttable}. Additional scale factors are also  needed adjusting the differences between samples which are either created with a full simulation or fast simulation. The Fast to Full factor is obtained by extracting the criteria efficiency ratio between  full and fast sim ttbar samples.
+
+\FigureOne{2017data_medID_msyst.pdf}{Example systematic spread from various fit models and binnings for muons. Includes the four combinations of regions either low or high pt and central and forward eta.}{fig:systspread}
+	
+\begin{table}
+\caption{The electron systematic error derived from the Tag-and-Probe for 2017 data and split into \pt and $|\eta|$ regions. }
+\label{tab:elesysts}
+\begin{tabular}{|c|ccc|}
+\hline
+ID & $0\leq |\eta|<0.8$ & $0.8\leq |\eta|<1.479$ & $|\eta|\geq1.479$ \\
+\hline
+$\pt < 20$ [GeV] & 0.003 & 0.001 & 0.005 \\
+$\pt \geq 20$ [GeV] & 0.001 & 0.001 & 0.002  \\
+ &  &  &    \\
+\hline
+Iso $|$ ID  &  &  &   \\
+\hline
+$\pt < 20$ [GeV] & 0.002 & 0.003 & 0.003   \\
+$\pt \geq 20$ [GeV] & 0.001 & 0.001 & 0.002 \\
+ &  &  &   \\
+\hline
+SIP $|$ Iso $\cap$ ID &  &  &  \\
+\hline
+$\pt < 20$ [GeV]& 0.006 & 0.004 & 0.007 \\
+$\pt \geq 20$ [GeV]& 0.002 & 0.002 & 0.0006  \\
+\hline
+VeryLoose &  &  &  \\
+\hline
+$\pt < 20$ [GeV]& 0.002 & 0.007 & 0.03 \\
+$\pt \geq 20$ [GeV]& 0.003 & 0.0001 & 0.0007 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[htbp]
+\centering
+\caption{The muon systematic error derived from the Tag-and-Probe data and split into \pt and $|\eta|$ regions. }
+\label{tab:musysttable}
+\begin{tabular}{|c|cc|}
+\hline
+\hline
+ID & $|\eta|<1.2$ & $|\eta|\geq 1.2$  \\
+\hline
+$\pt < 20$ [GeV](J) & 0.001 & 0.001  \\
+
+$\pt \geq 20$ [GeV](Z) &  0.001& 0.0003 \\
+
+ &  & \\
+\hline
+Iso $|$ ID  &  &  \\
+\hline
+$\pt < 20$ [GeV]  & 0.007 & 0.004  \\
+
+$\pt \geq 20$ [GeV] & 0.007 & 0.002  \\
+
+ &  &  \\
+\hline
+SIP $|$ Iso $\cap$ ID &  &  \\
+\hline
+$\pt < 20$ [GeV]& 0.005 & 0.003 \\
+
+$\pt \geq 20$ [GeV]& 0.001 & 0.002 \\
+ & &  \\
+\hline
+Very Loose & &  \\
+\hline
+$\pt < 20 $ [GeV]  & 0.001 & 0.0003 \\
+$\pt \geq 20$ [GeV]  & 0.001 & 0.001 \\
+\hline
+\end{tabular}
+\label{tab:musyst}
+\end{table}
+
+

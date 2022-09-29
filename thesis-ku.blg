@@ -1,31 +1,9 @@
 This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis-ku.aux
-A level-1 auxiliary file: Chapter1/C1.aux
-A level-1 auxiliary file: Chapter2/C2.aux
-A level-1 auxiliary file: Chapter3/C3.aux
 A level-1 auxiliary file: Chapter4/C4.aux
 The style file: unsrt.bst
-A level-1 auxiliary file: Appendix1/Appendix1.aux
 Database file #1: Biblio/allcites.bib
-Warning--entry type for "muMediumID" isn't style-file defined
---line 64 of file Biblio/allcites.bib
-Warning--entry type for "eTightID" isn't style-file defined
---line 72 of file Biblio/allcites.bib
-Warning--entry type for "murun2baseline" isn't style-file defined
---line 80 of file Biblio/allcites.bib
-Warning--entry type for "miniIso" isn't style-file defined
---line 88 of file Biblio/allcites.bib
-Warning--entry type for "ElTnPGit" isn't style-file defined
---line 97 of file Biblio/allcites.bib
-Warning--entry type for "ElTnPAnaGit" isn't style-file defined
---line 105 of file Biblio/allcites.bib
-Warning--entry type for "MuTnPTwiki" isn't style-file defined
---line 113 of file Biblio/allcites.bib
-Warning--entry type for "MuTnPAnaTwiki" isn't style-file defined
---line 121 of file Biblio/allcites.bib
-Warning--entry type for "MuTnPCentralSamps" isn't style-file defined
---line 129 of file Biblio/allcites.bib
 Warning--I didn't find a database entry for "?"
 Too many commas in name 1 of "N. Adam, J. Berryhill, V. Halyo, A. Hunt, K. Mishra" for entry AN111-2009
 while executing---line 944 of file unsrt.bst
@@ -35,40 +13,36 @@ Warning--empty journal in AN111-2009
 Name 3 in "Berryhill, Jeffrey and Daskalakis, Georgios and Halyo, Valerie, and Werner, Jeremy and Xie, Si" has a comma at the end for entry Berryhill_2010
 while executing---line 944 of file unsrt.bst
 Warning--empty journal in Berryhill_2010
-Too many commas in name 1 of "Adam Dishaw, Jack Bradmiller-Feld, Manuel Franco Sevilla, Ana Ovcharova, Jeff Richman" for entry miniIso
-while executing---line 944 of file unsrt.bst
-Too many commas in name 1 of "Adam Dishaw, Jack Bradmiller-Feld, Manuel Franco Sevilla, Ana Ovcharova, Jeff Richman" for entry miniIso
-while executing---line 944 of file unsrt.bst
 You've used 13 entries,
             1791 wiz_defined-function locations,
-            509 strings with 4977 characters,
-and the built_in function-call counts, 1660 in all, are:
-= -- 115
-> -- 54
+            518 strings with 5658 characters,
+and the built_in function-call counts, 1740 in all, are:
+= -- 152
+> -- 42
 < -- 0
-+ -- 26
-- -- 13
++ -- 22
+- -- 9
 * -- 47
-:= -- 231
-add.period$ -- 25
+:= -- 236
+add.period$ -- 39
 call.type$ -- 13
 change.case$ -- 13
 chr.to.int$ -- 0
 cite$ -- 15
 duplicate$ -- 79
 empty$ -- 235
-format.name$ -- 13
-if$ -- 385
+format.name$ -- 9
+if$ -- 418
 int.to.chr$ -- 0
 int.to.str$ -- 13
 missing$ -- 4
-newline$ -- 54
-num.names$ -- 8
-pop$ -- 62
+newline$ -- 68
+num.names$ -- 4
+pop$ -- 84
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 80
+skip$ -- 39
 stack$ -- 0
 substring$ -- 40
 swap$ -- 11
@@ -77,7 +51,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 11
+while$ -- 7
 width$ -- 15
-write$ -- 95
-(There were 5 error messages)
+write$ -- 123
+(There were 3 error messages)
