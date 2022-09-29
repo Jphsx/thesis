@@ -1,15 +1,10 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{LHCb:2013itw}
-R~Aaij et~al.
-\newblock {Production of J/psi and Upsilon mesons in pp collisions at sqrt(s) =
-  8 TeV}.
-\newblock {\em JHEP}, 06:064, 2013.
-
-\bibitem{miniIso}
-Manuel Franco Sevilla Ana Ovcharova Jeff~Richman Adam~Dishaw, Jack
-  Bradmiller-Feld.
-\newblock Alternatives to standard isolation for 13 tev.
+\bibitem{AN111-2009}
+V.~Halyo A. Hunt K.~Mishra N.~Adam, J.~Berryhill.
+\newblock Generic tag and probe tool for measuring efficiency at cms with early
+  data.
+\newblock June 2009.
 
 \bibitem{Berryhill_2010}
 Jeffrey Berryhill, Georgios Daskalakis, Valerie Halyo, Jeremy Werner, and
@@ -22,9 +17,33 @@ Jeffrey Berryhill, Georgios Daskalakis, Valerie Halyo, Jeremy Werner, and
 {Cristina Botta, Giovanni Petrucciani}.
 \newblock Proposal of a new “medium” muon id.
 
+\bibitem{eTightID}
+Kati~Lassila Perini.
+\newblock Electron identification based on simple cuts.
+
 \bibitem{murun2baseline}
 Sergio~Sanchez Cruz.
 \newblock Baseline muon selections for run-ii.
+
+\bibitem{miniIso}
+Manuel Franco Sevilla Ana Ovcharova Jeff~Richman Adam~Dishaw, Jack
+  Bradmiller-Feld.
+\newblock Alternatives to standard isolation for 13 tev.
+
+\bibitem{ElTnPGit}
+Electron tag-and-probe producer git repository.
+
+\bibitem{ElTnPAnaGit}
+Electron tag-and-probe analyzer git repository.
+
+\bibitem{MuTnPTwiki}
+Muon tag-and-probe producer twiki.
+
+\bibitem{MuTnPAnaTwiki}
+Tag-and-probe analyzer twiki.
+
+\bibitem{MuTnPCentralSamps}
+Muon tag-and-probe instructions for run-ii.
 
 \bibitem{Lansberg:2006dh}
 J.~P. Lansberg.
@@ -32,14 +51,10 @@ J.~P. Lansberg.
   Review}.
 \newblock {\em Int. J. Mod. Phys. A}, 21:3857--3916, 2006.
 
-\bibitem{AN111-2009}
-V.~Halyo A. Hunt K.~Mishra N.~Adam, J.~Berryhill.
-\newblock Generic tag and probe tool for measuring efficiency at cms with early
-  data.
-\newblock June 2009.
-
-\bibitem{eTightID}
-Kati~Lassila Perini.
-\newblock Electron identification based on simple cuts.
+\bibitem{LHCb:2013itw}
+R~Aaij et~al.
+\newblock {Production of J/psi and Upsilon mesons in pp collisions at sqrt(s) =
+  8 TeV}.
+\newblock {\em JHEP}, 06:064, 2013.
 
 \end{thebibliography}

@@ -6,9 +6,9 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Example Tag-and-Probe Z di-muon fits for passing,failing, and all probes with the Medium Id, $|\eta |<1.2$, and $p_T < 20$ GeV \relax }}{7}{figure.caption.4}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Gold (Top-Left), Silver (Top-Right) and Bronze (Bottom) MC truth matching in TTJets sample 2017. Signal is defined here as prompt electrons from a $W$ decay.\relax }}{10}{figure.caption.6}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Gold, Silver, and Bronze efficiency on truth matched prompt electrons as signal and secondary electons as Fakes.\relax }}{11}{figure.caption.7}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces fig:el2deff\relax }}{13}{figure.caption.9}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces 2017 electron GSB efficiency and SF \relax }}{14}{figure.caption.10}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Tag-and-Probe efficiencies for the Medium Id in 2017. The left plots show the barrel while the right plots show the endcaps. The top fits use $J/\psi $ resonance while the bottom use the Z resonance. \relax }}{18}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces The fitted muon isolation and SIP3D efficiencies for 2017. Includes both data and MC which are separated between barrel and endcap. \relax }}{19}{figure.caption.13}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces The combined efficiency components from equations \ref {eq:effcomp_J} and \ref {eq:effcomp_Z} and Very Loose for 2017. The low-\ensuremath {p_{\mathrm {T}}}\xspace region ($<20$ GeV) includes the contributions from $J/\psi $ as well as the isolation and SIP3D extrapolations. Propagated errors are treated as uncorrelated.\relax }}{20}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces fig:el2deff\relax }}{13}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 2017 electron GSB efficiency and SF \relax }}{14}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Tag-and-Probe efficiencies for the Medium Id in 2017. The left plots show the barrel while the right plots show the endcaps. The top fits use $J/\psi $ resonance while the bottom use the Z resonance. \relax }}{18}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces The fitted muon isolation and SIP3D efficiencies for 2017. Includes both data and MC which are separated between barrel and endcap. \relax }}{19}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces The combined efficiency components from equations \ref {eq:effcomp_J} and \ref {eq:effcomp_Z} and Very Loose for 2017. The low-\ensuremath {p_{\mathrm {T}}}\xspace region ($<20$ GeV) includes the contributions from $J/\psi $ as well as the isolation and SIP3D extrapolations. Propagated errors are treated as uncorrelated.\relax }}{20}{figure.caption.17}%
 \addvspace {10\p@ }

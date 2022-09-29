@@ -155,7 +155,7 @@ MVA VLooseFO ID & \checkmark  & --\\
 
 
 The advantage of having various lepton quality categories allows for robust sensitivity to a wide range of signal processes. This strategy boosts the overall modeling statistics and provides control regions for multiple scenarios. %but also provide fake rich selection in control region that helps stabilize the overall fit and extract fake rates into the sensitive regions.  
-The populations of different truth selected objects are shown in Figure \ref{andresPurity} and the overall efficiency for Gold, Silver, and Bronze on truth matched objects are shown in Figure \ref{andresEff}.  The gold region is mainly populated by prompt and isolated leptons that are produced within the primary vertex. This region also coincides with the signature of many targeted electroweakino models. The silver selection accomodates both leptonically decaying taus, providing a ideal region for stau's, and assists in recovering efficiency of isolated b decays in stop production. The bronze selection is rich in fake leptons and provides the best regions to extract overall fake rates for other regions as well as a surplus of events to anchor the fit. 
+The populations of different truth selected objects are shown in Figure \ref{andresPurity} and the overall efficiency for Gold, Silver, and Bronze on truth matched objects are shown in Figure \ref{andresEff}.  The gold region is mainly populated by prompt and isolated leptons that are produced within the primary vertex. This region also coincides with the signature of many targeted electroweakino models. The silver selection accomodates both leptonically decaying taus, providing an ideal region for stau's, and assists in recovering efficiency of isolated b decays in stop production. The bronze selection is rich in fake leptons and provides the best regions to extract overall fake rates for other regions as well as a surplus of events to anchor the fit. 
 
 
 
@@ -166,10 +166,12 @@ The populations of different truth selected objects are shown in Figure \ref{and
 \FloatBarrier
 \section{Electron Tag-and-Probe }
 
-The electron tag and probe is done by using the Z resonance over the entire \pt range of selected electrons. The selected binnings follow the $\pt$ and $\eta$ binning conventions from the electron physics object group and are $ p_T \in [5, 10, 20, 30, 40, 70, 100]$ and $|\eta| \in [ 0, 0.6, 1.4, 2.4]$. The electron Tag-and-Probe tools uses a centrally curated CMSSW PhysicsTools in \url{CMSSW_10_2_X}. The Tag-and-Probe software pipeline consists of two steps, an ntuplizing stage and a fitting stage. The  Ntupilizing stage selectsTag-and-Probe pairs along with all potential variables of interest and loads them onto an ntuple using TnPTreeProducer. The samples used in the Ntuplizing stage are listed in Table \ref{tab:electronTnPSamples}. In the fitting stage, a random subset of of TnP pairs are sampled with TnPTreeAnalyzer. The TnPTreeAnalyzer performs all of the fitting and efficiency measurements according to the specified selection criteria. 
+The electron tag and probe is done by using the Z resonance over the entire \pt range of selected electrons. The selected binnings follow the $\pt$ and $\eta$ binning conventions from the electron physics object group and are $ p_T \in [5, 10, 20, 30, 40, 70, 100]$ and $|\eta| \in [ 0, 0.6, 1.4, 2.4]$. The electron Tag-and-Probe tools uses a centrally curated CMSSW PhysicsTools in \url{CMSSW_10_2_X}. The software pipeline consists of two steps, an ntuplizing stage and a fitting stage. The  Ntupilizing stage selects Tag-and-Probe pairs along with all potential variables of interest and loads them onto an ntuple using \url{TnPTreeProducer} \cite{ElTnPGit}. The samples used in the Ntuplizing stage are listed in Table \ref{tab:electronTnPSamples}. In the fitting stage, a random subset of of TnP pairs are sampled with \url{TnPTreeAnalyzer} \cite{ElTnPAnaGit}. The analyzer performs all of the fitting and efficiency measurements according to the specified selection criteria. 
 
 
 \begin{table}
+\caption{ Data and MC samples for each year used for the electron Tag-and-Probe. }
+\label{tab:electronTnPSamples}
 \scriptsize
 \begin{tabular}{|c|c|c|}
 \hline 
@@ -184,14 +186,16 @@ MC & 2017 & \tiny \url{/DYJetsToLL_Pt-100To250_TuneCP5_13TeV-amcatnloFXFX-pythia
 MC & 2018 & \tiny \url{/DYJetsToLL_Pt-100To250_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v1/MINIAODSIM} \\ 
 \hline
 \end{tabular} 
-\label{tab:electronTnPSamples}
 \end{table}
 
 
 
 
-A general selection of electron pairs is applied for TnP candidates to be considered. The basic selection for electrons is different for the tag and probe but both depend on super cluster (SC) kinematics. The super clusters are expected to fall within the calorimeter acceptance and clusters within the ECAL and endcap gaps are vetoed. The invariant mass of the electron of the pair also is required to fall within a specified Z-window.
+A general selection is applied for electron TnP candidates. The selection for electrons differs between the tag and probe, but, both depend on super cluster (SC) kinematics. The super clusters are expected to fall within the calorimeter acceptance which includes vetoing super clusters in the endcap gaps. The invariant mass of the electron of the pair also is required to fall within a specified Z-window. The selection specifics are listed in Table \ref{tab:eleTnPSelect}.  The tag is also required to pass a trigger requirement to reflect the inherit trigger bias which is not applied in simulation by default. The triggers selected are HLT electron collections and are grouped by specific paths and filters. The electrons are matched to trigger objects in the path/filter combination and passed based on the OR of triggers in the collection. The probes are not subjected to trigger matching. The chosen trigger combinations are \url{HLT_Ele27_eta2p1_WPTight_Gsf_v*}, \url{HLT_Ele32_WPTight_Gsf_L1DoubleEG_v*}, \url{HLT_Ele32_WPTight_Gsf_v*} for 2016 through 2018 respectively.\\
 
+\begin{table}
+\caption{selection}
+\label{tab:eleTnPSelect}
 \begin{tabular}{|c|c|c|c|}
 \hline 
 \multicolumn{4}{|c|}{Tag-and-Probe Electron Candidate Selection Criteria} \\ 
@@ -200,32 +204,30 @@ Tag & Probe & Super Cluster & Pair \\
 \hline 
 $|\eta_{SC}| \leq 2.1$ & $|\eta_{SC}| \leq 2.5$  & $|\eta|<2.5 $ & $50 \text{GeV} < m_{ee} < 130 \text{GeV} $ \\
 veto $ 1.4442 \leq |\eta_{SC}| \leq 1.566 $ & $E_{ECAL}\sin(\theta_{SC}) > 5.0 $ GeV & $E_T > 5.0 $ GeV &  \\
- $\pt \geq 30.0$ GeV & x & x &  \\
- Passes tightID & x & x & \\
+ $\pt \geq 30.0$ GeV &  &  &  \\
+ Passes Tight Id &  &  & \\
 \hline 
 \end{tabular} 
+\end{table}
 
 
-The triggers selected are HLT electron collections and are grouped by specific paths and filters. The tag electrons are matched to trigger objects in the path/filter combination and passed based on the OR of triggers in the collection. The probes are not subjected to trigger matching. The chosen trigger combinations are the following:\\
-\begin{center}
-\begin{tabular}{@{}l@{}} 
-\tabitem 2016: \url{HLT_Ele27_eta2p1_WPTight_Gsf_v*} \\
-\tabitem 2017: \url{HLT_Ele32_WPTight_Gsf_L1DoubleEG_v*}\\
-\tabitem 2018: \url{HLT_Ele32_WPTight_Gsf_v*} \\
-\end{tabular} 
-\end{center}
+
+%\begin{center}
+%\begin{tabular}{@{}l@{}} 
+%\tabitem 2016: \url{HLT_Ele27_eta2p1_WPTight_Gsf_v*} \\
+%\tabitem 2017: \url{HLT_Ele32_WPTight_Gsf_L1DoubleEG_v*}\\
+%\tabitem 2018: \url{HLT_Ele32_WPTight_Gsf_v*} \\
+%\end{tabular} 
+%\end{center}
 
 
 %\end{center}
-How to calculate gold silver and bronze
-The gold silver and bronze efficiencies are calculated  based one the same prescprtion defined in Equations \ref{eq:efflep_general}
+The measurments of the gold silver and bronze efficiencies components, based on Equations \ref{eq:efflep_general}, are shown in Figure \ref{fig:el2deff}. The relative efficiencies per component range from approximately $75\%$ to $95\%$ with a slight dependence on $|\eta|$ which is the strongest lower \pt. The largest combined systematic and statistical errors are $O(4\%)$ and occur in data with the lowest \pt bins. The data and MC agreement is within a few percent for both the Id and Isolation but the average data and MC agreement in SIP3D averages closer to $O(10\%)$ with the highest \pt bins discrepancies about $20\%$ and a consistent deficit in data efficiency. The product of the efficiency components into their corresponding Gold, Silver, and Bronze category is shown in Figure \ref{fig:elgsb}. The efficiency for Very Loose is also included separately but is factored into the denominator efficiencies components, so, the Gold, Silver, and Bronze efficiencies represent the overall electron efficiency for that particular lepton ranking. The range of efficiencies for each ranking are $(50-70)\%$, $(10-20)\%$, and $(10-30)\%$ for Gold, Silver, and Bronze respectively. The component combined agreement for all three ranks ranges around $10\%$ to $20\%$ but large discrepancies can be seen at the highest and lowest \pt bins for Silver and Bronze. Better measurements could be obtained by using a different resonance such as $J/\psi \rightarrow ee$ to measure the lower \pt ranges, however, data triggers with electrons for $J/\psi$ are not available.
 
-efficiency plots, I'll have to actually make these myself....
 \FigureThree{h_2017_1_eleff.pdf}{h_2017_2_eleff.pdf}%
            {h_2017_3_eleff.pdf}%
           {fig:el2deff}{2017 efficiencies}
 
-The combination of these efficiencies we get the gold silver and bronze efficiencies and scale factors
 
 \FigureFour{h_2017_0_el.pdf}{h_2017_1_el.pdf}%
            {h_2017_2_el.pdf}{h_2017_3_el.pdf}%
@@ -233,9 +235,30 @@ The combination of these efficiencies we get the gold silver and bronze efficien
 
 \FloatBarrier
 \section{Muon Tag-and-Probe}
-The muon Tag-and-Probe tools also uses a centrally curated CMSSW PhysicsTools in \url{CMSSW_10_6_X}. The software pipeline is identical to electons in that it consists of an ntuplizing and fitting stage. The code bases are separate but functionally identical.
-The muon Tag-and-Probe efficiencies are measured above 20 GeV using the Z boson. Muons below 20 GeV benefit from the $J/\psi$ meson for Id measurements only. The $\eta$ bins are divided into a central and forward regions around the endcaps at $|\eta| = 2.1$. In total there are three sets of binnings: The low \pt $J/\psi$ binning $J/\psi^{L}$ used to measure muon Id below 20 GeV, the high \pt Z binning $Z^{H}$ above 20 GeV, and the low \pt Z binning $Z^{L}$ used to extrapolate isolation and impact parameter efficiencies down to 3 GeV.  The explicit bin edges for each range are define as follows:
+The muon Tag-and-Probe tools also uses a centrally curated CMSSW PhysicsTools in \url{CMSSW_10_6_X}. The software pipeline is identical to electons in that it consists of an ntuplizing \cite{MuTnPTwiki} and fitting \cite{MuTnPAnaTwiki} stage. The code bases for muons and electrons are separate but functionally identical. The samples chosen for Z measurements are shown in Table \ref{tab:mutnpsamples}. The $J/\psi$ ntuples are available from a central repository of standard Tag-and-Probe selection variables which use the pre-ultra legacy samples for each year \cite{MuTnPCentralSamps}.  The muon Tag-and-Probe efficiencies are measured above 20 GeV using the Z boson while below 20 GeV benefits from the $J/\psi$ meson for Id measurements. The $\eta$ bins are divided into a central and forward regions around the endcaps at $|\eta| = 2.1$. In total there are three sets of binnings: The low \pt $J/\psi$ binning $J/\psi^{L}$ for muon Id below 20 GeV, the high \pt Z binning $Z^{H}$ above 20 GeV, and the low \pt Z binning $Z^{L}$ used to extrapolate isolation and impact parameter efficiencies down to 3 GeV.  The explicit bin edges for each range are defined in Table \ref{tab:mubin}.
 
+\begin{table}
+\caption{}
+\label{tab:mutnpsamples}
+\scriptsize
+\begin{tabular}{|c|c|c|}
+\hline 
+Type & Year & Sample Name \\ 
+\hline 
+Data & 2016 & \tiny \url{/SingleMuon/Run2016C-17Jul2018-v1/MINIAOD}  \\  
+Data & 2017 & \tiny \url{/SingleMuon/Run2017C-31Mar2018-v1/MINIAOD} \\  
+Data & 2018 & \tiny \url{/SingleMuon/Run2018A-17Sep2018-v2/MINIAOD} \\ 
+\hline 
+MC & 2016 & \tiny \url{/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext2-v2/MINIAODSIM} \\ 
+MC & 2017 & \tiny \url{/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAODv2-PU2017RECOSIMstep_12Apr2018_94X_mc2017_realistic_v14_ext1-v1/MINIAODSIM} \\ 
+MC & 2018 & \tiny \url{/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v1/MINIAODSIM} \\ 
+\hline
+\end{tabular} 
+\end{table}
+
+\begin{table}
+\caption{muon binning}
+\label{tab:mubin}
 \begin{tabular}{|c|c|c|}
 \hline 
 \multicolumn{3}{|c|}{Muon Binning} \\ 
@@ -249,6 +272,7 @@ $Z^{H}$ &  [10, 20, 30, 40, 60, 100] & [0, 1.2, 2.4] \\
 $Z^{L}$ & [6,8,10,14,18,22,28,32,38,44,50] & [0, 1.2, 2.4] \\ 
 \hline 
 \end{tabular} 
+\end{table}
 
 %\begin{itemize}
 %\item $J/\psi^{L}$  
@@ -285,32 +309,32 @@ Tag & Probe & Pair \\
 \hline 
 isGlobalMuon & Matches hltTracksIter   & $2.8 \text{GeV} < m_{\mu\mu} < 3.4 \text{GeV} $ \\
 numberOfMatchedStations$>1$  & OR &  $|z_{\mu_1} - z_{\mu_2}| <1 $ cm\\
- $\pt > 5$ GeV & Maches hltMuTrackJpsiEffCtfTrackCands & x   \\
- Matches hltIterL3MuonCandidates & x & \\
+ $\pt > 5$ GeV & Maches hltMuTrackJpsiEffCtfTrackCands &    \\
+ Matches hltIterL3MuonCandidates &   & \\
 \hline
 \multicolumn{3}{|c|}{$Z$} \\
 \hline
 passes tightID & No requirement & $m_{\mu\mu} > 60$ GeV \\
 $\sum \pt^{ch} / \pt < 0.2$ & &  $|z_{\mu_1} - z_{\mu_2}| <4 $ cm \\
-$\pt > 15$ GeV & x & x \\
+$\pt > 15$ GeV &   &   \\
 \hline 
 \end{tabular} 
 \end{table}
-Data will  have an implicit selection due to triggering to reflect this selection in MC tags are required to pass a trigger in the denominator of efficiency for all criteria in addition to matching HLT objects in HLT trigger collections. The triggers available vary from year to year and are as follows:\\
-\begin{center}
-\begin{tabular}{@{}l@{}} 
-\tabitem $J/\psi$ 2016,2017,2018: \url{Mu7p5Tk2} \\
-\tabitem $Z$ 2016: \url{IsoTkMu22}\\
-\tabitem $Z$ 2017, 2018: \url{isoMu24eta2p1} \\
-\end{tabular} 
-\end{center}
+The muon data will also  have an implicit selection due to triggering. To reflect this selection in MC, the tag is required to pass a chosen trigger in the efficiency denominator in addition to HLT object matching. The triggers available vary from year to year for $Z$ using \url{IsoTkMu22} in 2016 and \url{isoMu24eta2p1} in 2017 and 2018. A single $J/\psi$ triggers is available for all years which is \url{Mu7p5Tk2}.\\
+
+%\begin{center}
+%\begin{tabular}{@{}l@{}} 
+%\tabitem $J/\psi$ 2016,2017,2018: \url{Mu7p5Tk2} \\
+%\tabitem $Z$ 2016: \url{IsoTkMu22}\\
+%\tabitem $Z$ 2017, 2018: \url{isoMu24eta2p1} \\
+%%\end{tabular} 
+%\end{center}
 
 
 
 
 
- The Gold/Silver/Bronze efficiency definitions depend \pt and reflect the high and low binning separations between Z and $J/\psi$. The low \pt muons include the Id measured by $J/\psi$ as well as the extrapolated efficiencies from SIP3D and isolation fits in $Z_L$. The high \pt muons are composed of all the factors directly measured in $Z_H$ :
-
+ The Gold, Silver, and Bronze efficiency definitions are split based on \pt and reflect the high and low binning separations shown in Table \ref{tab:mubin}. The low \pt muons include the Id measured by $J/\psi$ as well as the extrapolated efficiencies from SIP3D and isolation fits in $Z_{L}$. The high \pt muons are composed of all the factors directly measured in $Z_H$.
 
 \begin{itemize}
 \item[] $\pt \in [3,20)$
@@ -334,16 +358,15 @@ Data will  have an implicit selection due to triggering to reflect this selectio
 \end{split}
 \end{equation}
 
- The ID efficiency with statistical errors for both data and MC are shown in Figure \ref{fig:jpsiZ17-ideff-ratio}. The other efficiencies for each year for all \pt ranges are included in the appendix. The overlapping bins between $J/\psi$ and $Z$ do not all match within statistical uncertainties. However, the average deviation of the efficiency central values are $0.02\%$ for MC and $1\%$ for data.  
+ The 2017 Id efficiency with statistical errors for both data and MC are shown in Figure \ref{fig:jpsiZ17-ideff-ratio}. The other efficiencies for each year for all \pt ranges are included in the appendix. The overlapping bins between $J/\psi$ and $Z$ do not all match within statistical uncertainties. However, the average deviation of the efficiency central values are $0.02\%$ for MC and $1\%$ for data.  The relative efficiencies per component range from approximately $88\%$ to $98\%$ and are fairly uniform between the central tracker and endcaps. The efficiencies for the isolation ranges from $(90 - 95)\%$ where the encaps generally are about $5\%$ more efficient. As for SIP3D, the efficiency ranges from about $(80 - 93)\%$ with another $5\%$ $|eta|$ based efficiency gap, however, in the SIP3D case, the central tracks are more efficient as opposed to isolation.  The extrapolation of the vertexing and isolation efficiencies below 20 GeV is done by fitting a quadratic polynomial to the efficiencies on the $Z_L$ interval.  Both data and MC are shown in Figure \ref{fig:eff17-extraps}.  The errors for each bin are the combined statistical and systematic errors from Table \ref{tab:musyst} and are adjusted before the polynomial fit. Any efficiencies below 20 GeV are then reported from the fit model. The fit errors are the 68\% confidence interval combined with the systematic errors. The worst observed right tail P-value from all fits is $\approx 2\%$, the median P-value from the Figure \ref{fig:eff17-extraps} is $84\%$. The fits in each year behave qualitatively the same as 2017.
+The product of the efficiency components into their corresponding Gold, Silver, and Bronze category is shown in Figure \ref{fig:2017-mu1-gsbvl}. Similar to electrons, the efficiency for Very Loose is also included separately but is factored into the denominator efficiencies components, so, the Gold, Silver, and Bronze
+efficiencies represent the overall electron efficiency for that particular lepton ranking. The
+range of efficiencies for each ranking are $(70 - 80)\%$, $(5 - 15)\%$, and $(4 - 20)\%$ for Gold, Silver, and Bronze respectively. The Data and MC agreement for all three ranks is better than electrons with the largest discrepancy in Gold being $2\%$ and the average deviation in Silver and Bronze begin approximately $(5-10)\%$.
 
-
-
-The extrapolation of the vertexing and isolation efficiencies below 20 GeV is done by fitting a quadratic polynomial to the efficiencies on the $Z_L$ interval.  Both data and MC are shown in Figure \ref{fig:eff17-extraps}.  The errors for each bin are the combined statistical and systematic errors from Table \ref{tab:musyst} and are adjusted before the polynomial fit. Any efficiencies below 20 GeV are then reported from the fit model. The fit errors are the 68\% confidence interval combined with the systematic errors. The worst observed P-value is $\approx 2\%$ but most of the fits are high quality.
-
-The very loose and the efficiency components combined into Gold, Silver, and Bronze are summarized in Figure \ref{fig:2017-mu1-gsbvl}, the other years are included in the appendix. The tool used to store/calculate efficiencies can be found at \url{https://github.com/Jphsx/LepTool}.  The cumulative efficiency for a muon also includes the efficiency of the VeryLoose selection and is defined as:
-\begin{equation}
-\epsilon_\mu = \epsilon_{\text{VeryLoose}} \times \epsilon_{\text{Gold/Silver/Bronze}}
-\end{equation}
+%The very loose and the efficiency components combined into Gold, Silver, and Bronze are summarized in Figure \ref{fig:2017-mu1-gsbvl}, the other years are included in %the appendix. The tool used to store/calculate efficiencies can be found at \url{https://github.com/Jphsx/LepTool}.  The cumulative efficiency for a muon also includes %the efficiency of the VeryLoose selection and is defined as:
+%\begin{equation}
+%\epsilon_\mu = \epsilon_{\text{VeryLoose}} \times \epsilon_{\text{Gold/Silver/Bronze}}
+%\end{equation}
 
 
 
