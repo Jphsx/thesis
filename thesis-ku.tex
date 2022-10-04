@@ -63,6 +63,21 @@
 %\providecommand{\tabularnewline}{\\}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+%%%FUNCTIONS
+
+\newcommand\FigOne[3]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=0.5\textwidth]{fig/#1}\hfill
+\caption{#2}
+\label{#3}
+\end{figure}}
+
+
+
+
+%%% END FUNC
+
 
 
 %used to align decimals in tables according to APA style
@@ -143,7 +158,7 @@ Thanks everybody
 \end{romanpages}
 
 
-%\include{Chapter1/C1}
+\include{Chapter1/C1}
 
 %\section{Chapter 2 \lable{sec:ch2}}
 %\include{Chapter2/C2}
