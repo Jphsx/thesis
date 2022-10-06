@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.11)  4 OCT 2022 15:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.11)  6 OCT 2022 17:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -618,39 +618,39 @@ ype png)
 Package pdftex.def Info: fig/Intro_figs/Standard_Model_of_Elementary_Particles.
 png  used on input line 36.
 (pdftex.def)             Requested size: 234.8775pt x 224.75882pt.
-) [1
+[1
 
 
 
-] [2 <./fig/Intro_figs/Standard_Model_of_Elementary_Particles.png>]
+] [2 <./fig/Intro_figs/Standard_Model_of_Elementary_Particles.png>] [3])
+[4]
 \openout2 = `Chapter4/C4.aux'.
 
-
-(./Chapter4/C4.tex
+ (./Chapter4/C4.tex
 Chapter 2.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
 3.
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [3
+) [5
 
 
 
-] [4]
-<fig/Lep_Obj_plots/PassingProbes_Med16_lowpt.png, id=191, 881.2925pt x 485.815p
+] [6]
+<fig/Lep_Obj_plots/PassingProbes_Med16_lowpt.png, id=200, 881.2925pt x 485.815p
 t>
 File: fig/Lep_Obj_plots/PassingProbes_Med16_lowpt.png Graphic file (type png)
 <use fig/Lep_Obj_plots/PassingProbes_Med16_lowpt.png>
 Package pdftex.def Info: fig/Lep_Obj_plots/PassingProbes_Med16_lowpt.png  used 
 on input line 95.
 (pdftex.def)             Requested size: 187.89914pt x 103.58087pt.
-<fig/Lep_Obj_plots/FailingProbes_Med16_lowpt.png, id=192, 883.3pt x 509.905pt>
+<fig/Lep_Obj_plots/FailingProbes_Med16_lowpt.png, id=201, 883.3pt x 509.905pt>
 File: fig/Lep_Obj_plots/FailingProbes_Med16_lowpt.png Graphic file (type png)
 <use fig/Lep_Obj_plots/FailingProbes_Med16_lowpt.png>
 Package pdftex.def Info: fig/Lep_Obj_plots/FailingProbes_Med16_lowpt.png  used 
 on input line 95.
 (pdftex.def)             Requested size: 187.89914pt x 108.46814pt.
-<fig/Lep_Obj_plots/AllProbes_Med16_lowpt.png, id=193, 851.18pt x 484.81125pt>
+<fig/Lep_Obj_plots/AllProbes_Med16_lowpt.png, id=202, 851.18pt x 484.81125pt>
 File: fig/Lep_Obj_plots/AllProbes_Med16_lowpt.png Graphic file (type png)
 <use fig/Lep_Obj_plots/AllProbes_Med16_lowpt.png>
 Package pdftex.def Info: fig/Lep_Obj_plots/AllProbes_Med16_lowpt.png  used on i
@@ -658,43 +658,43 @@ nput line 95.
 (pdftex.def)             Requested size: 187.89914pt x 107.02129pt.
 
 
-Package natbib Warning: Citation `?' on page 5 undefined on input line 108.
+Package natbib Warning: Citation `?' on page 7 undefined on input line 108.
 
-[5 <./fig/Lep_Obj_plots/PassingProbes_Med16_lowpt.png> <./fig/Lep_Obj_plots/Fai
+[7 <./fig/Lep_Obj_plots/PassingProbes_Med16_lowpt.png> <./fig/Lep_Obj_plots/Fai
 lingProbes_Med16_lowpt.png> <./fig/Lep_Obj_plots/AllProbes_Med16_lowpt.png>]
-[6] [7]
-<fig/Lep_Obj_plots/gold_ele_TTJets_Fall17.pdf, id=232, 569.12625pt x 408.52625p
+[8] [9]
+<fig/Lep_Obj_plots/gold_ele_TTJets_Fall17.pdf, id=240, 569.12625pt x 408.52625p
 t>
 File: fig/Lep_Obj_plots/gold_ele_TTJets_Fall17.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/gold_ele_TTJets_Fall17.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/gold_ele_TTJets_Fall17.pdf  used on 
 input line 171.
 (pdftex.def)             Requested size: 187.89914pt x 134.8764pt.
-<fig/Lep_Obj_plots/silver_ele_TTJets_Fall17.pdf, id=233, 569.12625pt x 408.5262
+<fig/Lep_Obj_plots/silver_ele_TTJets_Fall17.pdf, id=241, 569.12625pt x 408.5262
 5pt>
 File: fig/Lep_Obj_plots/silver_ele_TTJets_Fall17.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/silver_ele_TTJets_Fall17.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/silver_ele_TTJets_Fall17.pdf  used o
 n input line 171.
 (pdftex.def)             Requested size: 187.89914pt x 134.8764pt.
-<fig/Lep_Obj_plots/bronze_ele_TTJets_Fall17.pdf, id=234, 569.12625pt x 408.5262
+<fig/Lep_Obj_plots/bronze_ele_TTJets_Fall17.pdf, id=242, 569.12625pt x 408.5262
 5pt>
 File: fig/Lep_Obj_plots/bronze_ele_TTJets_Fall17.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/bronze_ele_TTJets_Fall17.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/bronze_ele_TTJets_Fall17.pdf  used o
 n input line 171.
 (pdftex.def)             Requested size: 187.89914pt x 134.8764pt.
-<fig/Lep_Obj_plots/sigEff_ele_TTJets_Fall17.pdf, id=235, 569.12625pt x 408.5262
+<fig/Lep_Obj_plots/sigEff_ele_TTJets_Fall17.pdf, id=243, 569.12625pt x 408.5262
 5pt>
 File: fig/Lep_Obj_plots/sigEff_ele_TTJets_Fall17.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/sigEff_ele_TTJets_Fall17.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/sigEff_ele_TTJets_Fall17.pdf  used o
 n input line 173.
 (pdftex.def)             Requested size: 234.8775pt x 168.60019pt.
- [8 <./fig/Lep_Obj_plots/gold_ele_TTJets_Fall17.pdf, page is rotated 90 degrees
-> <./fig/Lep_Obj_plots/silver_ele_TTJets_Fall17.pdf, page is rotated 90 degrees
-> <./fig/Lep_Obj_plots/bronze_ele_TTJets_Fall17.pdf, page is rotated 90 degrees
->]
+ [10 <./fig/Lep_Obj_plots/gold_ele_TTJets_Fall17.pdf, page is rotated 90 degree
+s> <./fig/Lep_Obj_plots/silver_ele_TTJets_Fall17.pdf, page is rotated 90 degree
+s> <./fig/Lep_Obj_plots/bronze_ele_TTJets_Fall17.pdf, page is rotated 90 degree
+s>]
 Overfull \hbox (59.08316pt too wide) in paragraph at lines 185--198
 [][] 
  []
@@ -704,58 +704,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
-[9 <./fig/Lep_Obj_plots/sigEff_ele_TTJets_Fall17.pdf, page is rotated 90 degree
-s>]
+[11 <./fig/Lep_Obj_plots/sigEff_ele_TTJets_Fall17.pdf, page is rotated 90 degre
+es>]
 Overfull \hbox (54.23805pt too wide) in paragraph at lines 208--220
 [][] 
  []
 
-[10]
-<fig/Lep_Obj_plots/h_2017_1_eleff.pdf, id=444, 569.12625pt x 546.04pt>
+[12]
+<fig/Lep_Obj_plots/h_2017_1_eleff.pdf, id=453, 569.12625pt x 546.04pt>
 File: fig/Lep_Obj_plots/h_2017_1_eleff.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/h_2017_1_eleff.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/h_2017_1_eleff.pdf  used on input li
 ne 238.
 (pdftex.def)             Requested size: 187.89914pt x 180.27707pt.
-<fig/Lep_Obj_plots/h_2017_2_eleff.pdf, id=445, 569.12625pt x 546.04pt>
+<fig/Lep_Obj_plots/h_2017_2_eleff.pdf, id=454, 569.12625pt x 546.04pt>
 File: fig/Lep_Obj_plots/h_2017_2_eleff.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/h_2017_2_eleff.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/h_2017_2_eleff.pdf  used on input li
 ne 238.
 (pdftex.def)             Requested size: 187.89914pt x 180.27707pt.
-<fig/Lep_Obj_plots/h_2017_3_eleff.pdf, id=446, 569.12625pt x 546.04pt>
+<fig/Lep_Obj_plots/h_2017_3_eleff.pdf, id=455, 569.12625pt x 546.04pt>
 File: fig/Lep_Obj_plots/h_2017_3_eleff.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/h_2017_3_eleff.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/h_2017_3_eleff.pdf  used on input li
 ne 238.
 (pdftex.def)             Requested size: 187.89914pt x 180.27707pt.
-<fig/Lep_Obj_plots/h_2017_0_el.pdf, id=447, 569.12625pt x 546.04pt>
+<fig/Lep_Obj_plots/h_2017_0_el.pdf, id=456, 569.12625pt x 546.04pt>
 File: fig/Lep_Obj_plots/h_2017_0_el.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/h_2017_0_el.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/h_2017_0_el.pdf  used on input line 
 243.
 (pdftex.def)             Requested size: 234.8775pt x 225.35258pt.
-<fig/Lep_Obj_plots/h_2017_1_el.pdf, id=448, 569.12625pt x 546.04pt>
+<fig/Lep_Obj_plots/h_2017_1_el.pdf, id=457, 569.12625pt x 546.04pt>
 File: fig/Lep_Obj_plots/h_2017_1_el.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/h_2017_1_el.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/h_2017_1_el.pdf  used on input line 
 243.
 (pdftex.def)             Requested size: 234.8775pt x 225.35258pt.
-<fig/Lep_Obj_plots/h_2017_2_el.pdf, id=449, 569.12625pt x 546.04pt>
+<fig/Lep_Obj_plots/h_2017_2_el.pdf, id=458, 569.12625pt x 546.04pt>
 File: fig/Lep_Obj_plots/h_2017_2_el.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/h_2017_2_el.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/h_2017_2_el.pdf  used on input line 
 243.
 (pdftex.def)             Requested size: 234.8775pt x 225.35258pt.
-<fig/Lep_Obj_plots/h_2017_3_el.pdf, id=450, 569.12625pt x 546.04pt>
+<fig/Lep_Obj_plots/h_2017_3_el.pdf, id=459, 569.12625pt x 546.04pt>
 File: fig/Lep_Obj_plots/h_2017_3_el.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/h_2017_3_el.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/h_2017_3_el.pdf  used on input line 
 243.
 (pdftex.def)             Requested size: 234.8775pt x 225.35258pt.
- [11 <./fig/Lep_Obj_plots/h_2017_1_eleff.pdf, page is rotated 90 degrees> <./fi
+ [13 <./fig/Lep_Obj_plots/h_2017_1_eleff.pdf, page is rotated 90 degrees> <./fi
 g/Lep_Obj_plots/h_2017_2_eleff.pdf, page is rotated 90 degrees> <./fig/Lep_Obj_
-plots/h_2017_3_eleff.pdf, page is rotated 90 degrees>] [12 <./fig/Lep_Obj_plots
+plots/h_2017_3_eleff.pdf, page is rotated 90 degrees>] [14 <./fig/Lep_Obj_plots
 /h_2017_0_el.pdf, page is rotated 90 degrees> <./fig/Lep_Obj_plots/h_2017_1_el.
 pdf, page is rotated 90 degrees> <./fig/Lep_Obj_plots/h_2017_2_el.pdf, page is 
 rotated 90 degrees> <./fig/Lep_Obj_plots/h_2017_3_el.pdf, page is rotated 90 de
@@ -779,93 +779,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
  []
 
-[13] [14]
-<fig/Lep_Obj_plots/canvas0J2017b.pdf, id=803, 569.12625pt x 543.02875pt>
+[15] [16]
+<fig/Lep_Obj_plots/canvas0J2017b.pdf, id=811, 569.12625pt x 543.02875pt>
 File: fig/Lep_Obj_plots/canvas0J2017b.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/canvas0J2017b.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/canvas0J2017b.pdf  used on input lin
 e 384.
 (pdftex.def)             Requested size: 234.8775pt x 224.10983pt.
-<fig/Lep_Obj_plots/canvas1J2017e.pdf, id=804, 569.12625pt x 543.02875pt>
+<fig/Lep_Obj_plots/canvas1J2017e.pdf, id=812, 569.12625pt x 543.02875pt>
 File: fig/Lep_Obj_plots/canvas1J2017e.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/canvas1J2017e.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/canvas1J2017e.pdf  used on input lin
 e 384.
 (pdftex.def)             Requested size: 234.8775pt x 224.10983pt.
-<fig/Lep_Obj_plots/canvas0Z2017b.pdf, id=805, 569.12625pt x 543.02875pt>
+<fig/Lep_Obj_plots/canvas0Z2017b.pdf, id=813, 569.12625pt x 543.02875pt>
 File: fig/Lep_Obj_plots/canvas0Z2017b.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/canvas0Z2017b.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/canvas0Z2017b.pdf  used on input lin
 e 384.
 (pdftex.def)             Requested size: 234.8775pt x 224.10983pt.
-<fig/Lep_Obj_plots/canvas1Z2017e.pdf, id=806, 569.12625pt x 543.02875pt>
+<fig/Lep_Obj_plots/canvas1Z2017e.pdf, id=814, 569.12625pt x 543.02875pt>
 File: fig/Lep_Obj_plots/canvas1Z2017e.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/canvas1Z2017e.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/canvas1Z2017e.pdf  used on input lin
 e 384.
 (pdftex.def)             Requested size: 234.8775pt x 224.10983pt.
-<fig/Lep_Obj_plots/effFit_2.pdf, id=807, 569.12625pt x 546.04pt>
+<fig/Lep_Obj_plots/effFit_2.pdf, id=815, 569.12625pt x 546.04pt>
 File: fig/Lep_Obj_plots/effFit_2.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/effFit_2.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/effFit_2.pdf  used on input line 387
 .
 (pdftex.def)             Requested size: 234.8775pt x 225.35258pt.
-<fig/Lep_Obj_plots/effFit_5.pdf, id=808, 569.12625pt x 546.04pt>
+<fig/Lep_Obj_plots/effFit_5.pdf, id=816, 569.12625pt x 546.04pt>
 File: fig/Lep_Obj_plots/effFit_5.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/effFit_5.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/effFit_5.pdf  used on input line 387
 .
 (pdftex.def)             Requested size: 234.8775pt x 225.35258pt.
-<fig/Lep_Obj_plots/h_2017_1_mu.pdf, id=809, 569.12625pt x 546.04pt>
+<fig/Lep_Obj_plots/h_2017_1_mu.pdf, id=817, 569.12625pt x 546.04pt>
 File: fig/Lep_Obj_plots/h_2017_1_mu.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/h_2017_1_mu.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/h_2017_1_mu.pdf  used on input line 
 393.
 (pdftex.def)             Requested size: 234.8775pt x 225.35258pt.
-<fig/Lep_Obj_plots/h_2017_2_mu.pdf, id=810, 569.12625pt x 546.04pt>
+<fig/Lep_Obj_plots/h_2017_2_mu.pdf, id=818, 569.12625pt x 546.04pt>
 File: fig/Lep_Obj_plots/h_2017_2_mu.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/h_2017_2_mu.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/h_2017_2_mu.pdf  used on input line 
 393.
 (pdftex.def)             Requested size: 234.8775pt x 225.35258pt.
-<fig/Lep_Obj_plots/h_2017_3_mu.pdf, id=811, 569.12625pt x 546.04pt>
+<fig/Lep_Obj_plots/h_2017_3_mu.pdf, id=819, 569.12625pt x 546.04pt>
 File: fig/Lep_Obj_plots/h_2017_3_mu.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/h_2017_3_mu.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/h_2017_3_mu.pdf  used on input line 
 393.
 (pdftex.def)             Requested size: 234.8775pt x 225.35258pt.
-<fig/Lep_Obj_plots/h_2017_0_mu.pdf, id=812, 569.12625pt x 546.04pt>
+<fig/Lep_Obj_plots/h_2017_0_mu.pdf, id=820, 569.12625pt x 546.04pt>
 File: fig/Lep_Obj_plots/h_2017_0_mu.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/h_2017_0_mu.pdf>
 Package pdftex.def Info: fig/Lep_Obj_plots/h_2017_0_mu.pdf  used on input line 
 393.
 (pdftex.def)             Requested size: 234.8775pt x 225.35258pt.
- [15] [16 <./fig/Lep_Obj_plots/canvas0J2017b.pdf, page is rotated 90 degrees> <
+ [17] [18 <./fig/Lep_Obj_plots/canvas0J2017b.pdf, page is rotated 90 degrees> <
 ./fig/Lep_Obj_plots/canvas1J2017e.pdf, page is rotated 90 degrees> <./fig/Lep_O
 bj_plots/canvas0Z2017b.pdf, page is rotated 90 degrees> <./fig/Lep_Obj_plots/ca
-nvas1Z2017e.pdf, page is rotated 90 degrees>] [17 <./fig/Lep_Obj_plots/effFit_2
+nvas1Z2017e.pdf, page is rotated 90 degrees>] [19 <./fig/Lep_Obj_plots/effFit_2
 .pdf, page is rotated 90 degrees> <./fig/Lep_Obj_plots/effFit_5.pdf, page is ro
-tated 90 degrees>] [18 <./fig/Lep_Obj_plots/h_2017_1_mu.pdf, page is rotated 90
+tated 90 degrees>] [20 <./fig/Lep_Obj_plots/h_2017_1_mu.pdf, page is rotated 90
  degrees> <./fig/Lep_Obj_plots/h_2017_2_mu.pdf, page is rotated 90 degrees> <./
 fig/Lep_Obj_plots/h_2017_3_mu.pdf, page is rotated 90 degrees> <./fig/Lep_Obj_p
 lots/h_2017_0_mu.pdf, page is rotated 90 degrees>]
-<fig/Lep_Obj_plots/muons_lowpt_syst.png, id=1268, 1775.63374pt x 499.8675pt>
+<fig/Lep_Obj_plots/muons_lowpt_syst.png, id=1276, 1775.63374pt x 499.8675pt>
 File: fig/Lep_Obj_plots/muons_lowpt_syst.png Graphic file (type png)
 <use fig/Lep_Obj_plots/muons_lowpt_syst.png>
 Package pdftex.def Info: fig/Lep_Obj_plots/muons_lowpt_syst.png  used on input 
 line 402.
 (pdftex.def)             Requested size: 352.31625pt x 99.17848pt.
-<fig/Lep_Obj_plots/muons_highpt_syst.png, id=1269, 1806.75pt x 494.84875pt>
+<fig/Lep_Obj_plots/muons_highpt_syst.png, id=1277, 1806.75pt x 494.84875pt>
 File: fig/Lep_Obj_plots/muons_highpt_syst.png Graphic file (type png)
 <use fig/Lep_Obj_plots/muons_highpt_syst.png>
 Package pdftex.def Info: fig/Lep_Obj_plots/muons_highpt_syst.png  used on input
  line 402.
 (pdftex.def)             Requested size: 352.31625pt x 96.49133pt.
- [19
+ [21
 
  <./fig/Lep_Obj_plots/muons_lowpt_syst.png> <./fig/Lep_Obj_plots/muons_highpt_s
 yst.png>]
-<fig/Lep_Obj_plots/2017data_medID_msyst.pdf, id=1278, 569.12625pt x 543.02875pt
+<fig/Lep_Obj_plots/2017data_medID_msyst.pdf, id=1286, 569.12625pt x 543.02875pt
 >
 File: fig/Lep_Obj_plots/2017data_medID_msyst.pdf Graphic file (type pdf)
 <use fig/Lep_Obj_plots/2017data_medID_msyst.pdf>
@@ -873,8 +873,8 @@ Package pdftex.def Info: fig/Lep_Obj_plots/2017data_medID_msyst.pdf  used on in
 put line 408.
 (pdftex.def)             Requested size: 234.8775pt x 224.10983pt.
 )
-[20 <./fig/Lep_Obj_plots/2017data_medID_msyst.pdf, page is rotated 90 degrees>]
-[21] (./thesis-ku.bbl
+[22 <./fig/Lep_Obj_plots/2017data_medID_msyst.pdf, page is rotated 90 degrees>]
+[23] (./thesis-ku.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 17--21
 \T1/lmtt/m/n/12 contributions / 1769745 / attachments / 710701 / 975626 / muoni
 d-[]pog081214 . pdf$[][]\T1/cmr/m/n/12 .
@@ -886,7 +886,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--39
 7 / 20150127 _ ald _
  []
 
-[22
+[24
 
 
 ]
@@ -900,19 +900,23 @@ iki . cern . ch / twiki / bin / view / CMSPublic /
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
-[23]
+[25]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
  (./thesis-ku.aux (./Chapter1/C1.aux) (./Chapter4/C4.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
 Package rerunfilecheck Info: File `thesis-ku.out' has not changed.
 (rerunfilecheck)             Checksum: 8709B2D834E45AC24D44A18F5C59AE27;1703.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
  ) 
 Here is how much of TeX's memory you used:
- 14792 strings out of 481239
- 214341 string characters out of 5920377
- 490193 words of memory out of 5000000
+ 14794 strings out of 481239
+ 214355 string characters out of 5920377
+ 490195 words of memory out of 5000000
  29701 multiletter control sequences out of 15000+600000
  547767 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -938,10 +942,10 @@ ype1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super
 /sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/
 share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/ty
 pe1/public/cm-super/sfti1200.pfb>
-Output written on thesis-ku.pdf (31 pages, 1018147 bytes).
+Output written on thesis-ku.pdf (33 pages, 1024918 bytes).
 PDF statistics:
- 1455 PDF objects out of 1728 (max. 8388607)
- 805 compressed objects within 9 object streams
- 84 named destinations out of 1000 (max. 500000)
+ 1464 PDF objects out of 1728 (max. 8388607)
+ 812 compressed objects within 9 object streams
+ 86 named destinations out of 1000 (max. 500000)
  221 words of extra memory for PDF output out of 10000 (max. 10000000)
 
