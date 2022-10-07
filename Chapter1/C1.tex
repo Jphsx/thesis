@@ -35,16 +35,34 @@ The standard model (SM) is a collection of theories which explain the most funda
 
 \FigOne{Intro_figs/Standard_Model_of_Elementary_Particles.png}{particles figure cite wiki}{fig:smfig}
 
-The Lagrangian density composed of a sum of constituent lagrangian densities representing diffrent groups/fields/particles. The main SM sectors are, the quantum electrodynamic sector $\mathcal{L}_{QED}$, the quantum chromodynamics sector $\mathcal{L}_{QCD}$, the electroweak sector $\mathcal{L}_{EW}$, the Higgs sector $\mathcal{L}_{H}$, and the Yukawa sector $\mathcal{L}_{Yukawa}$.  QED explains the interactions of charged particles through photon exchange. QCD explains the strong interaction of quarks mediated by gluons. The electroweak sector unifies both the electromagnetic and weak interactions between all particles via exchange of W or Z bosons. 
-The Higgs sector inculdes the higgs field, the interaction of bosons with this field causes the bosons to have mass. The Yukawa sector describes the interaction of fermions with the higgs field.
+
+The SM is represented with a Lagrangian density composed of a sum of constituent lagrangian densities representing diffrent groups/fields/particles. The main SM sectors are, the quantum chromodynamics sector $\mathcal{L}_{QCD}$, the electroweak sector $\mathcal{L}_{EW}$, the Higgs sector $\mathcal{L}_{H}$, and the Yukawa sector $\mathcal{L}_{Yukawa}$. QCD explains the strong interaction of quarks mediated by gluons. The electroweak sector unifies both the electromagnetic and weak interactions between all particles via exchange of W or Z bosons. The Higgs sector inculdes the higgs field, the interaction of bosons with this field causes the bosons to have mass. The Yukawa sector describes the interaction of fermions with the higgs field.
+
 
 \section{Supersymmetry}
 
 base super symmetery at lagrange level
 
-Supersymmetry is an extension of the standard model. It includes an generator that acts as a rotation of the spin between bosons and fermions. This symmetry would generates super partners for each particle which differs by a half integer in spin. Thus there is a particle super partner (sparticle) matched to every particle and denoted with an "s" indicating superparnter e.g. sfermion, squark, selectron. 
+Supersymmetry is an extension of the standard model. It includes an generator that acts as a rotation of the spin between bosons and fermions. This symmetry would generates super partners for each particle which differs by a half integer in spin. Thus there is a particle super partner (sparticle) matched to every particle and denoted with an "s" indicating superparnter e.g. sfermion, squark, selectron. Supersymmetry is an extremely expansive model and intractable to experimentally test without significant well motivated simplifications. The most experimentally common is the Minimally super symmetric standard model (MSSM). This model contains the smallest number of new particle states and new interactions conssistent with phenomenology (cite howie direct weak scale book). This model still experimentally inaccesible due to the presence of over 100 parameters. Further simplification is needed. A difficult but simpler model to search for is the phenomological MSSM (pMSSM). This contains 19 parameters which includes mass parameters for each generation of squark and slepton, parameters to control the mixing of super fields, and dials for the higgs.  More commonly the MSSM is boiled down into 5 parameters in Gravity -mediate supersymmetry breaking models or (minimal supbergravity mSUGRA). It can also be reduced, which is what our MC is made from, into 4 paramters M1,M2, $\mu$, $\tan\beta$. These come from Realistic simplified gaugino-higgsino models in MSSM (cite benjamin Fuks papaer). A direct quote from the paper describing the 4 paramters: "that are the off-diagonal Higgs(ino) mass parameter, the ratio of the vacuum expectation values of the neutral components of the two doublets of Higgs fields and the two soft
+supersymmetry-breaking electroweak gaugino mass parameters, respectively."
+
+What particles are in susY?
+For each elementary standard model particle there is a super partner. For the quarks and leptons, the pairing is simple, there is just the equivalent slepton and squark partner. The gauge bosons are slightly more complicated, these are generally denoted with an "ino" suffix. There are also 3 super fields which mix in specific quantities to yield varying instances of particles with particular properties. These mixings define the characteristics of the model point by influecing things like decay mode, cross seection, and couplings.  (WhY?) There are four neutralinos $\chi^0_i$ and two charginos $\chi^\pm_j$. There are also 4 Hiigs bosons, a charged pair $H^\pm$ and a neutral pair $H^0_{u,d}$. (Why?)  The electroweakinos, i.e chargino or neutralinos, increase in mass with increasing index but the structure of reletavie masses depends specifically on the model. The $\chi^0_0$ is generally the lightest supersymmetric partilce (LSP) and in many popular models is stable. The instances of stable LSP depend on R-parity conservation. (Define R-parity conservation) If this is violated the LSP will decay into SM particles.
+
+
+
+Incldue a plot with mass hierarchies. Since there are so many possible parameters, varying sets of paramters can produce significant diffences in experimental signatures and topologies. Typically for a model we decouple specific sectors when generatting monte carlo, For instance if we are searching for sleptons, the squark or electroweakino sector will be chosen to be significantly heavier (out of current experimental range) effectively decoupling it from the slepton sector. Then from a simplified model with everything else decoupled we scan various topologies with particular mass values. 
+
+MSSM how many paramaters, what about msugra and all of that, what are the main interesting parameters??
+
+
+talk about the higgsino double and the particles that arise from this model
+
+Talk about and define r-parity, what is rparity pair production
 
 
 simplified models
 
 pmssm
+
+what are the important parameters and specific particles?
