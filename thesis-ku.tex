@@ -73,7 +73,14 @@
 \label{#3}
 \end{figure}}
 
-
+\newcommand\FigTwo[4]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=0.45\textwidth]{fig/#1}
+\includegraphics[width=0.45\textwidth]{fig/#2}\hfill
+\caption{#3}
+\label{#4}
+\end{figure}}
 
 
 %%% END FUNC
