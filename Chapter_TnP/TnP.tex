@@ -266,6 +266,25 @@ MC & 2018 & \tiny \url{/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIA
 \end{table}
 
 \begin{table}
+\caption{add ref to this table later, premade jpsi tnp trees for id}
+\label{tab:jpsimutnpsamples}
+\scriptsize
+\begin{tabular}{|c|c|c|}
+\hline 
+Type & Year & Sample Name \\ 
+\hline 
+Data & 2016 & \tiny \url{TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016Bver2_GoldenJSON.root}  \\  
+Data & 2017 & \tiny \url{TnPTreeJPsi_17Nov2017_Charmonium_Run2017Cv1_Full_GoldenJSON.root} \\  
+Data & 2018 & \tiny \url{TnPTreeJPsi_Charmonium_Run2018Dv2_GoldenJSON.root} \\ 
+\hline 
+MC & 2016 & \tiny \url{TnPTreeJPsi_80X_JpsiToMuMu_JpsiPt8_Pythia8.root} \\ 
+MC & 2017 & \tiny \url{TnPTreeJPsi_94X_JpsiToMuMu_Pythia8.root} \\ 
+MC & 2018 & \tiny \url{TnPTreeJPsi_102XAutumn18_JpsiToMuMu_JpsiPt8_Pythia8.root} \\ 
+\hline
+\end{tabular} 
+\end{table}
+
+\begin{table}
 \caption{muon binning}
 \label{tab:mubin}
 \begin{tabular}{|c|c|c|}
@@ -312,15 +331,15 @@ The exact criteria chosen for the tag and probe vary between physics processes b
 \hline 
 \multicolumn{3}{|c|}{Tag-and-Probe Muon Candidate Selection Criteria} \\ 
 \hline 
-\multicolumn{3}{|c|}{$J/\psi$} \\
+%\multicolumn{3}{|c|}{$J/\psi$} \\
 \hline
 Tag & Probe & Pair \\ 
 \hline 
-isGlobalMuon & Matches hltTracksIter   & $2.8 \text{GeV} < m_{\mu\mu} < 3.4 \text{GeV} $ \\
-numberOfMatchedStations$>1$  & OR &  $|z_{\mu_1} - z_{\mu_2}| <1 $ cm\\
- $\pt > 5$ GeV & Maches hltMuTrackJpsiEffCtfTrackCands &    \\
- Matches hltIterL3MuonCandidates &   & \\
-\hline
+%isGlobalMuon & Matches hltTracksIter   & $2.8 \text{GeV} < m_{\mu\mu} < 3.4 \text{GeV} $ \\
+%numberOfMatchedStations$>1$  & OR &  $|z_{\mu_1} - z_{\mu_2}| <1 $ cm\\
+% $\pt > 5$ GeV & Matches hltMuTrackJpsiEffCtfTrackCands &    \\
+% Matches hltIterL3MuonCandidates &   & \\
+%\hline
 \multicolumn{3}{|c|}{$Z$} \\
 \hline
 passes tightID & No requirement & $m_{\mu\mu} > 60$ GeV \\
