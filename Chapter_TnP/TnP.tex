@@ -177,7 +177,7 @@ The populations of different truth selected objects are shown in Figure \ref{and
 
 The electron tag and probe is done by using the Z resonance over the entire \pt range of selected electrons. The selected binnings follow the $\pt$ and $\eta$ binning conventions from the electron physics object group and are $ p_T \in [5, 10, 20, 30, 40, 70, 100]$ and $|\eta| \in [ 0, 0.6, 1.4, 2.4]$. The electron Tag-and-Probe tools uses a centrally curated CMSSW PhysicsTools in \url{CMSSW_10_2_X}. The software pipeline consists of two steps, an ntuplizing stage and a fitting stage. The  Ntupilizing stage selects Tag-and-Probe pairs along with all potential variables of interest and loads them onto an ntuple using \url{TnPTreeProducer} \cite{ElTnPGit}. The samples used in the Ntuplizing stage are listed in Table \ref{tab:electronTnPSamples}. In the fitting stage, a random subset of of TnP pairs are sampled with \url{TnPTreeAnalyzer} \cite{ElTnPAnaGit}. The analyzer performs all of the fitting and efficiency measurements according to the specified selection criteria. 
 
-
+%notes to add back in later 2016B, 2017C, 2018A
 \begin{table}
 \caption{ Data and MC samples for each year used for the electron Tag-and-Probe. }
 \label{tab:electronTnPSamples}
@@ -186,9 +186,9 @@ The electron tag and probe is done by using the Z resonance over the entire \pt 
 \hline 
 Type & Year & Sample Name \\ 
 \hline 
-Data & 2016 & \tiny \url{/SingleElectron/Run2016B-17Jul2018_ver2-v1/MINIAOD}  \\  
-Data & 2017 & \tiny \url{/SingleElectron/Run2017C-31Mar2018-v1/MINIAOD} \\  
-Data & 2018 & \tiny \url{/EGamma/Run2018A-PromptReco-v1/MINIAOD} \\ 
+Data & 2016 & \tiny \url{/SingleElectron/Run2016-17Jul2018_ver2-v1/MINIAOD}  \\  
+Data & 2017 & \tiny \url{/SingleElectron/Run2017-31Mar2018-v1/MINIAOD} \\  
+Data & 2018 & \tiny \url{/EGamma/Run2018-PromptReco-v1/MINIAOD} \\ 
 \hline 
 MC & 2016 & \tiny \url{/DYJetsToLL_Pt-100To250_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext5-v2/MINIAODSIM} \\ 
 MC & 2017 & \tiny \url{/DYJetsToLL_Pt-100To250_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM} \\ 
@@ -246,6 +246,8 @@ The measurments of the gold silver and bronze efficiencies components, based on 
 \section{Muon Tag-and-Probe}
 The muon Tag-and-Probe tools also uses a centrally curated CMSSW PhysicsTools in \url{CMSSW_10_6_X}. The software pipeline is identical to electons in that it consists of an ntuplizing \cite{MuTnPTwiki} and fitting \cite{MuTnPAnaTwiki} stage. The code bases for muons and electrons are separate but functionally identical. The samples chosen for Z measurements are shown in Table \ref{tab:mutnpsamples}. The $J/\psi$ ntuples are available from a central repository of standard Tag-and-Probe selection variables which use the pre-ultra legacy samples for each year \cite{MuTnPCentralSamps}.  The muon Tag-and-Probe efficiencies are measured above 20 GeV using the Z boson while below 20 GeV benefits from the $J/\psi$ meson for Id measurements. The $\eta$ bins are divided into a central and forward regions around the endcaps at $|\eta| = 2.1$. In total there are three sets of binnings: The low \pt $J/\psi$ binning $J/\psi^{L}$ for muon Id below 20 GeV, the high \pt Z binning $Z^{H}$ above 20 GeV, and the low \pt Z binning $Z^{L}$ used to extrapolate isolation and impact parameter efficiencies down to 3 GeV.  The explicit bin edges for each range are defined in Table \ref{tab:mubin}.
 
+
+%notes to add in later 2016C, 2017C, 2018A
 \begin{table}
 \caption{}
 \label{tab:mutnpsamples}
@@ -254,9 +256,9 @@ The muon Tag-and-Probe tools also uses a centrally curated CMSSW PhysicsTools in
 \hline 
 Type & Year & Sample Name \\ 
 \hline 
-Data & 2016 & \tiny \url{/SingleMuon/Run2016C-17Jul2018-v1/MINIAOD}  \\  
-Data & 2017 & \tiny \url{/SingleMuon/Run2017C-31Mar2018-v1/MINIAOD} \\  
-Data & 2018 & \tiny \url{/SingleMuon/Run2018A-17Sep2018-v2/MINIAOD} \\ 
+Data & 2016 & \tiny \url{/SingleMuon/Run2016-17Jul2018-v1/MINIAOD}  \\  
+Data & 2017 & \tiny \url{/SingleMuon/Run2017-31Mar2018-v1/MINIAOD} \\  
+Data & 2018 & \tiny \url{/SingleMuon/Run2018-17Sep2018-v2/MINIAOD} \\ 
 \hline 
 MC & 2016 & \tiny \url{/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext2-v2/MINIAODSIM} \\ 
 MC & 2017 & \tiny \url{/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAODv2-PU2017RECOSIMstep_12Apr2018_94X_mc2017_realistic_v14_ext1-v1/MINIAODSIM} \\ 
