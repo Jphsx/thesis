@@ -23,7 +23,11 @@
 %\end{chapterabstract}
 
 \section{Compressed Search Introduction}
-In accordance with strong experimental and phenomenological motivation for compressed spectra accompanied by the pursuit to comprehensively test SUSY, we conduct a search with a generic approach with many final states that involve missing energy. Some targeted processes include, but are not limited to, stops, electroweakinos, and sleptons with diagrams included in Figure X.  The common thread between between all of these processes is a pair produced visible system alongside a massive invisible system. In the case of a compressed scenario, most of the energy available in the system is used by the rest mass of the LSP. These small mass splittings leads to low momemtum visible products that are difficult to reconstruct or are undetectable. In the case of intermediate massive particles, such as W or Z boson, these are forced off-shell so the visible products receive even less momentum, as the available energy goes into the mass of the intermediate particle. In order to identify these type of events we study cases with significant initial-state radiation (ISR). Due to momentum conservation, the ISR system recoils against, or boosts, the sparticle system, leading to high missing transverse momentum which is a tractable experimental signature. With the ISR assisted pair produced topology we categorize and subdivide the visible and invisible system using Recursive Jigsaw Reconstruction (RJR) to approximate various rest frames. Using the various rest frames we compute a basis of kinematic observables that describe features that are unique to compressed scenarios and process independent and use them to discriminate against SM processes.
+In accordance with the strong experimental and phenomenological motivation for compressed spectra accompanied by the pursuit to comprehensively test SUSY, we conduct a search with a generic approach with many final states that involve missing energy. Some targeted processes include, but are not limited to, stops, electroweakinos, and sleptons with diagrams included in Figure \ref{susyfeyn}.  
+\FigFour{RJR_figs/T2tt.pdf}{RJR_figs/TChiWW.pdf}{RJR_figs/TChiWZ.pdf}{RJR_figs/TSlepSlep.pdf}{diagrams}{fig:susyfeyn}
+The common thread between between all of these processes is a pair produced visible system alongside a massive invisible system. In the case of a compressed scenario, most of the energy available in the system is used by the rest mass of the LSP. These small mass splittings leads to low momemtum visible products that are difficult to reconstruct or are undetectable. In the case of intermediate massive particles, such as W or Z boson, these are forced off-shell so the visible products receive even less momentum, as the available energy goes into the mass of the intermediate particle. In order to identify these type of events we study cases with significant initial-state radiation (ISR). The ISR system recoils against, or boosts, the sparticle system, leading to high missing transverse momentum which is a tractable experimental signature. A depiction of this type of event is shown in Figure \ref{fig:isrrecoil}. With the ISR assisted pair produced topology we categorize and subdivide the visible and invisible system using Recursive Jigsaw Reconstruction (RJR) to approximate various rest frames. From those rest frames, we compute a basis of kinematic observables that describe features aid in the discrimination of compressed SUSY against SM processes.
+
+\FigOne{RJR_figs/ISRrecoil.png}{recoiling system}{fig:isrrecoil}
 
 %mentally all supersymmetry searches tend to exhibit their weakest limits in corridor regions with low mass differ-
 %ences; if supersymmetry is to be tested comprehensively this region must also be explored. Phenomenologically,
@@ -37,13 +41,37 @@ In accordance with strong experimental and phenomenological motivation for compr
 
 
 \section{ RJR Reconstruction}
- The ISR assisted topology involves a collimated invisible and soft visible system together recoiling against another visible system of ISR jets. Each event is organized by imposing a decay tree onto the visible $(V)$ and invisible objects $(I)$ and assigning the visible components to either the ISR or sparticle $(S)$ side of the event. From the initial assignment, the sparticle system is further subdivided into subsystems A and B where each sub system has a visible $(V_{A/B})$ and invisible  $(I_{A/B})$ component. In order to resolve the invisible four momentum of each system both kinematic and combinatoric unknowns need to be estimated. For example, the visible products are indistinguishable, so figure out how to correctly assign them to either the ISR or sparticle subsystem. Similaary we need partition momentum between two invisible systems where only the magnitude of missing momentum is known. But, the combinatoric assignment and the estimated four vectors depend on each other, so, we use a apply a set of rules estimate and simultaneously determine both.  The RJR framework provides a set of rules to organize and evaluate an event. The set of rules used by this analysis are as follows:
-\begin{list}
-\item[1.] Leptons are always assigned to the S system
-\item[2.] Other visible objects can be assigned to either the S or ISR
-\item[3.] The kinematics of $I_{A/B}$ and momentum partitioning are determined
-\item[4.] The visible S system objects are assigned to $V_A$ or $V_B$
-\end{list}
+ The ISR assisted topology involves a collimated invisible and soft visible system together recoiling against another visible system of ISR jets. Each event is organized by imposing a decay tree onto the visible $(V)$ and invisible objects $(I)$ and assigning the visible components to either the ISR or sparticle $(S)$ side of the event. From the initial assignment, the sparticle system is further subdivided into subsystems A and B where each sub system has a visible $(V_{a/b})$ and invisible  $(I_{a/b})$ component. The three decay trees that contains these sets of objects in different reference frames are illustrated in Figure \ref{fig:decaytrees}. 
+\FigThree{RJR_figs/tree_CM.pdf}{RJR_figs/tree_ISR.pdf}{RJR_figs/tree_S.pdf}{decay trees}{fig:decaytrees}
+In order to resolve the two invisible four momenta, kinematic and combinatoric unknowns need to be estimated. For example, the visible products are indistinguishable, so, there needs to be a metric which dictates the assignment of the visible objects to either the ISR or sparticle system. Similarly, the sparticle subsystem partitioning, both visible and invisible, must be determined when only the transverse invisible momentum is known. Thus, the combinatoric assignment and the estimated four momenta depend on each other, so, we  apply a set of rules to simultaneously determine both.  RJR provides the framework to organize and evaluate each event. The set of rules used by this analysis are as follows:
+\begin{itemize}
+\item[1.] Assign charged leptons to the S system
+\begin{itemize}
+	\item Target leptonic sparticle signatures and fixing the leptonic system to always recoil against ISR
+\end{itemize}
+\item[2.] Fully determine the set of $\{V,ISR\}$ objects by assigning other visible objects to either the S or ISR systems by maximizing the momentum of the sparticle system in the CM frame
+\begin{equation}
+\{V,ISR\} =  \underset{V,ISR}{\arg\max} \, p_S^{CM}
+\end{equation}
+\item[3.] The visible S system objects are assigned to $V_a$ or $V_b$ by minimizing the mass of the sparticle subsystems i.e. grouping objects that traveling in similar directions
+\begin{equation}
+\{V_a,V_b\} = \underset{V_a,V_b}{\arg\min} \, M_{P_a}^2 + M_{P_b}^2
+\end{equation}
+\item[4.] Adjust the total mass of the invisible system according the visible systems where the individual invisible masses are constrained to zero.
+\begin{equation}
+M_I^2 = M_V^2 - 4M_{V_a}M_{V_b}
+\end{equation}
+\item[5.] Estimate the longitudinal component of invisible momentum by minimizing CM mass, i.e. determining the transverse mass of V+I systems
+\begin{equation}
+ \vec{\beta}_{CM,z}^{\text{lab}} = \underset{\vec{\beta}_{CM,z}^{\text{lab}} } {\arg\min} \, M_{CM}
+\end{equation}
+\item[6.] Determine the full kinematics of $I_A$ and $I_B$ and momentum partitioning  by evaluating the S frame velocities also through minimizing the mass of the sparticle subsystems
+\begin{equation}
+\vec{\beta}_{P_a}^S, \, \vec{\beta}_{P_b}^S = \underset{\vec{\beta}_{P_a}^S, \, \vec{\beta}_{P_b}^S}{\arg\min} \, M_{P_a}^2 + M_{P_b}^2
+\end{equation}
+\end{itemize}
+
+By recursively iterating through the various combinations of objects and determining  the four momenta of the groupings from Figure \ref{fig:decaytrees}, the optimal organization for the event is determined that satisfies the aforementioned RJR prescription. The consequences of this organization is discussed in the following section where we construct a basis of kinematic variables to exploit characteristics of compressed SUSY and discriminate against SM processes.
 
 
 
@@ -51,7 +79,7 @@ In accordance with strong experimental and phenomenological motivation for compr
 
 %The kinematic variables the form basis of the search is RISR and MPERP.
 %Risr. RISR is process independent and peaks at the ratio of sparticle/lsp masses. mperp is the transverse mass of the sparticle frame with respect to the sparticle frame boost axis.  
-\section{}
+\section{Compressed Kinematics}
 
-\section{Signal Models}
+
 %The analysis is generalized to deal with a broad range of signal models but the three targeted compressed signal processes incldue stop, neutralino/chargino, slepton production. the signals include T2tt, T2bW, TChiWZ, TChiWW, TSlepSlep
