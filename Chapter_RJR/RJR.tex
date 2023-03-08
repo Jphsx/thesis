@@ -18,21 +18,40 @@
 
 \chapter{Compressed SUSY Search}
 
-\begin{chapterabstract}
-This chapter summarizes the approach for a compressed susy search and pertinent sensitive kinematic variables that the analysis is based on.
-\end{chapterabstract}
+%\begin{chapterabstract}
+%This chapter summarizes the approach for a compressed susy search and pertinent sensitive kinematic variables that the analysis is based on.
+%\end{chapterabstract}
 
-\section{analysis overview}
+\section{Compressed Search Introduction}
+In accordance with strong experimental and phenomenological motivation for compressed spectra accompanied by the pursuit to comprehensively test SUSY, we conduct a search with a generic approach with many final states that involve missing energy. Some targeted processes include, but are not limited to, stops, electroweakinos, and sleptons with diagrams included in Figure X.  The common thread between between all of these processes is a pair produced visible system alongside a massive invisible system. In the case of a compressed scenario, most of the energy available in the system is used by the rest mass of the LSP. These small mass splittings leads to low momemtum visible products that are difficult to reconstruct or are undetectable. In the case of intermediate massive particles, such as W or Z boson, these are forced off-shell so the visible products receive even less momentum, as the available energy goes into the mass of the intermediate particle. In order to identify these type of events we study cases with significant initial-state radiation (ISR). Due to momentum conservation, the ISR system recoils against, or boosts, the sparticle system, leading to high missing transverse momentum which is a tractable experimental signature. With the ISR assisted pair produced topology we categorize and subdivide the visible and invisible system using Recursive Jigsaw Reconstruction (RJR) to approximate various rest frames. Using the various rest frames we compute a basis of kinematic observables that describe features that are unique to compressed scenarios and process independent and use them to discriminate against SM processes.
 
-A compressed system is defined by a sparticle such as a neutralino 2 or stop in which the mass difference with this particle and the lightest supersymmetrical particle is small. The mass difference is considered small when the sparticle decays to intermediate standard model particles like W,Z,t such that the intermediate particle is forced off shell. For example the smallest targeted mass splittings can range between 3 to 10 GeV in neutralino 2 to W/Z decays. The intermediate decays will be difficult to detect or separate from standard model backgrounds. To assist in identifying compressed topologies we look for ISR assisted events. The signature of the event then becomes an ISR jet back to back with sparticle system which consists of mostly missing transverse energy from the LSP and soft SM particles.
+%mentally all supersymmetry searches tend to exhibit their weakest limits in corridor regions with low mass differ-
+%ences; if supersymmetry is to be tested comprehensively this region must also be explored. Phenomenologically,
+%the lowest lying states in the electroweakino sector \\
+%Given the lack of compelling conclusive evidence against supersymmetry, we conduct a broad search
+%with many final states that involve missing energy. This is well motivated and does not rely strongly on theoretical
+%assumptions.
 
 
-\section{ reference frames and kinematic variables}
-An isr assisted event is divided into multiple reference frames. The CM frame consists of the particles measured in the lab e.g. the isr jet against the met system. The sparticle frame consists two subsystems A and B. THe sparticles are expected to be pair produced if r parity is conserved.
-
-The kinematic variables the form basis of the search is RISR and MPERP.
-Risr. RISR is process independent and peaks at the ratio of sparticle/lsp masses. mperp is the transverse mass of the sparticle frame with respect to the sparticle frame boost axis.  
+%A compressed system is defined by a sparticle such as a neutralino 2 or stop in which the mass difference with this particle and the lightest supersymmetrical particle is small. The mass difference is considered small when the sparticle decays to intermediate standard model particles like W,Z,t such that the intermediate particle is forced off shell. For example the smallest targeted mass splittings can range between 3 to 10 GeV in neutralino 2 to W/Z decays. The intermediate decays will be difficult to detect or separate from standard model backgrounds. To assist in identifying compressed topologies we look for ISR assisted events. The signature of the event then becomes an ISR jet back to back with sparticle system which consists of mostly missing transverse energy from the LSP and soft SM particles.
 
 
-\section{ signal models}
-The analysis is generalized to deal with a broad range of signal models but the three targeted compressed signal processes incldue stop, neutralino/chargino, slepton production. the signals include T2tt, T2bW, TChiWZ, TChiWW, TSlepSlep
+\section{ RJR Reconstruction}
+ The ISR assisted topology involves a collimated invisible and soft visible system together recoiling against another visible system of ISR jets. Each event is organized by imposing a decay tree onto the visible $(V)$ and invisible objects $(I)$ and assigning the visible components to either the ISR or sparticle $(S)$ side of the event. From the initial assignment, the sparticle system is further subdivided into subsystems A and B where each sub system has a visible $(V_{A/B})$ and invisible  $(I_{A/B})$ component. In order to resolve the invisible four momentum of each system both kinematic and combinatoric unknowns need to be estimated. For example, the visible products are indistinguishable, so figure out how to correctly assign them to either the ISR or sparticle subsystem. Similaary we need partition momentum between two invisible systems where only the magnitude of missing momentum is known. But, the combinatoric assignment and the estimated four vectors depend on each other, so, we use a apply a set of rules estimate and simultaneously determine both.  The RJR framework provides a set of rules to organize and evaluate an event. The set of rules used by this analysis are as follows:
+\begin{list}
+\item[1.] Leptons are always assigned to the S system
+\item[2.] Other visible objects can be assigned to either the S or ISR
+\item[3.] The kinematics of $I_{A/B}$ and momentum partitioning are determined
+\item[4.] The visible S system objects are assigned to $V_A$ or $V_B$
+\end{list}
+
+
+
+%An isr assisted event is divided into multiple reference frames. The CM frame consists of the particles measured in the lab e.g. the isr jet against the met system. The sparticle frame consists two subsystems A and B. THe sparticles are expected to be pair produced if r parity is conserved.
+
+%The kinematic variables the form basis of the search is RISR and MPERP.
+%Risr. RISR is process independent and peaks at the ratio of sparticle/lsp masses. mperp is the transverse mass of the sparticle frame with respect to the sparticle frame boost axis.  
+\section{}
+
+\section{Signal Models}
+%The analysis is generalized to deal with a broad range of signal models but the three targeted compressed signal processes incldue stop, neutralino/chargino, slepton production. the signals include T2tt, T2bW, TChiWZ, TChiWW, TSlepSlep
