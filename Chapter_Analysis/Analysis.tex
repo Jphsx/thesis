@@ -23,29 +23,106 @@ The full analysis is built on the compressed kinematics described in the previou
 
 
 \section{ Data and Simulation}
-The analysis invovles the full Run II dataset which is divided into three subsets by the years 2016,2017,2018 and total integrated luminosity of $138 \text{fb}^{-1}$. Each year is comprised of $36.31 \, \text{fb}^{-1} \, \pm 1.2\%$ (cite lumi 17 003), $41.48 \, \text{fb}^{-1} \, \pm 2.3\%$ (cite lumi 17 004), $59.83 \, \text{fb}^{-1} \, \pm2.5\%$ (cite lumi 18-002) in 2016, 2017, and 2018 respectively. The data is modeled by MC that represents the full SM background and is qualitatively grouped by process and final state. These grouping of SM backgrounds is defined in table X
+The analysis invovles the full Run II dataset which is divided into three subsets by the years 2016,2017,2018 and total integrated luminosity of $138 \text{fb}^{-1}$. Each year is comprised of $36.31 \, \text{fb}^{-1} \, \pm 1.2\%$ (cite lumi 17 003), $41.48 \, \text{fb}^{-1} \, \pm 2.3\%$ (cite lumi 17 004), $59.83 \, \text{fb}^{-1} \, \pm2.5\%$ (cite lumi 18-002) in 2016, 2017, and 2018 respectively. The data is modeled by MC that represents the full SM background and is qualitatively grouped by process and final state. These grouping of SM backgrounds is defined in table \ref{tab:bkgsigtab} along with the partnered signal models.
 
 %insert bg list and description
+\begin{table}
+\label{tab:bkgsigtab}
+\caption{table caption}
+\begin{tabular}{c|c}
+\hline 
+Bkg. Label & Bkg. Composition \\ 
+\hline 
+\hline
 
-The signals that will be addressed in this work include mutiple different sparticles and final states, which also will include multiple interpretation of their analysis results. A list of the signals is provided in table y. Each signal is produced according to an (LSP,NLSP) mass grid where the events number of raw events per mass points and grid spacings for the signal shown in table y are displayed in Figure Z.
+W + jets & \makecell{Single W boson, a dominant background that composes \\ about $50\%$ of the total background} \\ 
+  & \\
+tt+jets & \makecell{$t\bar{t}$ which can be accompanied by a W,Z,h, or $\gamma$, \\ the other dominant background composes about $50\%$ of the total background} \\ 
+  & \\
+ZDY & Z+jets and Drell Yan, an intermediate background \\ 
+Di-boson (DB)& WW,ZZ,WZ,Wh,Zh,  an intermediate background \\ 
+
+ST & Single top processes including tW, a rare background \\ 
+
+Tri-boson (TB) & WWW,ZZZ,WWZ, WZZ, WZ$\gamma$, WW$\gamma$, a rare background  \\ 
+\hline 
+Signal Label & Signal Composition \\
+\hline
+\hline
+T2tt & $pp \rightarrow \tilde{t} \tilde{\bar{t}}; \, \, \tilde{t}\rightarrow t \tilde{\chi}_1^0$ \\
+TChiWZ & $pp\rightarrow \tilde{\chi}_2^0 \tilde{\chi}_1^\pm; \, \, \tilde{\chi}_2^0 \rightarrow Z \tilde{\chi}^0_1; \, \, \tilde{\chi}_1^\pm \rightarrow W^\pm \tilde{\chi}^0_1$ \\
+TSlepSlep & $pp\rightarrow \tilde{\ell} \tilde{\ell}; \, \, \tilde{\ell} \rightarrow \ell \tilde{\chi}^0_1$ \\
+TChipmWW & $pp\rightarrow \tilde{\chi}_1^\pm \tilde{\chi}_1^\mp; \, \,  \tilde{\chi}_1^\pm \rightarrow W^\pm \tilde{\chi}^0_1$  \\
+\end{tabular} \\
+\end{table}
+
+The signals that will be addressed in this work include mutiple different sparticles and final states, which also will include multiple interpretation of their analysis results. A list of the signals is provided in table y. Each signal is produced according to an (LSP,NLSP) mass grid for each year.  The raw number of events per mass points and grid spacings for the signals shown in table \ref{tab:bkgsigtab} are displayed in Figure \ref{fig:grids} with all years combined. 
 
 %insert signal list and description
+\FigFour{Analysis_figs/T2tt_EventCount.pdf}{Analysis_figs/TChiWZ_EventCount.pdf}{Analysis_figs/TSlepSlep_EventCount.pdf}{Analysis_figs/TChipmWW_EventCount.pdf}{grids}{fig:grids}
 
 The majority of signal and backgrounds use the MadGraph \cite{madgraph} generator to model at LO and NLO. The ST backgrounds use PowHEG 2.0 \cite{powheg} to model at NLO. Parton shower and fragmentaion for all samples is done with PYTHIA 7 \cite{pythia}. Each year is subjected to an underlying event tunes with CUETP8M1 for 2016, CP2 for 2017 and 2018 signals and CP5, for 2017 and 2018 backgrounds \cite{erich tunes}. The detector conditions and response are simulated for all samples with GEANT4 \cite{geant}.
  
 \section{Event Selection and Physics Objects}
- For events to be qualified for analysis, they pass a handful of selected triggers and preselection which reflect the compressed kinematic description provided in the previous chapter. The triggers used PFMET PFMHT cross triggers. PFMET is the particle flow missing transverse energy which is expected to capture the $p_T^{Miss}$ from the LSP. PFMHT is expected to trigger on events with significant jet activity and multiplicity which are likely candidates for ISR events.  In general, the compressed SUSY topology is are somewhat rare organization of an event, due to the uncommon nature of these types of events the MC modeling does not always sufficiently and precisely describe data, so,  a data driven approach is utilized for physics objects to compensate for any disagreement. This approach compares the overall efficiency or behavior of selected objects and computes data driven scale factors, while also providing a platform to model and understand systematic effects. These calibrations are then applied to MC to bring data and MC into agreement. The instance of Scale factor generation arises in the modeling of the efficiencies of the trigger turn ons, with efficiency defined as events that pass the trigger and preselection versus only preselection. The comparisons of data with  which is shown in Figure X with the efficiency shapes modeled by a Gaussian CDF.  
+ For events to be qualified for analysis, they pass a handful of selected triggers and preselection which reflect the compressed kinematic description provided in the previous chapter. The triggers used PFMET PFMHT cross triggers. PFMET is the particle flow missing transverse energy which is expected to capture the $p_T^{Miss}$ from the LSP. PFMHT is expected to trigger on events with significant jet activity and multiplicity which are likely candidates for ISR events.  In general, the compressed SUSY topology is are somewhat rare organization of an event, due to the uncommon nature of these types of events the MC modeling does not always sufficiently and precisely describe data, so,  a data driven approach is utilized for physics objects to compensate for any disagreement. This approach compares the overall efficiency or behavior of selected objects and computes data driven scale factors, while also providing a platform to model and understand systematic effects. These calibrations are then applied to MC to bring data and MC into agreement. The instance of Scale factor generation arises in the modeling of the efficiencies of the trigger turn ons, with efficiency defined as events that pass the trigger and preselection versus only preselection. The comparisons of data with  which is shown in Figure \ref{fig:metsf} with the efficiency shapes modeled by a Gaussian CDF.  
 
 %insert trigger turn ons
+\FigOne{Analysis_figs/SF_Plot_HT-Le600--SingleMuontrigger-E1--Nmu-E1_SingleMuon_2016.pdf}{met trig sf}{fig:metsf}
 
 The aforementioned pre selection which is a set of carefully studied criteria to remove background and mismodeled events as well as select events with objects that are expected to populated targeted final states. The pre selection consists of the criteria listed in the following Table Z:
 
 %insert preselection table  
+\begin{tabular}{c|c}
+\hline 
+\multicolumn{2}{|c|}{Preselection Requirements} \\ 
+\hline 
+Criteria & Description \\ 
+\hline 
+\hline
+$N_V \geq 1$ & At least one visible object assigned to the S system \\ 
+$N_j^{ISR} \geq 1$ & At least one jet assigned to the ISR system \\ 
 
-The object composition for each event 
+$p_T^{miss} > 150$GeV &\makecell{ Minimum transverse missing energy based on trigger efficiency}  \\ 
+
+$p_T^{ISR} > 250 $GeV & \makecell{Minimum ISR kick to resolve massive invisible particles} \\ 
+
+$R_{ISR}$ > 0.5 & Target Massive LSPs \\ 
+
+$|\Delta \phi_{\vec{p}_T^{miss}, V}| < \pi/2$ &  Ensures visible and invisible system are traveling in the same direction \\ 
+
+$p_T^{CM} < 200$  & Rejects mismodeled events \\ 
+
+veto $f(\Delta\phi_{CM,I}, p_T^{CM})$& 2D function to also reject mismodeled events - See Fig \ref{fig:cleancut}\\
+\hline 
+\end{tabular} \\
+
+\FigOne{Analysis_figs/cleaningCuts.pdf}{cleaning cuts}{fig:cleancut}
+
+The pre selection forms the basis for an event to be analyzed. Following preselection, the physics objects can be selected, classified, and categorized. The possible object composition can consist of jets, b-tagged jets, soft secondary vertices (SVs), and leptons. The discussion of the leptons and their classification will be reserved for the following chapter alongside the calculation of lepton scale factors. A summary of these physics objects and their kinematic requirements are listed in the following Table X. The various types of jets involve working points (WP) from their respective physics object groups and are standard objects used in CMS physics analysis (cite jet stuff ak4 and ids). The b-tagging is done by a standard NN based tagger which only identifies b-jets down to 20 GeV. A complementary SV tagger was developed specifically for this analysis and a detailed description of this tool is described in this analysis's sister thesis (cite erich thesis). The purpose of the SV tagger is to efficiently extend the b-tagging range down to 2 GeV because a final state topology with something like compressed stops often includes soft b-jets.
 
 
+\begin{table}
+\centering
+\label{tab:physicsobjects}
+\caption{table caption2}
+\begin{tabular}{c|c}
+\hline 
+\multicolumn{2}{c}{Visible Physics Objects} \\ 
+\hline 
+\hline
+Jets & \makecell{AK4 PF Jets \\ Tight ID \\ $p_T^{jet} > 20$ GeV \\ $|\eta|>2.4$} \\ 
+\hline
+B-tagged Jets & \makecell{AK4 PF Jets \\ DeepJet Medium WP \\ $p_T^{b-jet} > 20 $ GeV}  \\ 
+\hline
+SVs & $2<p_T^{SV}<20$ GeV \\ 
+\hline
+Leptons & \makecell{Very Loose ID \\ $p_T^{\mu^\pm} > 3$ GeV \\ $p_T^{e^\pm} > 5 $GeV \\ Gold/Silver/Bronze quality classes} \\ 
+\hline 
+\end{tabular} 
+\end{table}
 
 \section{Categorization and Fit Strategy}
 
-category and bin optimization
+Once an event passes all the preselection and the objects are classified, the event is then categorized based on object composition, object multplicity, and kinematic characteristics. 
+
+% dont forget bin optimization

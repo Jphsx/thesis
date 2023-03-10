@@ -40,6 +40,10 @@
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 \usepackage{tabularx}
 
+\usepackage{makecell}
+%\renewcommand{\cellalign}{vh}
+%\renewcommand{\theadalign}{vh}
+
 \input{stylefiles/mymathdefns}
 %\input{stylefiles/sparticledefns}
 \usepackage[authoryear]{natbib}
@@ -186,18 +190,17 @@ Thanks everybody
 
 \end{romanpages}
 
+\include{Chapter_Theory/theory}
 
-%\include{Chapter_Theory/theory}
+\include{Chapter_Motivation/motivation}
 
-%\include{Chapter_Motivation/motivation}
+\include{Chapter_Detector/detector}
 
-%\include{Chapter_Detector/detector}
-
-%\include{Chapter_RJR/RJR}
+\include{Chapter_RJR/RJR}
 
 \include{Chapter_Analysis/Analysis}
 
-%\include{Chapter_TnP/TnP}
+\include{Chapter_TnP/TnP}
   
 \global\long\def\bibname{References}%
 
