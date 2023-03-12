@@ -16,16 +16,41 @@
 
 \section{Introduction}
 %introduce actual fit, fit regions, systematics treatment, results of fit stages
-The modeling for this analysis uses the standard ounting experiment approach with a Poisson likelihood. The MC model is data driven such that background composes most of the regions and tunes the data and MC agreement. This agreement translates into well constrained background predictions in sensitive regions with sparse background with an ABCD-like approach. To achieve a robust fit model three stages of fits are performed, one with the Control Region (CR) which has no signal presence, a Validation Region (VR) which is a partially unblinded region with mild sensitivity designed to validate the CR model and demonstrate reasonable modeling in regions untouched by the CR , and finally SR which is comprised of the high $R_{ISR}$ bins which are sensitive to all signal regions. Following the full fit, limits can be calculated which test the hypotheses of background only model versus background plus signal model. 
-\section{Fit Defintion}
-%Poisson likelihood
+The modeling for this analysis uses the standard counting experiment approach with a Poisson likelihood. The MC model is data driven such that background composes most of the regions and tunes the data and MC agreement. This agreement translates into well constrained background predictions in sensitive regions with sparse background with an ABCD-like approach. To achieve a robust fit model three stages of fits are performed, one with the Control Region (CR) which has no signal presence, a Validation Region (VR) which is a partially unblinded region with mild sensitivity designed to validate the CR model and demonstrate reasonable modeling in regions untouched by the CR , and finally SR which is comprised of the high $R_{ISR}$ bins which are sensitive to all signal regions. Following the full fit, limits can be calculated which test the hypotheses of background only model versus background plus signal model. 
 
 
-
-\section{Fit Stragegy and Fit Region Definitions}
+\section{Fit Strategy and Fit Region Definitions}
 CR VR SR
 
-\section{Treatment of systematics}
+\section{Fit Implementation and Model Defintion}
+%Poisson likelihood
+The fitting framework is provided by the HiggsCombine tool which generates datacards that encodes all the components of the fit into a standard format that is processed by CombineHarvester and RooFit/RooStats packages. The fit and its components can be represented by a Poisson likelihood defined as:
+\begin{equation}
+\label{eq:fit}
+\mathcal{L}(\vec{\alpha}|\vec{x}) = \bigg[ \prod_i^N \text{Pois}(x_i|\lambda_i(\vec{\alpha})) \bigg] \bigg[\prod_j^M \pi_j(\alpha_j) \bigg]
+\end{equation}
+The contents of equation \ref{eq:fit} extend over the range of all $N$ analysis bins where each $i$-th bin is composed of a count of observed events $x_i$ and expected events $\lambda_i$. The expected events are subject to the set of nuisance parameters $\vec{\alpha}$ of which some are conditioned by prior probability distributions $\pi_j(\alpha_j)$. The ideal model for $\lambda(\vec{\alpha})$ is found by maximizing the likelihood \ref{eq:fit} with the minimum set of nuisance parameters $\vec{\alpha}$ by fitting the stages of fit regions such that the model is sensitive to signals and the signal + background hyptothesis.  There are three types of nuisances implemented in the fit, freely floating rate parameters, log-normal constrained parameters, and shape parameters.  Freely floating paramters contribute to a factor $\kappa$, with a starting value of 1,  that is applied to the expected bin yield $\lambda$ to adjust the bin yield by some fraction with respect to the nominal value. The free parameters have no associated penalty with their adjustment and are fully determined by data. Individual bins $i$ are mapped together by common processes $k$ which are all associated under a common nuisance $j$. The selection of processes associated to a nuisance parameter can either be the contribution from a background process or associated fake leptons. The definition of a free rate parameter can then be defined as 
+\begin{equation}
+\label{eq:rateparam}
+\kappa_{ijk}(\alpha_j) = \alpha_j
+\end{equation}  
+The log-normal parameters also functions of a $\kappa$ factor that is applied to an expected events of the associated bin. The log-normal parameter is different from the freely floating paramters in such that it is penalized for moving from the nominal value with based on normally distributed prior $\pi(\alpha_j)$. Along with a prior associated uncertainty on a process $j$ of nuisance $k$, that is $\sigma_{jk}$, the log-normal factors are defined as
+\begin{equation}
+\label{eq:logparam}
+\kappa_{ijk}(\alpha_j) = (1+\sigma_{ijk})^{\alpha_j}
+\end{equation}
+
+The third type of nuisance is different from the first two such that it does not associate with and modify the process components for a particular bin, instead, the shape nuisances adjust expected bin yields based on the underlying shapes of the $R_{ISR}$ and $M_\perp$ distributions. The $kappa$ factor for a bin yield is then a function of up and down variations of one of the kinematic variables which are also encoded with a normally distributed prior $\pi(\alpha_j)$. The $\kappa$ definition is based on the interpolation $-1<\alpha_j<1$ and is written as follwing based on a predefined shape treatment \cite{combine shapes}
+\begin{equation}
+\label{eq:shapeparam}
+\kappa_{ijk}(\alpha_j)= 1 + \frac{1}{2}((\delta^+ - \delta^-)\alpha_j + \frac{1}{8}(\delta^+ + \delta^-)(3\alpha_j^6-10\alpha_j^4+15\alpha_j^2))
+\end{equation}
+the $\delta^\pm$ components are ratios of the up and down shape variations, $\lambda^{up/down}$, to the nominal shape< $\lambda^{nominal}$ such that $\delta^+ = \lambda^{up}/\lambda^{nominal}$ and $\delta^- = \lambda^{down}/\lambda^{nominal}.$
+
+From the Likelihood Equation \ref{eq:fit} which is composed of the three types of nuisances from equations \ref{eq:rateparam}, \ref{eq:logparam}, \ref{eq:shapeparam}. These nuisances are mapped to either a set of processes or shapes and also mapped to a set of associated bins. The product of the three $\kappa$ factors multiply the nominal expectation $\lambda$ such that they maximize the likelihood and in turn the agreement between the observed data $\vec{x}$ and $\vec{\lambda}$. 
+
+
+\section{Development of Modeling Systematics}
 definition of sytematics
 poisson pulls
 
