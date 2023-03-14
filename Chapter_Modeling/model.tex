@@ -23,11 +23,12 @@ The modeling for this analysis uses the standard counting experiment approach wi
 %CR VR SR
 The strategy for developing a robust fit model with the ability to accurately predict the background in the most sensistive regions is carried out in three stages. The stages combine different regions with varying sensitivity, they are the Control Region, Validation Region, and Signal Region. The control region guaranteed to have no signal sensitivity and also covers nearly a majority of all bins. Quantitatively, the expected contamination in the control region from any signal process being stops,sleptons, or electroweakinos is $<1\%$ in and below sparticle masses that are of potential discovery interest. Signals can appear in the CR, especially stops, due to the strong cross-section, but, the mass ranges that can appear at the few percent level or more have already been well excluded by other searches. The categories and bins that compose the CR are easily described as simply the low $R_{ISR}$ region and more specifically the lowest two $R_{ISR}$ bins of almost every category. The only category that has been specifically excluded from the CR is 2L high $p_T^{ISR}$ categories which were especially sensitive to some stop signals and borderline sensitive to electroweakinos. The CR region is then fully described by XYZ categories and ABC total bins, of which, hold $x\%$ of total expected Run II events. This means that the CR will ultimately dominate the behavior of the fit, but, it does not guarantee everywhere will be well modeled e.g. high $R_{ISR}$. To deal with this short coming, we introduce a complementary region the Validation Region. This region is designed to extend the control region to sample all types of categories and kinematics. The VR unmasks all the bronze categories, so it is composed the remaining bronze category $R_{ISR}$ not covered by the CR. Fitting the CR+VR is a conservative approach unblinding useful in validating the fit model everywhere. The signal presence in VR bins is mild where stops and electroweakinos can show up in the most sensitive categories, like $\mu\mu$, at the few $\%$ level. Together the CR+VR fit covers XYZ categories, and ABC total bins with an increase in the expected number of events to $y\%$. The remaining region is the signal region SR, it comprises the XYX categories and ABC total bins, and a smaller fraction of $z\%$ of total expected events. The sensitivity to every signal is high in this region examples of the S/B significance using the Zbinomial statistic if Fig X.
 
-% Zbi CR
+\FigTwo{Model_figs/0L_4J_ratioZbin_highDm_RISR_Mperp.pdf}{Model_figs/1L_G_0J_ratioZbin_chargeSep_RISR_Mperp.pdf}{stop in 0l and 1l}{fig:zbi1}
 
-% Zbi VR
+\FigTwo{Model_figs/zbi_2lgold.png}{Model_figs/zbi_2lbron.png}{all signals 2l}{fig:zbi2}
 
-% Zbi SR
+
+
 
 \section{Fit Implementation and Model Defintion}
 %Poisson likelihood
@@ -58,8 +59,14 @@ From the Likelihood Equation \ref{eq:fit} which is composed of the three types o
 
 
 \section{Development of Modeling Systematics}
-definition of sytematics
-poisson pulls
+The set of nuisances that based on the types described in the previous section went through an extensive evolution beginning with very early fits with only 10 nuisances in \cite{erich thesis}. This fit only used a single nuisance to describe b-tag systematics, one for MET trigger systematics, one for luminosity and one for each background process rate. The final configuration consists of over 200 nuisances which can be divided into 5 subcategories: kinematic, process normalizations, lepton fakes, lepton categorization, and b-tagging. The optimizations of these nuisances, that is, their bin association and process mapping along with their allowed degrees of freedom has undergone extensive study. The complete list of systematics, their type, and prior uncertainties are listed in Table X.
+
+% table of systematics
+
+The optimization of each group of systematics was conducted over CR fits to 2016 data and then expanded to include multiple years then account for systematic effects induced from different run conditions. The statistical evaluation of each fit is performed by comparing metrics such as the $\log\mathcal{L}$, $\chi^2$, significance of the residuals of each bin (pull distributions), and impacts distributions which are a series of separate fits that independently vary all of the nuisance parameters to assess the impact of each on the POI. Multiple definitions of pulls are used together the main one being $ (O-E)/(E+\sigma_{postfit})$ where the $O$ is the observed data, $E$ is the expected events post-fit, the denonimator is also the expected post-fit events under the assumption that each bin is poisson distributed. The total error of the denominator is then the sum in quadrature of the poisson variance and the post fit variance for the bin in question. Similar pull defintions assist this one such as the same evaulation withough post-fit variance or the pull evaluated with respect to the pre-fit values. Each fit evaluation is performed on subsets of the same fit which includes all bins, each individual lepton multiplicity, or gold silver or bronze. The statisical errors for each bin are assumed to be gaussian with sufficient number of events. In the case of bins with very few events they assumed to be poisson distributed, this is important distinction when combining different bins, which can vary in numbers of events by orders of magnitude, into a pull distribution.
+ 
+%definition of sytematics
+%poisson pulls
 
 \section{Region Results}
 
