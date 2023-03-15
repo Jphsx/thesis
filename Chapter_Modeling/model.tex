@@ -58,12 +58,148 @@ the $\delta^\pm$ components are ratios of the up and down shape variations, $\la
 From the Likelihood Equation \ref{eq:fit} which is composed of the three types of nuisances from equations \ref{eq:rateparam}, \ref{eq:logparam}, \ref{eq:shapeparam}. These nuisances are mapped to either a set of processes or shapes and also mapped to a set of associated bins. The product of the three $\kappa$ factors multiply the nominal expectation $\lambda$ such that they maximize the likelihood and in turn the agreement between the observed data $\vec{x}$ and $\vec{\lambda}$. 
 
 
-\section{Development of Modeling Systematics}
+\section{Definitions and Development of Modeling Systematics}
 The set of nuisances that based on the types described in the previous section went through an extensive evolution beginning with very early fits with only 10 nuisances in \cite{erich thesis}. This fit only used a single nuisance to describe b-tag systematics, one for MET trigger systematics, one for luminosity and one for each background process rate. The final configuration consists of over 200 nuisances which can be divided into 5 subcategories: kinematic, process normalizations, lepton fakes, lepton categorization, and b-tagging. The optimizations of these nuisances, that is, their bin association and process mapping along with their allowed degrees of freedom has undergone extensive study. The complete list of systematics, their type, and prior uncertainties are listed in Table X.
 
 % table of systematics
+\begin{tabular}{ccc}
+\hline 
+Category Mapping & $N_L$ Mapping & $N_{jets}^S$  Mapping \\ 
+\hline 
+\hline
+$p_T^{ISR}$  & 0 & $[1,\geq5]$ \\ 
+$p_T^{ISR}$ & 1 & $[0,\geq4]$ \\ 
+$p_T^{ISR}$ (QCD) & 0 & $[0,\geq5]$ \\ 
+$\gamma_\perp$ & 0 & $[2,\geq4]$ \\ 
+$\gamma_\perp$ & 1 & $[1,\geq4]$ \\ 
+$\gamma_\perp$ & 2 & $[0,\geq2]$ \\  
+$\gamma_\perp$ (QCD) & 0 & $[2,\geq4]$ \\ 
+\hline 
+\end{tabular} 
 
-The optimization of each group of systematics was conducted over CR fits to 2016 data and then expanded to include multiple years then account for systematic effects induced from different run conditions. The statistical evaluation of each fit is performed by comparing metrics such as the $\log\mathcal{L}$, $\chi^2$, significance of the residuals of each bin (pull distributions), and impacts distributions which are a series of separate fits that independently vary all of the nuisance parameters to assess the impact of each on the POI. Multiple definitions of pulls are used together the main one being $ (O-E)/(E+\sigma_{postfit})$ where the $O$ is the observed data, $E$ is the expected events post-fit, the denonimator is also the expected post-fit events under the assumption that each bin is poisson distributed. The total error of the denominator is then the sum in quadrature of the poisson variance and the post fit variance for the bin in question. Similar pull defintions assist this one such as the same evaulation withough post-fit variance or the pull evaluated with respect to the pre-fit values. Each fit evaluation is performed on subsets of the same fit which includes all bins, each individual lepton multiplicity, or gold silver or bronze. The statisical errors for each bin are assumed to be gaussian with sufficient number of events. In the case of bins with very few events they assumed to be poisson distributed, this is important distinction when combining different bins, which can vary in numbers of events by orders of magnitude, into a pull distribution.
+
+\begin{tabular}{lc}
+
+\multicolumn{2}{|l}{Process Mapping per $(N_\ell,N_{jet}^S)$ } \\ 
+\hline 
+ & (Combined/All) or ($tt+jets$) or (not $tt+jets$)  \\ 
+\multicolumn{2}{|l}{Category Mapping per $(N_\ell,N_{jet}^S)$ } \\ 
+\hline 
+ & $(N_{b-tag}^{ISR},N_{b-tag}^S)=\{(0,1),(1,0),(1,1),( \text{inclusive} ,\geq2) \}$ \\ 
+\multicolumn{2}{|l}{Combined/All Nuisances}  \\ 
+\hline 
+ & $(N_\ell,N_{jet}^S)=\{(0,1),(1,1),(2,1),(2,2) \}$ \\ 
+
+\end{tabular} 
+
+
+
+
+\begin{tabular}{cc|ccc}
+
+ &  & \multicolumn{3}{c}{$N_\ell$ Mapping} \\  
+ &  & 1$\ell$ & 2$\ell$ & 3$\ell$ \\ 
+\hline 
+\multirow{6}{*}{
+\rotatebox[origin=c]{90}{$N_{jet}^S$ Mapping}}  & Inclusive &  & $(ee,\mu\mu,e\mu)\times$!Gold & $(Z*,noZ*)$ \\ 
+
+ & 0J & $(e,\mu)\times$(Gold,!Gold) & \makecell{$(OS,SS)\times$ Gold \\ $(\ell\ell)\times$(Gold,!Gold)} &   \\ 
+ 
+ & 1J & $\ell$ Gold & $(Z*,noZ*)$ Gold &  \\ 
+ 
+ & 2J & $\ell$ Gold & $(Z*,noZ*)$ Gold &  \\ 
+ 
+ & 3J & $\ell$ Gold &  &  \\ 
+ 
+ & 4J & $\ell$ Gold &  &  \\ 
+
+\end{tabular} 
+
+
+\begin{tabular}{ccc}
+\hline 
+Category Mapping/ Degrees of Freedom & Process Mapping & Param. Details \\ 
+\hline 
+\hline
+per  $(N_\ell =1,2,3  \, ,N_{jet}^S)$ & W+jets & hierarchy \\ 
+ 
+per $(N_\ell = 0 \, , N_{jet}^S)$ & (W+jets)+(ZDY) & hierarchy \\ 
+ 
+per $(N_\ell, N_{jet}^S)$ & tt+jets & hierarchy \\ 
+ 
+per $(N_\ell=0,1,2 \,, N_{jet}^S)$ & QCD & $0\ell$ floating otherwise $20\%$ prior \\ 
+per $N_\ell=1,2,3$ & (ZDY)+(DB) & $20\%$ prior \\ 
+per $N_\ell=0,1,2$ & ST & $20\%$ prior \\ 
+global & TB & $20\%$ prior \\ 
+global & ZDY & free floating \\ 
+global & DB & free floating \\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{ccc}
+
+Category Mapping & Process Mapping & Parameter Details \\ 
+\hline 
+\hline
+$2_\ell^\pm\ell^\pm$ & Global & Free floating \\ 
+ 
+Global & $(e,\mu)\times(HF,LF)$ & Free floating \\ 
+ 
+Silver & $(e,\mu)\times(HF,LF)$ & $20\%$ prior \\ 
+ 
+Bronze & $(e,\mu)\times(HF,LF)$ & $20\%$ prior \\ 
+ 
+per $(N_\ell^S,N_{jet}^S)$ & $(e,\mu)\times(R_{ISR}^{shape}, M_\perp^{shape})$ & $5\%$ prior \\ 
+\hline 
+\end{tabular} 
+
+
+\begin{tabular}{cc}
+Category mapping & process mapping \\ 
+\hline 
+\hline
+$N_{SV}^S=1$ & All \\ 
+ 
+$N_{SV}^S \geq 1$ & All \\ 
+ 
+$|\eta_{SV}^f|$ & tt+jets \\ 
+ 
+$|\eta_{SV}^f|$ & other \\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|c|c|}
+\hline 
+Systematic Source and Scale Factors & Parameter Type \\ 
+\hline 
+Luminosity & log-normal \\  
+$e,\mu$ Efficiency & log-normal \\ 
+b-tag efficiency & log-normal \\ 
+*Factorization, Renormalization, PDF, and $Q^2$ & log-normal \\ 
+*JES \& type-I MET & shape \\ 
+*Unclustered Energy & shape \\ 
+MET Trigger Efficiency & shape \\ 
+Lepton FastSIM SF & log-normal \\ 
+SV FastSIM SF & log-normal \\ 
+b-jet FastSim SF & log-normal \\ 
+*MET FastSIm Correction & shape \\ 
+\hline 
+\end{tabular} 
+
+
+
+The optimization of each group of systematics was conducted over CR fits to 2016 data and then expanded to include multiple years then account for systematic effects induced from different run conditions. The statistical evaluation of each fit is performed by comparing metrics such as the $\log\mathcal{L}$, $\chi^2$, significance of the residuals of each bin (pull distributions), and impacts distributions which are a series of separate fits that independently vary all of the nuisance parameters to assess the impact of each on the POI. Multiple definitions of pulls are used together the main one being $ (O-E)/(E+\sigma_{postfit})$ where the $O$ is the observed data, $E$ is the expected events post-fit, the denonimator is also the expected post-fit events under the assumption that each bin is poisson distributed. The total error of the denominator is then the sum in quadrature of the poisson variance and the post fit variance for the bin in question. Similar pull defintions assist this one such as the same evaulation withough post-fit variance or the pull evaluated with respect to the pre-fit values. Each fit evaluation is performed on subsets of the same fit which includes all bins, each individual lepton multiplicity, or gold silver or bronze. The statisical errors for each bin are assumed to be gaussian with sufficient number of events. In the case of bins with very few events they assumed to be poisson distributed, this is important distinction when combining different bins, which can vary in numbers of events by orders of magnitude, into a pull distribution. For instance if a deviation of a few observed events were to occur in a bin with only a few expected events, the pull or z-score, would be significantly large which shows that the gaussian assumption in the z-score is inaccurate. To correct this assumption, each bin is given the ``Poisson treatment" new z-score is calculated from the poisson probality of the original observation given the expectation. The recipe for calculating the adjusted z-scores is as follows
+\begin{itemize}
+\item[1.] Generate N trials, each with new expectation $E_i' \sim \mathcal{N}(E,1)$
+\item[2.] Generate new observations $O_i'\sim \text{Poisson}(E_i')$
+\item[3.] Count $k$ successes such that $O',E'$ follow the original observation $(O<E \text{or} O>E)$
+\item[4.] Compute Poisson probability $P=k/N$ 
+\item[5.] Translate P into a z-score with normal distribution quantile
+\item[6.] Compute error on z-score with up/down variations of binomial error
+\item[7.] Sign z-score based on $O>E \, (+)$ or $O<E \, (-)$ convention
+\end{itemize} 
+
+The consequence of the poisson treatment is that the z-score significance is reduced in low statistics cases where $O>E$ and increased in cases with $O<E$ this is due to the asymmetery in the poisson distribution with a long tail tending to higher values.
  
 %definition of sytematics
 %poisson pulls
