@@ -37,7 +37,7 @@ The fitting framework is provided by the HiggsCombine tool which generates datac
 \label{eq:fit}
 \mathcal{L}(\vec{\alpha}|\vec{x}) = \bigg[ \prod_i^N \text{Pois}(x_i|\lambda_i(\vec{\alpha})) \bigg] \bigg[\prod_j^M \pi_j(\alpha_j) \bigg]
 \end{equation}
-The contents of equation \ref{eq:fit} extend over the range of all $N$ analysis bins where each $i$-th bin is composed of a count of observed events $x_i$ and expected events $\lambda_i$. The expected events are subject to the set of nuisance parameters $\vec{\alpha}$ of which some are conditioned by prior probability distributions $\pi_j(\alpha_j)$. The ideal model for $\lambda(\vec{\alpha})$ is found by maximizing the likelihood \ref{eq:fit} with the minimum set of nuisance parameters $\vec{\alpha}$ by fitting the stages of fit regions such that the model is sensitive to signals and the signal + background hyptothesis.  There are three types of nuisances implemented in the fit, freely floating rate parameters, log-normal constrained parameters, and shape parameters.  Freely floating paramters contribute to a factor $\kappa$, with a starting value of 1,  that is applied to the expected bin yield $\lambda$ to adjust the bin yield by some fraction with respect to the nominal value. The free parameters have no associated penalty with their adjustment and are fully determined by data. Individual bins $i$ are mapped together by common processes $k$ which are all associated under a common nuisance $j$. The selection of processes associated to a nuisance parameter can either be the contribution from a background process or associated fake leptons. The definition of a free rate parameter can then be defined as 
+The contents of equation \ref{eq:fit} extend over the range of all $N$ analysis bins where each $i$-th bin is composed of a count of observed events $x_i$ and expected events $\lambda_i$. The expected events are subject to the set of nuisance parameters $\vec{\alpha}$ of which some are conditioned by prior probability distributions $\pi_j(\alpha_j)$. The ideal model for $\lambda(\vec{\alpha})$ is found by maximizing the likelihood \ref{eq:fit} with the minimum set of nuisance parameters $\vec{\alpha}$ by fitting the stages of fit regions such that the model is sensitive to signals and the signal + background hyptothesis.  There are three types of nuisances implemented in the fit, freely floating rate parameters, log-normal constrained parameters, and shape parameters.  Freely floating paramters contribute to a factor $\kappa$, with a starting value of 1,  that is applied to the expected bin yield $\lambda$ to adjust the bin yield by some fraction with respect to the nominal value. The free parameters have no associated penalty with their adjustment and are fully determined by data. Individual bins $i$ are mapped together by common processes $k$ which are all associated under a common nuisance $j$. The selection of processes associated to a nuisance parameter can either be the contribution from a background process or associated flavor separated fake leptons which are also split by source: heavy flavor(HF) or light flavor(LF) . The definition of a free rate parameter can then be defined as 
 \begin{equation}
 \label{eq:rateparam}
 \kappa_{ijk}(\alpha_j) = \alpha_j
@@ -59,9 +59,11 @@ From the Likelihood Equation \ref{eq:fit} which is composed of the three types o
 
 
 \section{Definitions and Development of Modeling Systematics}
-The set of nuisances that based on the types described in the previous section went through an extensive evolution beginning with very early fits with only 10 nuisances in \cite{erich thesis}. This fit only used a single nuisance to describe b-tag systematics, one for MET trigger systematics, one for luminosity and one for each background process rate. The final configuration consists of over 200 nuisances which can be divided into 5 subcategories: kinematic, process normalizations, lepton fakes, lepton categorization, and b-tagging. The optimizations of these nuisances, that is, their bin association and process mapping along with their allowed degrees of freedom has undergone extensive study. The complete list of systematics, their type, and prior uncertainties are listed in Table X.
+The set of nuisances that based on the types described in the previous section went through an extensive evolution beginning with very early fits with only 10 nuisances in \cite{erich thesis}. This fit only used a single nuisance to describe b-tag systematics, one for MET trigger systematics, one for luminosity and one for each background process rate. The final configuration consists of over 200 nuisances which can be divided into 5 subcategories: kinematic, process normalizations, lepton fakes, lepton categorization, and b-tagging. The optimizations of these nuisances, that is, their bin association and process mapping along with their allowed degrees of freedom has undergone extensive study. The complete list of systematics, their type, and prior uncertainties are listed in Tables \ref{tab:kinnuisance}, \ref{tab:btagnuisance}, \ref{tab:lcatnuisance}, \ref{tab:procnuisance}, \ref{tab:fakenuisance}, \ref{tab:svnuisance}, and \ref{tab:othernuisance}.  The kinematic nuisances from Table \ref{tab:kinnuisance} contribute 27 factors which serve the purpose accounting for systematic effects between the high and low $p_T^{ISR}$ and $\gamma_\perp$ for each lepton and jet multiplicity. The kinematic nuisances, and nuisances in general, that appear to be missing e.g. $\gamma_\perp$ 0L 1J are merged with neighboring jet multiplicites if they are determined to be extraneous degrees of freedom or are highly correlated with another nuisance. Table \ref{tab:btagnuisance} describes 73 nuisances which are designed to accomodate systematic effects from categorization of b-tagged jets in either the S or ISR system in each lepton and jet multiplicity. Regions with few b-tags or are dominated by a single process include the contributions from all background processes, otherwise, each factor is split into two where one is associated with tt+jets only and the other is associated with the combined background of everything else. There are 21 lepton categorization nuisances which are designed to account for systematically different rates in Gold categories versus Silver or Bronze categories. Table \ref{tab:procnuisance} shows the rates for each background process, which includes a special hierarchy parameterization that will be discussed later. The rule of thumb for background process rates is that dominant processes are split by lepton and jet multilpicity, intermediate backgrounds are split by lepton, and rare backgrounds are mapped globally with a single nuisance. The fake lepton nuisances are comprised of global rates for each flavor and source, a single nuisance to account for the global rate of  charge misidentification, and the fake shapes. The fake shapes are split by flavor, lepton multiplicity, and jet multiplicity, originally they were also split by source but this introduced many extraneous parameters where HF and LF were highly correlated. The fake shapes target systematic effects from the shapes of either $R_{ISR}$, $M_\perp$ and are based on $1\sigma$ up and down variations which are applied to the shape templates in Equation \ref{eq:shapeparam}. The last two tables \ref{tab:svnuisance} and \ref{tab:othernuisance} account for systematics from SV effiency or binning rapidity which is either central, $\eta^c$, or forward, $\eta^f$ as well as other sources of systematics.
 
 % table of systematics
+\begin{table}
+\caption{kinematic nuisances mapped to high bin}
 \begin{tabular}{ccc}
 \hline 
 Category Mapping & $N_L$ Mapping & $N_{jets}^S$  Mapping \\ 
@@ -76,8 +78,16 @@ $\gamma_\perp$ & 2 & $[0,\geq2]$ \\
 $\gamma_\perp$ (QCD) & 0 & $[2,\geq4]$ \\ 
 \hline 
 \end{tabular} 
+\label{tab:kinnuisance}
+\end{table}
 
 
+\begingroup
+
+\begin{table}
+\caption{btagging}
+\setlength{\tabcolsep}{10pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value:
 \begin{tabular}{lc}
 
 \multicolumn{2}{|l}{Process Mapping per $(N_\ell,N_{jet}^S)$ } \\ 
@@ -91,10 +101,12 @@ $\gamma_\perp$ (QCD) & 0 & $[2,\geq4]$ \\
  & $(N_\ell,N_{jet}^S)=\{(0,1),(1,1),(2,1),(2,2) \}$ \\ 
 
 \end{tabular} 
+\label{tab:btagnuisance}
+\end{table}
+\endgroup
 
-
-
-
+\begin{table}
+\caption{lepton cats}
 \begin{tabular}{cc|ccc}
 
  &  & \multicolumn{3}{c}{$N_\ell$ Mapping} \\  
@@ -105,26 +117,32 @@ $\gamma_\perp$ (QCD) & 0 & $[2,\geq4]$ \\
 
  & 0J & $(e,\mu)\times$(Gold,!Gold) & \makecell{$(OS,SS)\times$ Gold \\ $(\ell\ell)\times$(Gold,!Gold)} &   \\ 
  
- & 1J & $\ell$ Gold & $(Z*,noZ*)$ Gold &  \\ 
+ & 1J & $\ell$ Gold & $(Z*,noZ*)\times$ Gold &  \\ 
  
- & 2J & $\ell$ Gold & $(Z*,noZ*)$ Gold &  \\ 
+ & 2J & $\ell$ Gold & $(Z*,noZ*)\times$ Gold &  \\ 
  
  & 3J & $\ell$ Gold &  &  \\ 
  
  & 4J & $\ell$ Gold &  &  \\ 
 
 \end{tabular} 
+\label{tab:lcatnuisance}
+
+\end{table}
 
 
+\begin{table}
+\caption{processes}
+ 
 \begin{tabular}{ccc}
 \hline 
 Category Mapping/ Degrees of Freedom & Process Mapping & Param. Details \\ 
 \hline 
 \hline
 per  $(N_\ell =1,2,3  \, ,N_{jet}^S)$ & W+jets & hierarchy \\ 
- 
+
 per $(N_\ell = 0 \, , N_{jet}^S)$ & (W+jets)+(ZDY) & hierarchy \\ 
- 
+
 per $(N_\ell, N_{jet}^S)$ & tt+jets & hierarchy \\ 
  
 per $(N_\ell=0,1,2 \,, N_{jet}^S)$ & QCD & $0\ell$ floating otherwise $20\%$ prior \\ 
@@ -135,13 +153,18 @@ global & ZDY & free floating \\
 global & DB & free floating \\ 
 \hline 
 \end{tabular} 
+\label{tab:procnuisance}
 
+\end{table}
+
+\begin{table}
+\caption{fakes}
 \begin{tabular}{ccc}
 
 Category Mapping & Process Mapping & Parameter Details \\ 
 \hline 
 \hline
-$2_\ell^\pm\ell^\pm$ & Global & Free floating \\ 
+$\ell^\pm\ell^\pm$ & Global & Free floating \\ 
  
 Global & $(e,\mu)\times(HF,LF)$ & Free floating \\ 
  
@@ -152,8 +175,13 @@ Bronze & $(e,\mu)\times(HF,LF)$ & $20\%$ prior \\
 per $(N_\ell^S,N_{jet}^S)$ & $(e,\mu)\times(R_{ISR}^{shape}, M_\perp^{shape})$ & $5\%$ prior \\ 
 \hline 
 \end{tabular} 
+\label{tab:fakenuisance}
+
+\end{table}
 
 
+\begin{table}
+\caption{svs}
 \begin{tabular}{cc}
 Category mapping & process mapping \\ 
 \hline 
@@ -167,7 +195,12 @@ $|\eta_{SV}^f|$ & tt+jets \\
 $|\eta_{SV}^f|$ & other \\ 
 \hline 
 \end{tabular} 
+\label{tab:svnuisance}
 
+\end{table}
+
+\begin{table}
+\caption{other stuff}
 \begin{tabular}{|c|c|}
 \hline 
 Systematic Source and Scale Factors & Parameter Type \\ 
@@ -185,7 +218,9 @@ b-jet FastSim SF & log-normal \\
 *MET FastSIm Correction & shape \\ 
 \hline 
 \end{tabular} 
+\label{tab:othernuisance}
 
+\end{table}
 
 
 The optimization of each group of systematics was conducted over CR fits to 2016 data and then expanded to include multiple years then account for systematic effects induced from different run conditions. The statistical evaluation of each fit is performed by comparing metrics such as the $\log\mathcal{L}$, $\chi^2$, significance of the residuals of each bin (pull distributions), and impacts distributions which are a series of separate fits that independently vary all of the nuisance parameters to assess the impact of each on the POI. Multiple definitions of pulls are used together the main one being $ (O-E)/(E+\sigma_{postfit})$ where the $O$ is the observed data, $E$ is the expected events post-fit, the denonimator is also the expected post-fit events under the assumption that each bin is poisson distributed. The total error of the denominator is then the sum in quadrature of the poisson variance and the post fit variance for the bin in question. Similar pull defintions assist this one such as the same evaulation withough post-fit variance or the pull evaluated with respect to the pre-fit values. Each fit evaluation is performed on subsets of the same fit which includes all bins, each individual lepton multiplicity, or gold silver or bronze. The statisical errors for each bin are assumed to be gaussian with sufficient number of events. In the case of bins with very few events they assumed to be poisson distributed, this is important distinction when combining different bins, which can vary in numbers of events by orders of magnitude, into a pull distribution. For instance if a deviation of a few observed events were to occur in a bin with only a few expected events, the pull or z-score, would be significantly large which shows that the gaussian assumption in the z-score is inaccurate. To correct this assumption, each bin is given the ``Poisson treatment" new z-score is calculated from the poisson probality of the original observation given the expectation. The recipe for calculating the adjusted z-scores is as follows
@@ -199,10 +234,16 @@ The optimization of each group of systematics was conducted over CR fits to 2016
 \item[7.] Sign z-score based on $O>E \, (+)$ or $O<E \, (-)$ convention
 \end{itemize} 
 
-The consequence of the poisson treatment is that the z-score significance is reduced in low statistics cases where $O>E$ and increased in cases with $O<E$ this is due to the asymmetery in the poisson distribution with a long tail tending to higher values.
+The consequence of the poisson treatment is that the z-score significance is reduced in low statistics cases where $O>E$ and increased in cases with $O<E$ this is due to the asymmetery in the poisson distribution with a long tail tending to higher values. Example pull distributions that compare the early fit model with the most complete model are shown in Figure Z. Comparisons of the same complete model with and withouth the poisson treatment is shown. The progression of the fit model's likelihood and the impact of the different groups of nuisances is summarized Figure Z with accompanied Table T with brief descriptions of the evolution of each fit configuration. 
  
-%definition of sytematics
-%poisson pulls
+ 
+%build 8 pull with last 16 build no poisson
+
+%build 67 no poisson vs build 67 w/ poisson
+
+%plot of likelihoods
+
+%table of builds
 
 \section{Region Results}
 
