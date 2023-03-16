@@ -227,24 +227,72 @@ The optimization of each group of systematics was conducted over CR fits to 2016
 \begin{itemize}
 \item[1.] Generate N trials, each with new expectation $E_i' \sim \mathcal{N}(E,1)$
 \item[2.] Generate new observations $O_i'\sim \text{Poisson}(E_i')$
-\item[3.] Count $k$ successes such that $O',E'$ follow the original observation $(O<E \text{or} O>E)$
+\item[3.] Count $k$ successes such that $O',E'$ follow the original observation $(O<E \,\, \text{or} \, \, O>E)$
 \item[4.] Compute Poisson probability $P=k/N$ 
 \item[5.] Translate P into a z-score with normal distribution quantile
 \item[6.] Compute error on z-score with up/down variations of binomial error
-\item[7.] Sign z-score based on $O>E \, (+)$ or $O<E \, (-)$ convention
+\item[7.] Sign z-score based on $O-E$ convention
 \end{itemize} 
 
 The consequence of the poisson treatment is that the z-score significance is reduced in low statistics cases where $O>E$ and increased in cases with $O<E$ this is due to the asymmetery in the poisson distribution with a long tail tending to higher values. Example pull distributions that compare the early fit model with the most complete model are shown in Figure Z. Comparisons of the same complete model with and withouth the poisson treatment is shown. The progression of the fit model's likelihood and the impact of the different groups of nuisances is summarized Figure Z with accompanied Table T with brief descriptions of the evolution of each fit configuration. 
  
- 
-%build 8 pull with last 16 build no poisson
-
 %build 67 no poisson vs build 67 w/ poisson
+\FigTwo{}{}{Build 67 poisson treatement}{fig:comparePoissonPull}
+ 
+%build 8 pull with last 16 build no poisson\
+\FigTwo{}{}{Build 8 vs Build 67}{fig:compareBuildPull}
+
+
 
 %plot of likelihoods
+\FigOne{Model_figs/likelihood_progress.pdf}{like for 2016 builds}{fig:likes}
 
 %table of builds
-
+\begin{table}
+\caption{table}
+\begin{tabular}{ll}
+\hline 
+Build 8 & N Nuisances = 186 \\ 
+\hline
+ & \makecell[l]{Used 3 shape sytematics for W+jets, QCD, Fakes. All other backgrounds \\ are grouped together under ``other'' and split by $(N_\ell^S,N_{jet}^S)$} \\ 
+ & \\
+\hline 
+Build 17 & N Nuisances = 179 \\
+\hline
+ &\makecell[l]{Removed W+jets and QCD shapes due to over fitting. Added in W+jets \\ hierarchy.  Split up ``other'' into 3 groups \{(tt+jets, ST),(ZDY),(DB,TB)\}\\ each split by $(N_\ell^S,N_{jet}^S)$} \\
+ & \\
+\hline
+Build 23 & N Nuisances = 193 \\
+\hline
+ & \makecell[l]{Added a simplified b-tag configuration with a splitting by $(N_{b-tag}^S,N_{b-tag}^{ISR})$\\ and further split by $(N_\ell^S,N_{jet}^S)$ }\\
+ & \\ 
+\hline
+Build 24 & N Nuisances = 194 \\
+\hline
+ & \makecell[l]{Added a nuisance to adjust the rate of same-sign lepton pairs.}  \\
+ & \\
+\hline
+Build 25 & N Nuisances = 194 \\
+\hline
+ & \makecell[l]{Added tt+jets hierarchy. Reconfigured background process grouping to \\ \{(ZDY, DB),(ST,TB)\} with full $(N_\ell^S,N_{jet}^S)$ splitting } \\
+ & \\
+\hline
+Build 30 & N Nuisances = 229 \\
+\hline
+ & \makecell[l]{Implemented lepton category nuisances from Table \ref{tab:lcatnuisance} and the Bronze \\ and Silver global fake rates from Table \ref{tab:fakenuisance} } \\
+ & \\
+\hline
+Build 37 & N Nuisances = 209 \\
+\hline
+ & \makecell[l]{Reworked background process grouping to the final configuration in Table \\ \ref{tab:procnuisance}  and consolidated extraneous degrees of freedom. \\Consolidated Fake shapes to no longer split between HF and LF. } \\
+ & \\
+\hline 
+Build 62 & N Nuisances = 227 \\
+\hline
+ & \makecell[l]{Reworked b-tagging parameters to include process splittng from Table \ref{tab:btagnuisance}. \\ This build reflects the final configuration of all previously described nuisances \\ and those implemented from Table \ref{tab:othernuisance}. } \\
+\end{tabular} 
+\label{tab:builds}
+\end{table}
 \section{Region Results}
 
 CR and VR plots 
