@@ -322,6 +322,10 @@ In addition to the control region only fit, a control region combined with the v
 %bronze only fit
 \FigTwo{Model_figs/1L_B_0J_b-fit.pdf}{Model_figs/2L_B_2J_b-fit.pdf}{bronze only}{fig:crvrsummary}
 \section{Bias tests}
+
+One possible danger of having two many degrees in the fit model is that the model would be too flexible and fit away potential signal. To test for this we perform and ensemble of pseudeoexperiments with and without signal injection to test if the fit model recovers the correct hypothesis.  If the fit is unbiased and sensitive to various signals then the signal strenth parameter or POI should be evaluated as $r=0$ in the case of no signal injection and $r=1$ when signal is injected.  These hypothesis are tested by generating observed data in each bin centered on the MC expectation, the MC is fit to data and the POI is extracted. This pseudo experiment was performed with a handful of points around the edge of the mass asymptotic limits for T2tt, TChiWZ, and TSlepSlep. The results are shown in Figure \ref{fig:biasstudy} where we see no bias in the fit, and the recovery of the correct hypothesis. Overall this means that the final configuration of nuisances does not fit away potential signal and is sensitive to discovery.
+
+\FigThree{Model_figs/T2tt_7500670_r0_r1.pdf}{Model_figs/TChiWZ_3250315_r0_r1.pdf}{Model_figs/TSlepSlep_2500245_r0_r1.pdf}{signal injection and bias}{fig:biasstudy}
  
 
 
