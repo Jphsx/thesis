@@ -18,7 +18,7 @@
 
 \section{Asymptotic Limits}
 
-This search is designed to be generically sensitive to SUSY with an emphasis compressed scenarios. The consequence is sensitive to a wide variety of models and final states, so, we present upper exlusion limits on the cross sections for stop, electroweakino, and slepton processes. The results use the full Run II dataset alongside the full SM MC background which is combined with the data driven fit model described in the previous chapter. The limits are calculated using the asypmtotic method for profile-likelihood test statistic \cite{whatever AN cites here} 
+This search is designed to be generically sensitive to SUSY with an emphasis compressed scenarios. The consequence is sensitive to a wide variety of models and final states, so, we present upper exlusion limits on the cross sections for stop, electroweakino, and slepton processes. The results use the full Run II dataset alongside the full SM MC background which is combined with the data driven fit model described in the previous chapter. The limits are calculated using the asypmtotic method for profile-likelihood test statistic \cite{Cowan:2010js}.
 
 \FigOne{Results_figs/allyear_limit_t2tt_138.pdf}{t2tt run2}{fig:limt2tt}
 
@@ -31,7 +31,48 @@ This search is designed to be generically sensitive to SUSY with an emphasis com
 \FigOne{Results_figs/can_dM2_WW.pdf}{ww 17}{fig:limtchiww}
 
 \section{Model Dependent Interpretation}
-The TChiWZ limits from the previous section use a simplified model which is described in Chapter 1 section ?. The decay kinematics for the MC use a flat matrix element meaning the W and Z boson 3 body decays are uniform in phase space. However, it is well known that the 3 body decays are model dependent and can by categorized into two distinct scenarios that correspond to the sign of the eigenstates of the neutralino mass matrix. The two eigenstates 
+The TChiWZ limits from the previous section use a simplified model which is described in Chapter 1. The decay kinematics for the MC use a flat matrix element which results in  W and Z boson 3 body uniform phase space decays. However, the nature of the 3 body decays depend on the sign of the eigenstates of the neutralino mass matrix. A reweighting of events in the simplified TChiWZ model is performed to assess the difference in kinematics in the Z decay. This has been performed by other analyses in ATLAS and CMS \cite{cms1}\cite{alts} but are restricted to $Z(\rightarrow \ ell\ell)$ topologies. We extend this reweighting strategy to the more general case of di-fermion pairs where sparticle A undergoes a three body decay to a di fermion pair indexed $1:f$ and $2:\bar{f}$ and sparticle B indexed as particle 3 
+\begin{equation}
+\label{eq:3bd}
+N_A \rightarrow f \bar{f} N_B
+\end{equation}
+The expression for the matrix equation \ref{eq:3bd} uses a phase space parameterization $x,y,z$ according to \cite{Nojiri:1999ki} from which one can derive an expression for the partial width 
+\begin{equation}
+\label{eq:dgam}
+\frac{d\Gamma^\pm}{xy}\sim \frac{(1-x)(x-r_B^2)+(1-y)(y-r_B^2)\pm 2|r_B|z}{(z-r_z^2)^2}
+\end{equation}
+where the $x,y,z$ can be represented by mass ratios
+\begin{equation}
+\begin{split}
+x=(m_{23}/m_A)^2 \\
+y=(m_{31}/m_A)^2 \\
+z=(m_{21}/m_A)^2 
+\end{split}
+\end{equation} 
+and the $r$ parameters represent mass ratios of particle B or Z mass with particle A
+\begin{equation}
+\begin{split}
+r_B = m_B/m_A \\
+r_Z = m_Z/m_A 
+\end{split}
+\end{equation}
+By separately sampling the $x,y,z$ space from in both scenarios from \ref{eq:dgam} along the allowed boundaries in equation \ref{eq:bounds}
+\begin{equation}
+\label{eq:bound}
+r_B^2 \leq x \leq 1 \\
+r_B^2 \leq x \leq 1 \\
+z(xy-r_B^2) \geq 0
+\end{equation}
+we can generate the four mometum of all particles in the 3 body decay according to the two eigenstates cases denoted opposite sign OS and same sign SS. From the model dependent set of four momenta a weight can be calculated which maps the original phase space simplified model to the OS or SS case. The example dalitz distributions which fully describe the differences in Z decays in terms of $x$ and $z$ is shown in Figure \ref{fig:dalizplot} which use a TChiWZ sample with $m_A = 300$ GeV and $m_B= 270$ GeV.
 
+\FigThree{Results_figs/ThreeBody-PS.png}{Results_figs/ThreeBody-OS.png}{Results_figs/ThreeBody-SS.png}{dalitz plots}{fig:dalitzplot}
+
+The relative differences in the final state kinematics for each model is shown in Figure \ref{fig:rwt} which uses the same TChiWZ masses as Figure \ref{fig:dalitzplot}.
+
+\FigTwo{Results_figs/DifermionMass.png}{Results_figs/Plot1DpNeutralino.png}{mll and p}{fig:rwt}
+
+The resulting limits for the new model dependent cases are shown in Figure \ref{fig:rwtlim}. The exclusion boundary between the two model dependent cases are similar but the OS scenario is able to exclude higher masses likely due to the momentum enhancement of $N_A$ which produces a larger missing momentum signature.
+
+\FigTwo{Results_figs/OS16_lim.pdf}{Results_figs/SS16_lim.pdf}{rwt lims}{fig:rwtlim}
 
 \section{Summary}
