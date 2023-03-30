@@ -76,7 +76,15 @@
 \newcommand\FigOne[3]{%
 \begin{figure}[!htbp]%
 \centering
-\includegraphics[width=0.5\textwidth]{fig/#1}\hfill
+\includegraphics[width=0.6\textwidth]{fig/#1}\hfill
+\caption{#2}
+\label{#3}
+\end{figure}}
+
+\newcommand\FigOneScale[4]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=#4\textwidth]{fig/#1}\hfill
 \caption{#2}
 \label{#3}
 \end{figure}}
@@ -90,7 +98,14 @@
 \label{#4}
 \end{figure}}
 
-
+\newcommand\FigTwoScale[6]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=#5\textwidth]{fig/#1}
+\includegraphics[width=#6\textwidth]{fig/#2}\hfill
+\caption{#3}
+\label{#4}
+\end{figure}}
 
 \newcommand\FigThree[5]{%
 \begin{figure}[!htbp]%
@@ -98,6 +113,16 @@
 \includegraphics[width=0.45\textwidth]{fig/#1}
 \includegraphics[width=0.45\textwidth]{fig/#2}\hfill
 \includegraphics[width=0.45\textwidth]{fig/#3}\hfill
+\caption{#4}
+\label{#5}
+\end{figure}}
+
+\newcommand\FigThreeScale[8]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=#6\textwidth]{fig/#1}
+\includegraphics[width=#7\textwidth]{fig/#2}\hfill
+\includegraphics[width=#8\textwidth]{fig/#3}\hfill
 \caption{#4}
 \label{#5}
 \end{figure}}
@@ -112,6 +137,19 @@
 \includegraphics[width=0.45\textwidth]{fig/#4}\hfill
 \caption{#5}
 \label{#6}
+\end{figure}}
+
+
+\newcommand\FigFive[7]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=0.45\textwidth]{fig/#1}
+\includegraphics[width=0.45\textwidth]{fig/#2}\hfill
+\includegraphics[width=0.45\textwidth]{fig/#3}
+\includegraphics[width=0.45\textwidth]{fig/#4}\hfill
+\includegraphics[width=0.45\textwidth]{fig/#5}\hfill
+\caption{#6}
+\label{#7}
 \end{figure}}
 %%% END FUNC
 
@@ -140,7 +178,7 @@
 %% for as many as 7 members, with various roles/titles.
 %% It is required to have 7 entries, even if some are empty for committee and role
 \committee{Graham Wilson}{Alice Bean}{Christopher Rogan}{Ian Lewis}{Zsolt Talata}{}{}
-\role{Chairperson}{Co-Chair}{}{}{External Reviewer}{}{}
+\role{Chairperson}{}{}{}{External Reviewer}{}{}
 %At Most 7 members allowed, last here is blank on purpose to demonstrate
 %flexibility
 
@@ -194,13 +232,13 @@ Thanks everybody
 
 \end{romanpages}
 
-\include{Chapter_Theory/theory}
+%\include{Chapter_Theory/theory}
 
 %\include{Chapter_Motivation/motivation}
 
 %\include{Chapter_Detector/detector}
 
-%\include{Chapter_RJR/RJR}
+\include{Chapter_RJR/RJR}
 
 %\include{Chapter_Analysis/Analysis}
 
