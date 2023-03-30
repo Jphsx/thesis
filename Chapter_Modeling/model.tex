@@ -162,7 +162,8 @@ global & DB & free floating \\
 \end{table}
 
 \begin{table}
-\caption{fakes}
+\centering
+\caption{The nuisances associated to fake leptons. The global or silver or bronze rates are split between MC matched source of either Heavy flavor or Light flavor. The shape systematics are applied per lepton and S-jet combinations but combine HF/LF sources and split by flavor only.}
 \begin{tabular}{ccc}
 
 Category Mapping & Process Mapping & Parameter Details \\ 
@@ -185,7 +186,8 @@ per $(N_\ell^S,N_{jet}^S)$ & $(e,\mu)\times(R_{ISR}^{shape}, M_\perp^{shape})$ &
 
 
 \begin{table}
-\caption{svs}
+\centering
+\caption{The set of nuisances associated to the categories that involve tagged SVs. The SV counting rates are mapped globally to every bin and the kinematic $\eta$ separation is split between SVs associated with tt+jets versus SVs associated with anything else.}
 \begin{tabular}{cc}
 Category mapping & process mapping \\ 
 \hline 
@@ -204,7 +206,8 @@ $|\eta_{SV}^f|$ & other \\
 \end{table}
 
 \begin{table}
-\caption{other stuff}
+\centering
+\caption{Additional secondary systematics which account for various scale factors or systematic effects of jet reconstruction and clustering.  The nuisances with a (*) are not currently implemented but will be added in later in the final model. }
 \begin{tabular}{|c|c|}
 \hline 
 Systematic Source and Scale Factors & Parameter Type \\ 
@@ -231,7 +234,7 @@ The background process hierarchy hinted at from Table \ref{tab:procnuisance} is 
 
 For example: The root factor for W+jets is 1L 0J, chosen because it is $14\%$ of the total process yield and $93\%$ of the total background for that particular region. 0L 2J, 1L 1J, and 1L 2J have comparable stats with up to $20\%$ more events in 1L 1J but with a loss of at least $20\%$ in terms of purity or the W+jets proportion to other backgrounds. The $\theta^{Wjets}_{1L, 0J}$ ``root" scale factor maps to every analysis bin for the W+jets process and governs the overall rate. This means that the root factor is multiplied against every other scale factor in each lepton multiplicity. An example "low level" parameter would be $\theta^{Wjets}_{1L, 4J}$, which is multiplied by $\theta^{Wjets}_{1L, 0J}\theta^{Wjets}_{1L, 1J}\theta^{Wjets}_{1L ,2J}\theta^{Wjets}_{1L, 3J}$ whenever it is applied to a process, which means the rate reported for this parameter is relative to each preceding nuisance at a higher level in the hierarchy.  A similar hierarchial parameterization is evaluated for tt+jets, and both hierarchy trees are shown in Figure \ref{fig:hierarchytree}. The 0L hierarchy for W+jets is special, due to very high correlations with the ZDY process from the similarities between $W$ and Z$\nu\nu$ decays. Here, the process mapping combines the backgrounds ZDY and W+jets while the ZDY,DB factor for 0L has been removed. s.
 %hier diagrams
-\FigTwo{Model_figs/wjets_hierarchy.png}{Model_figs/ttbar_hierarchy.png}{hierarchy}{fig:hier}
+\FigTwoScale{Model_figs/wjets_hierarchy.png}{Model_figs/ttbar_hierarchy.png}{Pair of k-nary trees that illustrate the hierarchical organization of background rates for W+jets and tt+jets.}{fig:hier}{0.49}{0.49}
 %end hierarchy
 
 \section{Development of Modeling Systematics}
@@ -251,19 +254,19 @@ The optimization of each group of systematics was conducted over CR fits to 2016
 The consequence of the poisson treatment is that the z-score significance is reduced in low statistics cases where $O>E$ and increased in cases with $O<E$ this is due to the asymmetery in the poisson distribution with a long tail tending to higher values. Example pull distributions that compare the early fit model with the most complete model are shown in Figure Z. Comparisons of the same complete model with and withouth the poisson treatment is shown. The progression of the fit model's likelihood and the impact of the different groups of nuisances is summarized Figure Z with accompanied Table T with brief descriptions of the evolution of each fit configuration. 
  
 %build 62 no poisson vs build 62 w/ poisson
-\FigTwo{Model_figs/build62_pull_run2_nopoisson.pdf}{Model_figs/build62_pull_run2_poisson.pdf}{Build 62 poisson treatement}{fig:comparePoissonPull}
+\FigTwoScale{Model_figs/build62_pull_run2_nopoisson.pdf}{Model_figs/build62_pull_run2_poisson.pdf}{Comparison of Run II CR fits with Build 62 of \ref{tab:builds} without Poisson treatment (left) and with Poisson treatment (right). The improvement by implementing is the Poisson treatment shown in the RMS and fitted $\sigma$ of the right distribution by reducing the number of large outliers due to bins with low statistics. }{fig:comparePoissonPull}{0.49}{0.49}
  
 %build 8 pull with last 16 build no poisson\
-\FigTwo{Model_figs/build8_pull_2016.pdf}{Model_figs/build62_pull_2016.pdf}{left Build 8 vs Build 62 2016 }{fig:compareBuildPull}
+\FigTwoScale{Model_figs/build8_pull_2016.pdf}{Model_figs/build62_pull_2016.pdf}{A comparison of the Poisson corrected builds from \ref{tab:builds} with the first Build 8 on the left and the final Build 62 on the right. Both distributions use only 2016 data and MC scaled to 138 fb$^{-1}$. }{fig:compareBuildPull}{0.49}{0.49}
 
 
 
 %plot of likelihoods
-\FigOne{Model_figs/likelihood_progress.pdf}{like for 2016 builds}{fig:likes}
+\FigOneScale{Model_figs/likelihood_progress.pdf}{The progression of the CR fit log likelihood following the model version milestones listed in the Build Table \ref{tab:builds}.}{fig:likes}{0.6}
 
 %table of builds
 \begin{table}
-\caption{table}
+\caption{Listing of all the model verison milestones with a brief description of each build, its Id number and number of nuisances. }
 \begin{tabular}{ll}
 \hline 
 Build 8 & N Nuisances = 186 \\ 
@@ -303,7 +306,7 @@ Build 37 & N Nuisances = 209 \\
 \hline 
 Build 62 & N Nuisances = 227 \\
 \hline
- & \makecell[l]{Reworked b-tagging parameters to include process splittng from Table \ref{tab:btagnuisance}. \\ This build reflects the final configuration of all previously described nuisances \\ and those implemented from Table \ref{tab:othernuisance}. } \\
+ & \makecell[l]{Reworked b-tagging parameters to include process splitting from Table \ref{tab:btagnuisance}. \\ This build reflects the final configuration of all previously described nuisances \\ and those implemented from Table \ref{tab:othernuisance}. } \\
 \end{tabular} 
 \label{tab:builds}
 \end{table}
@@ -312,24 +315,24 @@ The results of the control region fit and the control region plus validation reg
 
 %0L jet split plot
 %1L 2L 3L
-\FigFour{Model_figs/0L_S_Summary.pdf}{Model_figs/1L_J_Summary_fakesIncl_b-fit.pdf}{Model_figs/2L_GSBJ_b-fit.pdf}{Model_figs/3L_Summary_fakesIncl_b-fit}{summary plots}{fig:crsummary}
+\FigFour{Model_figs/0L_S_Summary.pdf}{Model_figs/1L_J_Summary_fakesIncl_b-fit.pdf}{Model_figs/2L_GSBJ_b-fit.pdf}{Model_figs/3L_Summary_fakesIncl_b-fit}{CR post-fit summary plots split by number of S-jets for each lepton  multiplicity. The bottom two figures for 2 lepton and 3 lepton selections include both jet or quality and jet or lepton category respectively. The two included types of splitting in 2 and 3 lepton are not mutually exclusive.}{fig:crsummary}
 
-\FigTwo{Model_figs/1L_G_0J_ChargeSep_fakesIncl_b-fit.pdf}{Model_figs/0L_3J_PTISRgamT_fakesIncl_b-fit.pdf}{wjets example and kinematic}{fig:crprockin}
+\FigTwoScale{Model_figs/1L_G_0J_ChargeSep_fakesIncl_b-fit.pdf}{Model_figs/0L_3J_PTISRgamT_fakesIncl_b-fit.pdf}{CR post-fit summary plots with the category associated with the root factor of W+jets (left) and a 0 lepton selection splitting by kinematic categories $p_T^{ISR}$ and $\gamma_\perp$ (right).}{fig:crprockin}{0.49}{0.49}
 
-\FigTwo{Model_figs/2L_Cat_Summary.pdf}{Model_figs/2L_B_2J_DefaultPlot_b-fit}{2L fakes and lep cat}{fig:cr2lsummary}
+\FigTwoScale{Model_figs/2L_Cat_Summary.pdf}{Model_figs/2L_B_2J_DefaultPlot_b-fit}{CR post-fit summary plots demonstrating the effects on 2 leptons which are split by lepton categories (left) or a Bronze only region which is strongly associated with lepton fake factors (right).}{fig:cr2lsummary}{0.49}{0.49}
 
-\FigTwo{Model_figs/1L_G_4J_DefaultPlot_fakesIncl_b-fit.pdf}{Model_figs/SV_Summary.pdf}{btag and sv}{fig:crbtagsummary}
+\FigTwoScale{Model_figs/1L_G_4J_DefaultPlot_fakesIncl_b-fit.pdf}{Model_figs/SV_Summary.pdf}{CR post-fit summary examples which show the agreement of data to the fitted background model for b-tagging and SV categories.}{fig:crbtagsummary}{0.49}{0.49}
 
 
 In addition to the control region only fit, a control region combined with the validation region fit was performed. This fit uses the final systematic configuration but excludes the fake shapse. Fake shapes are excluded due to the implementation requiring consisting binning across gold, silver, and bronze. In the case of the appended validation region there are more bronze bins, because the cover the entire $R_{ISR}$ range, than silver or gold bins. This CR+VR fit result is reasonable but has apparent systematic mismodeling from the removal of fake shapes.  To accomodate this a bronze only fit is performed. This fit includes only the bronze regions for each lepton multiplicity and includes the complete set of systematics. Example results are shown in Figure X which show excellent modeling in high $R_{ISR}$ regions.
 
 %bronze only fit
-\FigTwo{Model_figs/1L_B_0J_b-fit.pdf}{Model_figs/2L_B_2J_b-fit.pdf}{bronze only}{fig:crvrsummary}
+\FigTwo{Model_figs/1L_B_0J_b-fit.pdf}{Model_figs/2L_B_2J_b-fit.pdf}{The Bronze only category fit with fake dominated 1 lepton and 2 lepton bronze categories.}{fig:crvrsummary}
 \section{Bias tests}
 
 One possible danger of having two many degrees in the fit model is that the model would be too flexible and fit away potential signal. To test for this we perform and ensemble of pseudeoexperiments with and without signal injection to test if the fit model recovers the correct hypothesis.  If the fit is unbiased and sensitive to various signals then the signal strenth parameter or POI should be evaluated as $r=0$ in the case of no signal injection and $r=1$ when signal is injected.  These hypothesis are tested by generating observed data in each bin centered on the MC expectation, the MC is fit to data and the POI is extracted. This pseudo experiment was performed with a handful of points around the edge of the mass asymptotic limits for T2tt, TChiWZ, and TSlepSlep. The results are shown in Figure \ref{fig:biasstudy} where we see no bias in the fit, and the recovery of the correct hypothesis. Overall this means that the final configuration of nuisances does not fit away potential signal and is sensitive to discovery.
 
-\FigThree{Model_figs/T2tt_7500670_r0_r1.pdf}{Model_figs/TChiWZ_3250315_r0_r1.pdf}{Model_figs/TSlepSlep_2500245_r0_r1.pdf}{signal injection and bias}{fig:biasstudy}
+\FigThreeScale{Model_figs/T2tt_7500670_r0_r1.pdf}{Model_figs/TChiWZ_3250315_r0_r1.pdf}{Model_figs/TSlepSlep_2500245_r0_r1.pdf}{Signal injection and bias test for three different signal grid points. The top left is T2tt with $m_{\tilde{t}}=750$ and $m_{\tilde{\chi}_1^0}=670$. The top right is TChiWZ with $m_{\tilde{\chi}_2^0}=325$ and $m_{\tilde{\chi}_1^0}=315$. The bottom figure uses TSlepSlep with $m_{\tilde{\ell}}=250$ and $m_{\tilde{\chi}_1^0}=245$ \textit{Source R. Salvatico} \cite{AN}}{fig:biasstudy}{0.49}{0.49}{0.49}
  
 
 

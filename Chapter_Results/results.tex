@@ -18,17 +18,23 @@
 
 \section{Asymptotic Limits}
 
-This search is designed to be generically sensitive to SUSY with an emphasis compressed scenarios. The consequence is sensitive to a wide variety of models and final states, so, we present upper exlusion limits on the cross sections for stop, electroweakino, and slepton processes. The results use the full Run II dataset alongside the full SM MC background which is combined with the data driven fit model described in the previous chapter. The limits are calculated using the asypmtotic method for profile-likelihood test statistic \cite{Cowan:2010js}.
+This search is designed to be generically sensitive to SUSY with an emphasis compressed scenarios. The consequence is sensitive to a wide variety of models and final states, so, we present upper exclusion limits on the cross sections for stop, electroweakino, and slepton processes. The results use the full Run II dataset alongside the full SM MC background which is combined with the data driven fit model described in the previous chapter. The limits are calculated using the asypmtotic method for profile-likelihood test statistic \cite{Cowan:2010js}.
 
-\FigOne{Results_figs/allyear_limit_t2tt_138.pdf}{t2tt run2}{fig:limt2tt}
+\FigOneScale{Results_figs/allyear_limit_t2tt_138.pdf}{Run II expected cross section upper limits for di stop production, T2tt, excluding stop masses to the left of the 95\% CL line. }{fig:limt2tt}{0.6}
 
-\FigOne{Results_figs/allyear_limit_tchiwz_138.pdf}{tchiwz run2}{fig:limtchiwz}
+\FigOneScale{Results_figs/T2bW_dm_xs_LV1.pdf}{Run II equivalent expected cross section upper limits for di stop production with an intermediate chargino, T2bW. The MC uses the 2016 samples with 2016 luminosity and 2017 samples scaled to the combined 2017 and 2018 integrated luminosity. The chargino mass is assumed to be halfway between the LSP and stop mass for each grid point.}{fig:limt2bw}{0.58}
 
-\FigOne{Results_figs/allyear_limit_tslepslep_138.pdf}{tslep run2}{fig:limslep}
 
-\FigOne{Results_figs/T2bW_dm_xs_LV1.pdf}{t2bw 17}{fig:limt2bw}
+\FigOneScale{Results_figs/allyear_limit_tchiwz_138.pdf}{Run II expected cross section upper limits for Neutralino and Chargino production, TChiWZ, which excludes chargino masses to the left of the line with a 95\% CL. Shown as a function of the chargino mass and chagino-LSP mass difference. Simplified model uses the Wino-like cross-section and assumes that the initial sparticle pair are mass degenerate $m_{\tilde{\chi}_2^0}=m_{\tilde{\chi}_1^\pm}$}{fig:limtchiwz}{0.58}
 
-\FigOne{Results_figs/can_dM2_WW.pdf}{ww 17}{fig:limtchiww}
+\FigOneScale{Results_figs/can_dM2_WW.pdf}{2017 expected cross section upper limits which is scaled to the full Run II integrated luminosity 138 fb$^{-1}$ for Chargino pairs decaying to a oppositely signed W boson pair. Excludes chargino masses to the left of the line with 95\% CL. Limits are based on a sample which is filtered to purely leptonic decays. }{fig:limtchiww}{0.58}
+
+
+\FigOneScale{Results_figs/allyear_limit_tslepslep_138.pdf}{Run II expected cross section upper limits that exclude slepton masses to the left of the line at a 95\% CL. Shown as a function of slepton mass and slepton-LSP mass splitting. The L/R indicates the super partners of the SM left or right handed partner which are assumed to be degenerate}{fig:limslep}{0.58}
+
+
+
+\FloatBarrier
 
 \section{Model Dependent Interpretation}
 The TChiWZ limits from the previous section use a simplified model which is described in Chapter 1. The decay kinematics for the MC use a flat matrix element which results in  W and Z boson 3 body uniform phase space decays. However, the nature of the 3 body decays depend on the sign of the eigenstates of the neutralino mass matrix. A reweighting of events in the simplified TChiWZ model is performed to assess the difference in kinematics in the Z decay. This has been performed by other analyses in ATLAS and CMS \cite{cms1}\cite{alts} but are restricted to $Z(\rightarrow \ ell\ell)$ topologies. We extend this reweighting strategy to the more general case of di-fermion pairs where sparticle A undergoes a three body decay to a di fermion pair indexed $1:f$ and $2:\bar{f}$ and sparticle B indexed as particle 3 
@@ -65,14 +71,14 @@ z(xy-r_B^2) \geq 0
 \end{equation}
 we can generate the four mometum of all particles in the 3 body decay according to the two eigenstates cases denoted opposite sign OS and same sign SS. From the model dependent set of four momenta a weight can be calculated which maps the original phase space simplified model to the OS or SS case. The example dalitz distributions which fully describe the differences in Z decays in terms of $x$ and $z$ is shown in Figure \ref{fig:dalizplot} which use a TChiWZ sample with $m_A = 300$ GeV and $m_B= 270$ GeV.
 
-\FigThree{Results_figs/ThreeBody-PS.png}{Results_figs/ThreeBody-OS.png}{Results_figs/ThreeBody-SS.png}{dalitz plots}{fig:dalitzplot}
+\FigThree{Results_figs/ThreeBody-PS.png}{Results_figs/ThreeBody-OS.png}{Results_figs/ThreeBody-SS.png}{Dalitz distributions of the phase space parameters x and z. Compares the uniform phase space simplified model against the model dependent scenarios OS and SS which distribute the four momenta of the decay components differently. }{fig:dalitzplot}
 
 The relative differences in the final state kinematics for each model is shown in Figure \ref{fig:rwt} which uses the same TChiWZ masses as Figure \ref{fig:dalitzplot}.
 
-\FigTwo{Results_figs/DifermionMass.png}{Results_figs/Plot1DpNeutralino.png}{mll and p}{fig:rwt}
+\FigTwoScale{Results_figs/DifermionMass.png}{Results_figs/Plot1DpNeutralino.png}{The reweighted difermion invariant masses (left) and an illustration of the momentum partioning for each reweighting scenario (right)}{fig:rwt}{0.49}{0.49}
 
 The resulting limits for the new model dependent cases are shown in Figure \ref{fig:rwtlim}. The exclusion boundary between the two model dependent cases are similar but the OS scenario is able to exclude higher masses likely due to the momentum enhancement of $N_A$ which produces a larger missing momentum signature.
 
-\FigTwo{Results_figs/OS16_lim.pdf}{Results_figs/SS16_lim.pdf}{rwt lims}{fig:rwtlim}
+\FigTwo{Results_figs/OS16_lim.pdf}{Results_figs/SS16_lim.pdf}{The expected cross section upper limits for 2016 MC scaled to 138 fb$^{-1}$. Compares the SS reweighting (left) and OS reweighting (right). }{fig:rwtlim}
 
 \section{Summary}
