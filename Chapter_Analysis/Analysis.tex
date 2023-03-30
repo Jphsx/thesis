@@ -28,7 +28,7 @@ The analysis invovles the full Run II dataset which is divided into three subset
 %insert bg list and description
 \begin{table}
 \label{tab:bkgsigtab}
-\caption{table caption}
+\caption{Labels for SM background aggregation and relevant signal processes with their CMS shorthand labeling.}
 \begin{tabular}{c|c}
 \hline 
 Bkg. Label & Bkg. Composition \\ 
@@ -50,6 +50,7 @@ Signal Label & Signal Composition \\
 \hline
 \hline
 T2tt & $pp \rightarrow \tilde{t} \tilde{\bar{t}}; \, \, \tilde{t}\rightarrow t \tilde{\chi}_1^0$ \\
+T2bW & $pp \rightarrow \tilde{t} \tilde{\bar{t}}; \, \, \tilde{t}\rightarrow b \tilde{\chi}_1^\pm; \, \, \tilde{\chi}_1^\pm \rightarrow W^\pm \tilde{\chi}^0_1$ \\
 TChiWZ & $pp\rightarrow \tilde{\chi}_2^0 \tilde{\chi}_1^\pm; \, \, \tilde{\chi}_2^0 \rightarrow Z \tilde{\chi}^0_1; \, \, \tilde{\chi}_1^\pm \rightarrow W^\pm \tilde{\chi}^0_1$ \\
 TSlepSlep & $pp\rightarrow \tilde{\ell} \tilde{\ell}; \, \, \tilde{\ell} \rightarrow \ell \tilde{\chi}^0_1$ \\
 TChipmWW & $pp\rightarrow \tilde{\chi}_1^\pm \tilde{\chi}_1^\mp; \, \,  \tilde{\chi}_1^\pm \rightarrow W^\pm \tilde{\chi}^0_1$  \\
@@ -59,7 +60,7 @@ TChipmWW & $pp\rightarrow \tilde{\chi}_1^\pm \tilde{\chi}_1^\mp; \, \,  \tilde{\
 The signals that will be addressed in this work include mutiple different sparticles and final states, which also will include multiple interpretation of their analysis results. A list of the signals is provided in table y. Each signal is produced according to an (LSP,NLSP) mass grid for each year.  The raw number of events per mass points and grid spacings for the signals shown in table \ref{tab:bkgsigtab} are displayed in Figure \ref{fig:grids} with all years combined. 
 
 %insert signal list and description
-\FigFour{Analysis_figs/T2tt_EventCount.pdf}{Analysis_figs/TChiWZ_EventCount.pdf}{Analysis_figs/TSlepSlep_EventCount.pdf}{Analysis_figs/TChipmWW_EventCount.pdf}{grids}{fig:grids}
+\FigFour{Analysis_figs/T2tt_EventCount.pdf}{Analysis_figs/TChiWZ_EventCount.pdf}{Analysis_figs/TSlepSlep_EventCount.pdf}{Analysis_figs/TChipmWW_EventCount.pdf}{Mass grids and associated numbers of events per grid point for each the SUSY processes T2tt, T2bW, TChiWZ, TChipmWW}{fig:grids}
 
 The majority of signal and backgrounds use the MadGraph \cite{Alwall:2011uj} generator to model at LO and NLO. The ST backgrounds use PowHEG 2.0 \cite{Alioli:2010xd} to model at NLO. Parton shower and fragmentaion for all samples is done with PYTHIA 8 \cite{Sjostrand:2014zea}. Each year is subjected to an underlying event tunes with CUETP8M1 for 2016, CP2 for 2017 and 2018 signals and CP5, for 2017 and 2018 backgrounds \cite{CMS:2015wcf}\cite{CMS:2019csb}. The detector conditions and response are simulated for all samples with GEANT4 \cite{GEANT4:2002zbu}.
  
@@ -71,11 +72,13 @@ p_T^{MISS} = -\sum{p_T^{VIS}}
 PFMHT is expected to trigger on events with significant jet activity and multiplicity which are likely candidates for ISR events.  In general, the compressed SUSY topology is are somewhat rare organization of an event, due to the uncommon nature of these types of events the MC modeling does not always sufficiently and precisely describe data, so,  a data driven approach is utilized for physics objects to compensate for any disagreement. This approach compares the overall efficiency or behavior of selected objects and computes data driven scale factors, while also providing a platform to model and understand systematic effects. These calibrations are then applied to MC to bring data and MC into agreement. The instance of Scale factor generation arises in the modeling of the efficiencies of the trigger turn ons, with efficiency defined as events that pass the trigger and preselection versus only preselection. The comparisons of data with  which is shown in Figure \ref{fig:metsf} with the efficiency shapes modeled by a Gaussian CDF.  
 
 %insert trigger turn ons
-\FigOne{Analysis_figs/SF_Plot_HT-Le600--SingleMuontrigger-E1--Nmu-E1_SingleMuon_2016.pdf}{met trig sf}{fig:metsf}
+\FigOneScale{Analysis_figs/SF_Plot_HT-Le600--SingleMuontrigger-E1--Nmu-E1_SingleMuon_2016.pdf}{Example MET trigger efficiency comparison for Single Muon triggers between data and MC \textit{Source: Z. Flowers} \cite{AN}}{fig:metsf}{0.75}
 
-The aforementioned pre selection which is a set of carefully studied criteria to remove background and mismodeled events as well as select events with objects that are expected to populated targeted final states. The pre selection consists of the criteria listed in the following Table Z:
+The aforementioned pre selection which is a set of carefully studied criteria to remove background and mismodeled events as well as select events with objects that are expected to populated targeted final states. The pre selection consists of the criteria listed in the following Table \ref{tab:presel} which also introduces three quantites $p_T^{\text{CM}}$ which is the vectoral sum of the transverse momentum of the CM frame, $\Delta \phi_{\vec{p}_T^{miss}, V}$ the angle between the visible and invisble system, and $\Delta\phi_{CM,I}$ the angle between $p_T^{\text{CM}}$ and the invisible system.
 
 %insert preselection table  
+\begin{table}
+\caption{Kinematic and combinitorial event requirements.}
 \begin{tabular}{c|c}
 \hline 
 \multicolumn{2}{|c|}{Preselection Requirements} \\ 
@@ -99,8 +102,10 @@ $p_T^{CM} < 200$  & Rejects mismodeled events \\
 veto $f(\Delta\phi_{CM,I}, p_T^{CM})$& 2D function to also reject mismodeled events - See Fig \ref{fig:cleancut}\\
 \hline 
 \end{tabular} \\
+\label{tab:presel}
+\end{table}
 
-\FigOne{Analysis_figs/cleaningCuts.pdf}{cleaning cuts}{fig:cleancut}
+\FigOneScale{Analysis_figs/cleaningCuts.pdf}{Cleaning cuts designed to veto events in the red regions with signifcantly large data to MC $R_{ISR}$ ratios. Combines a flat cut and veto based on 2D function of $p_T^{CM}$ and $\Delta\phi_{CM,I}$  \textit{Source: Z. Flowers} \cite{AN}}{fig:cleancut}{0.75}
 
 The pre selection forms the basis for an event to be analyzed. Following preselection, the physics objects can be selected, classified, and categorized. The possible object composition can consist of jets, b-tagged jets, soft secondary vertices (SVs), and leptons. The discussion of the leptons and their classification will be reserved for the following chapter alongside the calculation of lepton scale factors. A summary of these physics objects and their kinematic requirements are listed in the following Table X. The jets are clustered with the anti-kt algorithm and $\Delta R = 0.4$ \cite{Cacciari:2008gp} the jet selection involves working points (WP) defined by their physics object group and are standard objects used in CMS physics analysis \cite{CMS:2010xta}. The b-tagging is done by a DeepJet \cite{Stoye:2018qgr} which only identifies b-jets down to 20 GeV. SV's above 20 GeV are tagged using Inclusive secondary Vertex Finder \cite{CMS:2011yuk}. A complementary SV tagger was developed which efficiently extend the b-tagging range down to 2 GeV for final state topology with very soft b-jets \cite{erich}.
 
@@ -108,7 +113,7 @@ The pre selection forms the basis for an event to be analyzed. Following presele
 \begin{table}
 \centering
 \label{tab:physicsobjects}
-\caption{table caption2}
+\caption{Kinematic requirements and working points for visible physics objects.}
 \begin{tabular}{c|c}
 \hline 
 \multicolumn{2}{c}{Visible Physics Objects} \\ 
@@ -128,13 +133,13 @@ Leptons & \makecell{Very Loose ID \\ $p_T^{\mu^\pm} > 3$ GeV \\ $p_T^{e^\pm} > 5
 \section{Categorization}
 
 Once an event passes all the preselection and the objects are classified, the event is then categorized based on object composition, object multplicity, and kinematic characteristics. The goal of categorization is to finely split up background and create generically sensitive regions for any type of signal. The regions where signal are not localized, function as control regions which can constrain the back ground prediction in the sensitive regions. The most fundamental categories for the analysis are the lepton and jet multiplicites, events can contain either 0,1,2, or 3 leptons and accompanied by a range of sparticle system jets (S jets) from $0\geq N_{S_{jet}} \geq 5$ where the upper limit of jet S jet counting is dependent on the lepton multiplicity. The type of jets are also counted i.e. whether or not any of the present jets have been tagged as b-jets. The b-jet counting is dependent on the system and lepton multiplicity - ISR jets can have 0 or $\geq 1$ b-jets and the S system can be composed of 0, 1, or $\geq2$ b-jets. SV tagging is similar but SVs are not counted in the ISR system. Events with SVs are special, however, wheret the SV can be further classified based on its direction, central or forward. The counting of b-jets and SVs are very important because these create categories that isolate tt+jets and stop signals with the presence of b-jets and similarly regions are created with the absence of b-jets that isolate backgrounds like w+jets and signals like TChiWZ. The benefit of both regions is that they can cross-constrain each other and is illustrated in Figure \ref{fig:bcount}, showing the presence and absence of tt+jets or W+jets backgrounds based on S system b-jet counting.
-\FigTwo{Analysis_figs/NbS_v_NbISR_0L_ttbar-gif-converted-to.pdf}{Analysis_figs/NbS_v_NbISR_1L_Wjets-gif-converted-to.pdf}{ttbar bjet count}{fig:bcount}
+\FigTwo{Analysis_figs/NbS_v_NbISR_0L_ttbar-gif-converted-to.pdf}{Analysis_figs/NbS_v_NbISR_1L_Wjets-gif-converted-to.pdf}{Example of relative background presence for tt+jets (left) and W+jets (right) with b-tag counting.}{fig:bcount}
 
-Aside from jet counting, there is further classification with leptons which includes flavor, charge, quality, and the presence or absence of an opposite sign same flavor Z candidate. The remaining classifications are the previously metioned complementary compressed kinematic observables $p_T^{ISR}$ and $\gamma_\perp$ where both have a high and low category.    The categorization does not include all possible combinations all aforementioned categorical labels but a subset of all possible combinations that reflects the available statistics and presence of backgrounds. A  table of the categorization is included in Table \ref{tab:cats}. 
+Aside from jet counting, there is further classification with leptons which includes flavor, charge, quality, and the presence or absence of an opposite sign same flavor Z candidate. The remaining classifications are the previously metioned complementary compressed kinematic observables $p_T^{ISR}$ and $\gamma_\perp$ where both have a high and low category.  The categorization does not include all possible combinations all aforementioned categorical labels but a subset of all possible combinations that reflects the available statistics and presence of backgrounds. A  table of the categorization is included in Table \ref{tab:cats}. 
 
 \begin{table}
 \label{tab:cats}
-\caption{cats, includes ptisr bin edges}
+\caption{Organization of categories across all lepton multiplicities. The bracketed jet ranges imply counting for all integer numbers of jets within the inclusively listed edges. The b-tag counting is limited based on the allowed number of jets in the category. The SV and $\gamma_\perp$ splitting indicates two categories or either forward and central $\eta$ or low and high respectively. The numbers listed in $p_T^{ISR}$ define the low $p_T^{ISR}$ category edges while the high $p_T^{ISR}$ bin is inclusive for everything above the low bin upper edge.}
 \begin{adjustwidth}{-0.7in}{-1in}
 
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
@@ -171,10 +176,11 @@ $N_\ell$ &  $\ell$ Type & $\ell$ Quality & $N_{jets}^{S}$ & $N_{b-tag}^{S}$ & $N
 
 
 Each category is then further divided into 2-D set of $(R_{ISR}, M_\perp)$ bins, where the number of bins and bin edges has been optimized for each combination of lepton and jet multiplicities. An example of binning of the sensitive variables for each lepton multiplicity is shown in Figure \ref{kinbin} and a full table of all binnings are included in Table X.
-\FigFour{Analysis_figs/0L_2J_totalBkg.png}{Analysis_figs/1L_G_1J_1sv_totalBkg.png}{Analysis_figs/2L_G_0J_totalBkg.png}{Analysis_figs/3L_B_1J_totalBkg.png}{example 2d binning}{fig:kinbin}
+\FigFour{Analysis_figs/0L_2J_totalBkg.png}{Analysis_figs/1L_G_1J_1sv_totalBkg.png}{Analysis_figs/2L_G_0J_totalBkg.png}{Analysis_figs/3L_B_1J_totalBkg.png}{The dotted lines show example 2D $R_{ISR}$ and $M_\perp$ binning for each lepton multiplicity with the full SM background.}{fig:kinbin}
 
 % insert RISR MP bins table here
 \begin{table}
+\caption{The complete set of $R_{ISR}$ and $M_\perp$ bin edges. A set of 2D bins have been designed for each allowed lepton and jet multiplicity.}
 \begin{adjustwidth}{-0.5in}{-1in}
 %\begin{singlespace}
 \begin{tabular}{c|cc|cc|cc|cc|}
@@ -226,4 +232,4 @@ $N_{jets}^S$ & $R_{ISR}$ & $M_\perp$ & $R_{ISR}$ & $M_\perp$ & $R_{ISR}$ & $M_\p
 Overall there are 392 categories and 3093 total bins, the category population is comprised of 84 categories from 0L, 178 categories from 1L, 115 categories from 2L, and 15 categories from 3L. The optimization of all the numberous bins and categories was a large undertaking and was performed using two statisical metrics: (1) The Cousins Z-binomial method \cite{Cousins_2008} which is a measure of the significance of the ratio of signal to background with some assumption on systematic error. (2)  Median asymptotic limit based on a profile likelihood ratio \cite{Cowan:2010js}, under signal and background hypotheses but where observed data is the nearest integer rounded MC model. Both metrics were tested with the presences of multiple signal types being either, stop, slepton, or electroweakino. The optimization efforts targeted $(R_{ISR}, M_\perp)$ number of bins and edges, the $p_T^{ISR}$ and $\gamma_\perp$ number of bins and edges. The categories and bins were also optimally consolidated to guarantee non zero expected background events in every bin. An example of this study is the flavor consolidation to 2L Z*/no Z 1J from previously flavor separated categories, in this instance the it was found that there were too few Z* candidates with electrons leading to pathologically improved limits due to nearly empty bins in the limit fit. Similarly 2L $\geq 3$ was reduced to $\geq 2$ to boost the statisitcs of high jet multiplicity events in 2L. An example limit comparison is illustrated in Figure \ref{fig:opto}.
 
 %1d limit
-\FigThree{Analysis_figs/optoTChiWZ.pdf}{Analysis_figs/TChiWZ_consol_opto.png}{Analysis_figs/T2bWopto.png}{Three optimization}{fig:opto}
+\FigThreeScale{Analysis_figs/optoTChiWZ.pdf}{Analysis_figs/TChiWZ_consol_opto.png}{Analysis_figs/T2bWopto.png}{Example internal optimization plots with the y-axis is the median asymptotic limit where smaller values indicate stronger exclusion of the signal grid points on the x-axis. The x-axis label conventions are $m_{NLSP}, m_{LSP}, m_{NLSP}-m_{LSP}$. The top distribution illustrates tests performed with TChiWZ $M_\perp$ bin edges and b combiniatorics. The middle distribution shows tests performed on TChiWZ with bin consolidation and jet multiplicity consolidation. The bottom distribution tests b-tag counting and $\gamma_T$ bin optimization on T2tt.  }{fig:opto}{0.7}{0.7}{0.7}
