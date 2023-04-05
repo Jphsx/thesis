@@ -71,37 +71,11 @@
 %\usepackage{babel}
 %\begin{document}
 
-\chapter{Letpon Selection and Efficiency Measurement}
+\chapter{Lepton Selection and Efficiency Measurement}
 
 %\begin{chapterabstract}
 %The Tag-and-Probe is a method used to measure the selection efficiencies of an object using data. In the context of this compressed SUSY %analysis, the Tag-and-probe measures the efficiencies separately of each light lepton($e/\mu$) selection critera. The total lepton selection %efficiency is then computed by combining factorized efficiency components. The same general method is used for both electrons and muons, %however, Muons utilize  the $J/\psi$ di-muon trigger which allow more precise efficiency measurements from data at lower $p_T$.
 %\end{chapterabstract}
-
-\section{Introduction and Methodology}
-An important element of a lepton based search is properly modeling the efficiency of selected leptons. A purely Monte-Carlo driven approach is inadequate in perfectly describing nuances in data due to imperfections in modeling. Instead of trying to model exactly all physics and detector effects with simulation, the efficiencies can be directly measured from data by using the Tag-and-Probe method. Then the efficiency ratio between data and MC can be used to multiply the MC as calibration to match data. 
-
-The Tag-and-Probe method is used to measure lepton selection criteria by using a well known resonance such as a $Z$, $J/\psi$, or $\Upsilon$ and counting the number of probes that pass that criteria. Each counted instance of the Tag-and-Probe consists of two selected leptons. One of the selected leptons is the tag and the other is the probe.  The tag passes tight selection requirement to give high confidence that it isn't a fake lepton. Fake leptons fall into two possible categories: reducible and irreducible. A reducible fake lepton is a particle that fakes the signature of a lepton such as a charged pion. An irreducible fake lepton is an actual lepton which coincidentally passes some selection criteria but is not the targeted leptons of interest e.g. an isolated muon from a jet accompanying a leptonic Z decay of interest.  The  second lepton in the Tag-and-Probe is the probe. The probe is subjected to the selection criteria whose efficiency is being measured. The invariant mass of the pair of leptons is calculated and required to fall within a defined range around the resonance. A particular event may have multiple lepton pairs but the tag and the probe are not allowed to switch positions and be counted twice, as double counting would lead to a bias in the efficiency measurement \cite{AN111-2009}. To avoid bias, the tag and probe are required to be the opposite charge and same flavor where the tag is randomly selected. If multiple same flavor lepton pairs occur in single event i.e. there are multiple probes to a single tag, the treatment for selecting the pairs differs between electrons and muons. There is no specific study which led to justifying the differing arbitration approaches in flavors, only that the choice reflects the default choices implemented in the existing code bases.  For muons, no arbitration is used, all pairs are utilized which means an additional pair not truly from the resonance will then contribute as combinitorial background in a single event. For electrons, only a single probe is selected per event which has the highest \pt. The selected probes can either pass or fail their selection which leads to the formation of three distributions, one with a passing probe, one with a failing probe, and one with all probes. An example of all three distributions is shown in Figure \ref{tnpexp}.  The probability of observing $k$ passing probes in $n$ Tag-and-Probe pair trials is dependent on the selection efficiency $\varepsilon$ and can be expressed as a likelihood from the binomial probabilty density $P(k|\varepsilon,n) = \binom{n}{k}\varepsilon^k(1-\varepsilon)^{n-k}$. The MLE estimator for efficiency is then the fraction of passing probes to the total number of pairs, or $\varepsilon = k/n$. Technical documentation for the Tag-and-Probe in CMS is scarce, but, an early strategy for fitting efficiency is defined in \cite{Berryhill_2010}. The legacy code base as of \url{CMSSW_10_6_X}  uses a binned maximum likelihood between the observed passing probes and failing probes where the efficiency extracted is an explicit fit parameter. The two simultaneously fit functions are:
-\begin{equation}
-	N^{\text{Pass}} = N_{\text{Total}} (\varepsilon \cdot f^{\text{sig}}_{\text{All}} ) +  \varepsilon_{\text{bkg}} \cdot (1-f^{\text{sig} }_{\text{All}}) )
-\end{equation} 
-\begin{equation}
-	N^{\text{Fail}} = N_{\text{Total}} ( (1-\varepsilon) \cdot f^{\text{sig}}_{\text{All}} +   (1-\varepsilon_{\text{bkg}}) \cdot (1-f^{\text{sig}}_{\text{All}}) )
-\end{equation}
-
-$N^{\text{Pass/Fail}}$ is the total number of observed probes that either pass or fail the selection criteria while $N_{\text{Total}}$ is the total number of Tag-and-Probe pairs.
-The binomial estimator for efficiency, $\varepsilon$, enters the fit functions as the first term but is accompanied by a second term that describes the background contribution with its own efficiency $\varepsilon_{\text{bkg}}$.  The term $f^{\text{sig}}_{\text{All}}$ is the fraction of background subtracted signal events over the allowed dilepton mass range.  $f^{\text{sig}}_{\text{All}}$ depends on the defined signal and background pdfs. The nominal pdfs chosen for reported fits uses a 5 parameter Voigtian+Voigtian signal model which share a common mean but use independent width parameters, in conjunction with an Exponential background model. 
-
-
-\FigureThree{PassingProbes_Med16_lowpt.png}{FailingProbes_Med16_lowpt.png}{AllProbes_Med16_lowpt.png}{Example Tag-and-Probe Z di-muon fits for passing,failing, and all probes with the Medium Id, $|\eta|<1.2$, and $p_T < 20$ GeV   }{tnpexp}
-
-
-
-%The distributions are fit simultaneously with a combined signal and background model. To extract the probe criteria efficiecy we divide the resonance distributions by the all probes distribution. The uncertainty on an efficiency is a combination of a statistical and systematic uncertainties. The systematic uncertainties are defined by repeating the simultaneous fit with varying mass windows, number of bins, and fit models and measuring the maximum spread of the central values.
-
-
-%The fit code is located here: \url{https://github.com/cms-sw/cmssw/blob/CMSSW_10_6_X/PhysicsTools/TagAndProbe/src/TagProbeFitter.cc} around line 600. confirm this with the fit model from the electron paper. \cite{Berryhill_2010}
-
-\FloatBarrier
 \section{Lepton Object Definitions}
 
 
@@ -173,6 +147,33 @@ The populations of different truth matched objects per quality are shown in Figu
 \FigureOne{sigEff_ele_TTJets_Fall17.pdf}{Gold, Silver, and Bronze efficiency on truth matched prompt electrons as signal and secondary electons as Fakes. \textit{Source A. Abreu} \cite{AN}}{andresEff}
 
 \FloatBarrier
+
+\section{Tag-and-Probe Methodology}
+An important element of a lepton based search is properly modeling the efficiency of selected leptons. A purely Monte-Carlo driven approach is inadequate in perfectly describing nuances in data due to imperfections in modeling. Instead of trying to model exactly all physics and detector effects with simulation, the efficiencies can be directly measured from data by using the Tag-and-Probe method. Then the efficiency ratio between data and MC can be used to multiply the MC as calibration to match data. 
+
+The Tag-and-Probe method is used to measure lepton selection criteria by using a well known resonance such as a $Z$, $J/\psi$, or $\Upsilon$ and counting the number of probes that pass that criteria. Each counted instance of the Tag-and-Probe consists of two selected leptons. One of the selected leptons is the tag and the other is the probe.  The tag passes tight selection requirement to give high confidence that it isn't a fake lepton. Fake leptons fall into two possible categories: reducible and irreducible. A reducible fake lepton is a particle that fakes the signature of a lepton such as a charged pion. An irreducible fake lepton is an actual lepton which coincidentally passes some selection criteria but is not the targeted leptons of interest e.g. an isolated muon from a jet accompanying a leptonic Z decay of interest.  The  second lepton in the Tag-and-Probe is the probe. The probe is subjected to the selection criteria whose efficiency is being measured. The invariant mass of the pair of leptons is calculated and required to fall within a defined range around the resonance. A particular event may have multiple lepton pairs but the tag and the probe are not allowed to switch positions and be counted twice, as double counting would lead to a bias in the efficiency measurement \cite{AN111-2009}. To avoid bias, the tag and probe are required to be the opposite charge and same flavor where the tag is randomly selected. If multiple same flavor lepton pairs occur in single event i.e. there are multiple probes to a single tag, the treatment for selecting the pairs differs between electrons and muons. There is no specific study which led to justifying the differing arbitration approaches in flavors, only that the choice reflects the default choices implemented in the existing code bases.  For muons, no arbitration is used, all pairs are utilized which means an additional pair not truly from the resonance will then contribute as combinitorial background in a single event. For electrons, only a single probe is selected per event which has the highest \pt. The selected probes can either pass or fail their selection which leads to the formation of three distributions, one with a passing probe, one with a failing probe, and one with all probes. An example of all three distributions is shown in Figure \ref{tnpexp}.  The probability of observing $k$ passing probes in $n$ Tag-and-Probe pair trials is dependent on the selection efficiency $\varepsilon$ and can be expressed as a likelihood from the binomial probabilty density $P(k|\varepsilon,n) = \binom{n}{k}\varepsilon^k(1-\varepsilon)^{n-k}$. The MLE estimator for efficiency is then the fraction of passing probes to the total number of pairs, or $\varepsilon = k/n$. Technical documentation for the Tag-and-Probe in CMS is scarce, but, an early strategy for fitting efficiency is defined in \cite{Berryhill_2010}. The legacy code base as of \url{CMSSW_10_6_X}  uses a binned maximum likelihood between the observed passing probes and failing probes where the efficiency extracted is an explicit fit parameter. The two simultaneously fit functions are:
+\begin{equation}
+	N^{\text{Pass}} = N_{\text{Total}} (\varepsilon \cdot f^{\text{sig}}_{\text{All}} ) +  \varepsilon_{\text{bkg}} \cdot (1-f^{\text{sig} }_{\text{All}}) )
+\end{equation} 
+\begin{equation}
+	N^{\text{Fail}} = N_{\text{Total}} ( (1-\varepsilon) \cdot f^{\text{sig}}_{\text{All}} +   (1-\varepsilon_{\text{bkg}}) \cdot (1-f^{\text{sig}}_{\text{All}}) )
+\end{equation}
+
+$N^{\text{Pass/Fail}}$ is the total number of observed probes that either pass or fail the selection criteria while $N_{\text{Total}}$ is the total number of Tag-and-Probe pairs.
+The binomial estimator for efficiency, $\varepsilon$, enters the fit functions as the first term but is accompanied by a second term that describes the background contribution with its own efficiency $\varepsilon_{\text{bkg}}$.  The term $f^{\text{sig}}_{\text{All}}$ is the fraction of background subtracted signal events over the allowed dilepton mass range.  $f^{\text{sig}}_{\text{All}}$ depends on the defined signal and background pdfs. The nominal pdfs chosen for reported fits uses a 5 parameter Voigtian+Voigtian signal model which share a common mean but use independent width parameters, in conjunction with an Exponential background model. 
+
+
+\FigureThree{PassingProbes_Med16_lowpt.png}{FailingProbes_Med16_lowpt.png}{AllProbes_Med16_lowpt.png}{Example Tag-and-Probe Z di-muon fits for passing,failing, and all probes with the Medium Id, $|\eta|<1.2$, and $p_T < 20$ GeV   }{tnpexp}
+
+
+
+%The distributions are fit simultaneously with a combined signal and background model. To extract the probe criteria efficiecy we divide the resonance distributions by the all probes distribution. The uncertainty on an efficiency is a combination of a statistical and systematic uncertainties. The systematic uncertainties are defined by repeating the simultaneous fit with varying mass windows, number of bins, and fit models and measuring the maximum spread of the central values.
+
+
+%The fit code is located here: \url{https://github.com/cms-sw/cmssw/blob/CMSSW_10_6_X/PhysicsTools/TagAndProbe/src/TagProbeFitter.cc} around line 600. confirm this with the fit model from the electron paper. \cite{Berryhill_2010}
+
+\FloatBarrier
+
 \section{The Electron Tag-and-Probe }
 
 The electron Tag-and-Probe is performed with the $Z$ resonance over a range of bins divdided by $p_T$ and $\eta$. The selected binnings follow the $\pt$ and $\eta$ binning conventions from the electron physics object group and are $ p_T \in [5, 10, 20, 30, 40, 70, 100]$ and $|\eta| \in [ 0, 0.6, 1.4, 2.4]$. The electron Tag-and-Probe tools uses a centrally curated CMSSW PhysicsTools in \url{CMSSW_10_2_X}. The software pipeline consists of two steps, an ntuplizing stage and a fitting stage. The  Ntupilizing stage selects Tag-and-Probe pairs along with all potential variables of interest and loads them onto an ntuple using \url{TnPTreeProducer} \cite{ElTnPGit}. The samples used in the Ntuplizing stage are listed in Table \ref{tab:electronTnPSamples}. In the fitting stage, a random subset of of TnP pairs are sampled with \url{TnPTreeAnalyzer} \cite{ElTnPAnaGit}. The analyzer performs all of the fitting and efficiency measurements according to the specified selection criteria. 

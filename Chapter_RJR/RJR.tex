@@ -22,7 +22,49 @@
 %This chapter summarizes the approach for a compressed susy search and pertinent sensitive kinematic variables that the analysis is based on.
 %\end{chapterabstract}
 
-\section{Introduction}
+\section{ Data and Simulation}
+The analysis involes the full Run II dataset which is divided by the years 2016,2017,2018 and has a cumulative integrated luminosity of $138 \text{fb}^{-1}$. Each year is comprised of $36.31 \, \text{fb}^{-1} \, \pm 1.2\%$ \cite{CMS:2021xjt}, $41.48 \, \text{fb}^{-1} \, \pm 2.3\%$ \cite{CMS:2018elu}, $59.83 \, \text{fb}^{-1} \, \pm2.5\%$ \cite{CMS:2019jhq} in 2016, 2017, and 2018 respectively. The data is modeled by MC that represents the full SM background and is qualitatively grouped by process and final state. These grouping of SM backgrounds is defined in table \ref{tab:bkgsigtab}.
+
+%insert bg list and description
+\begin{table}
+\caption{Labels for SM background aggregation and relevant signal processes with their CMS shorthand labeling.}
+\begin{tabular}{c|c}
+\hline 
+Bkg. Label & Bkg. Composition \\ 
+\hline 
+\hline
+
+W + jets & \makecell{Single W boson, a dominant background that composes \\ about $50\%$ of the total background} \\ 
+  & \\
+tt+jets & \makecell{$t\bar{t}$ which can be accompanied by a W,Z,h, or $\gamma$, \\ the other dominant background composes about $50\%$ of the total background} \\ 
+  & \\
+ZDY & Z+jets and Drell Yan, an intermediate background \\ 
+Di-boson (DB)& WW,ZZ,WZ,Wh,Zh,  an intermediate background \\ 
+
+ST & Single top processes including tW, a rare background \\ 
+
+Tri-boson (TB) & WWW,ZZZ,WWZ, WZZ, WZ$\gamma$, WW$\gamma$, a rare background  \\ 
+\hline 
+Signal Label & Signal Composition \\
+\hline
+\hline
+T2tt & $pp \rightarrow \tilde{t} \tilde{\bar{t}}; \, \, \tilde{t}\rightarrow t \tilde{\chi}_1^0$ \\
+T2bW & $pp \rightarrow \tilde{t} \tilde{\bar{t}}; \, \, \tilde{t}\rightarrow b \tilde{\chi}_1^\pm; \, \, \tilde{\chi}_1^\pm \rightarrow W^\pm \tilde{\chi}^0_1$ \\
+TChiWZ & $pp\rightarrow \tilde{\chi}_2^0 \tilde{\chi}_1^\pm; \, \, \tilde{\chi}_2^0 \rightarrow Z \tilde{\chi}^0_1; \, \, \tilde{\chi}_1^\pm \rightarrow W^\pm \tilde{\chi}^0_1$ \\
+TSlepSlep & $pp\rightarrow \tilde{\ell} \tilde{\ell}; \, \, \tilde{\ell} \rightarrow \ell \tilde{\chi}^0_1$ \\
+TChipmWW & $pp\rightarrow \tilde{\chi}_1^\pm \tilde{\chi}_1^\mp; \, \,  \tilde{\chi}_1^\pm \rightarrow W^\pm \tilde{\chi}^0_1$  \\
+\end{tabular} \\
+\label{tab:bkgsigtab}
+\end{table}
+
+The signals being addressed in this search include mutiple sparticle processes and final states. A list of the signals and their CMS shorthand that will be used throughout this text is also provided in table \ref{tab:bkgsigtab}. Each signal is produced according to an mass grid for each year.  The raw number of events per mass points and grid spacings for the signals shown are displayed in Figure \ref{fig:grids} with all years combined. 
+
+%insert signal list and description
+\FigFive{Analysis_figs/T2tt_EventCount.pdf}{Analysis_figs/TChiWZ_EventCount.pdf}{Analysis_figs/TSlepSlep_EventCount.pdf}{Analysis_figs/TChipmWW_EventCount.pdf}{Analysis_figs/TSlepSlep_EventCount.pdf}{Mass grids and associated numbers of events per grid point for each the SUSY processes T2tt, T2bW, TChiWZ, TChipmWW, and TSlepSlep.}{fig:grids}
+
+The majority of signal and backgrounds use the MadGraph \cite{Alwall:2011uj} generator to model at LO and NLO. The ST backgrounds use PowHEG 2.0 \cite{Alioli:2010xd} to model at NLO. Parton shower and fragmentation for all samples is done with PYTHIA 8 \cite{Sjostrand:2014zea}. Each year is subjected to an underlying event tune with CUETP8M1 for 2016, CP2 for 2017 and 2018 signals and CP5, for 2017 and 2018 backgrounds \cite{CMS:2015wcf}\cite{CMS:2019csb}. The detector conditions and response are simulated for all samples with GEANT4 \cite{GEANT4:2002zbu}.
+
+\section{Compressed Signal Overview}
 In accordance with strong experimental and phenomenological motivation for compressed spectra and the intention to comprehensively test SUSY, we conduct a search designed to be generically sensitive to many compressed final states. The kinematic techniques in this chapter is based largely on the previous work by C. Rogan and the Recursive Jigsaw Reconstruction (RJR) framework \cite{AN}\cite{PhysRevD.96.112007}. The targeted processes include, but are ultimately not limited to the production of stops, electroweakinos, and sleptons whose diagrams are included in Figure \ref{fig:susyfeyn}.  
 \FigFive{RJR_figs/T2tt.pdf}{RJR_figs/T6bbWW.pdf}{RJR_figs/TChiWW.pdf}{RJR_figs/TChiWZ.pdf}{RJR_figs/TSlepSlep.pdf}{Feynman diagrams for SUSY pair produce processes. Top row involves di-stop pairs where the intermediate state on the top left undergoes stop to top decay and the top right instead undergoes a stop to chargino decay. The middle left diagram show Chargino pairs decaying to two W boson and the middle right is a Neutralino and Chargino pair which decay into a W and Z boson final state. The bottom diagram shows dislepton production with sleptons decaying directly to SM leptons}{fig:susyfeyn}
 Each of the processes in \ref{fig:susyfeyn} has a pair produced visible system alongside a massive invisible system. For these systems to be compressed, most of the energy available in the sparticle decay is used by the rest mass of the LSP. These small mass splittings lead to low momemtum visible products that are difficult to reconstruct or are undetectable. In the case of intermediate massive particles, such as W or Z boson, these are forced off-shell so the visible products receive even less momentum because the available energy goes into the mass of the intermediate particle. In order to identify these type of events we study cases with significant initial-state radiation (ISR). The ISR system recoils against, or boosts, the sparticle system leading to high missing transverse momentum which is a tractable experimental signature. A depiction of this type of event is shown in Figure \ref{fig:isrrecoil} with objects grouped into either the ISR or sparticle system. The initial sparticle system is then further divided into two sparticle rest frames according to RJR rules. From these rest frames, we compute a basis of kinematic observables that aid in the discrimination of compressed SUSY against SM processes.
