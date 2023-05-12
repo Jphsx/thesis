@@ -16,11 +16,11 @@
 
 \section{Introduction}
 %introduce actual fit, fit regions, systematics treatment, results of fit stages
-This analysis is a counting experiment that is evaluated with a Poisson likelihood. The MC model is designed to be data-driven, since background dominates the majority of regions, tuning the data and MC agreement in the fit. The anchoring provided by background-rich regions translates into well-constrained background predictions in sensitive regions with an ABCD-like approach. To obtain a robust MC model before unblinding, three regions are defined, the Control Region (CR) which has no signal, a Validation Region (VR) which has mild sensitivity and tests the modeling in regions untouched by the CR, and finally the Signal Region (SR), which is comprised of the high $R_{ISR}$ bins and is sensitive to all signals. The fits are conducted in three stages, starting with the CR only, then CR+VR, and finally the full fit combining all three fit regions CR+VR+SR.
+This analysis is a counting experiment that is evaluated with a Poisson likelihood. The MC model is designed to be data-driven. Background dominates the majority of regions, and the data is used to adjust the MC model to the data in the fit. The anchoring provided by background-rich regions translates into well-constrained background predictions in sensitive regions with an ABCD-like approach \cite{abcd}. To obtain a robust MC model before unblinding, three regions are defined, the Control Region (CR) which has no signal, a Validation Region (VR) which has mild sensitivity and tests the modeling in regions untouched by the CR, and finally the Signal Region (SR), which is comprised of the high $R_{ISR}$ bins and is sensitive to all signals. The fits are conducted in three stages, starting with the CR only, then CR+VR, and finally the full fit combining all three fit regions CR+VR+SR.
 
 \section{Fit Strategy and Fit Region Definitions}
 %CR VR SR
-The fits are carried out in three stages combining the Control Region, Validation Region, and Signal Region. The control region is guaranteed to have no signal sensitivity and covers the majority of bins. The expected signal contamination in the control region from stops, sleptons, or electroweakinos is $<1\%$ for sparticle masses that are not excluded. The categories and bins that compose the CR are the low $R_{ISR}$ region,  more specifically the lowest two $R_{ISR}$ bins of almost every category. The only category that has been specifically excluded from the CR is 2L high $p_T^{ISR}$ categories. The high $p_T^{ISR}$ is very sensitive to stop processes and electroweakinos. The CR region is comprised of 1298 bins which hold $72\%$ of total expected Run II events. This means that the CR dominates the behavior of the fit, but does not guarantee decent modeling at high $R_{ISR}$. To deal with this shortcoming, we introduce the Validation Region. This region is combined with the CR and extends the fit sampling all categories and kinematic ranges. The VR is composed of the remaining bronze category $R_{ISR}$ distributions not covered by the CR. The signal presence in VR bins is at the few percent level with signals showing up in the most sensitive categories, like $\mu\mu$. Together the CR+VR fit covers 1517 total bins increasing the expected number of events seen by the fit $10\%$. The remaining region is the SR, it has 1576 total bins, but only $19\%$ of total expected events. The sensitivity to every signal is high in this region, with examples of the S/B significance using the Z-binomial statistic shown in Figures \ref{fig:zbi1} and \ref{fig:zbi2}.
+The fits are carried out in three stages combining the Control Region, Validation Region, and Signal Region. The control region is designed to have negligible signal sensitivity and covers the majority of bins. The expected signal contamination in the control region from stops, sleptons, or electroweakinos is $<1\%$ for sparticle masses that are not excluded. The categories and bins that compose the CR are the low $R_{ISR}$ region,  more specifically the lowest two $R_{ISR}$ bins of almost every category. The only category that has been specifically excluded from the CR is 2L high $p_T^{ISR}$ categories. The high $p_T^{ISR}$ is very sensitive to stop processes and electroweakinos. The CR region is comprised of 1298 bins which hold $72\%$ of the total expected Run II events. This means that the CR dominates the behavior of the fit, but does not guarantee satisfactory modeling at high $R_{ISR}$. To deal with this shortcoming, we introduce the Validation Region. This region is combined with the CR and extends the fit sampling all categories and kinematic ranges. The VR is composed of the remaining bronze category $R_{ISR}$ distributions not covered by the CR. The signal presence in VR bins is at the few percent level with signals showing up in the most sensitive categories, like $\mu\mu$. Together the CR+VR fit covers 1517 total bins increasing the expected number of events seen by the fit $10\%$. The remaining region is the SR, it has 1576 total bins, but only $19\%$ of total expected events. The sensitivity to every signal is high in this region, with examples of the S/B significance using the Z-binomial statistic \cite{Cousins_2008} shown in Figures \ref{fig:zbi1} and \ref{fig:zbi2}.
 
 \FigTwoScale{Model_figs/0L_4J_ratioZbin_highDm_RISR_Mperp.pdf}{Model_figs/1L_G_0J_ratioZbin_chargeSep_RISR_Mperp.pdf}{Distributions that show the relative sensitivity of compressed stop processes in each of $R_{ISR}$ and $M_\perp$ bins. The left distribution shows 0 lepton and 4 S-jets with color-coded b-tag counting categories. The $k^+$ denotes high $p_T^{ISR}$ and high $\gamma_\perp$ categories. The right distribution shows 1 gold lepton and 0 S-jets with color-coded lepton flavor categories. The X in both distribution indicates the integration over all sub-categories not explicitly listed.}{fig:zbi1}{0.8}{0.8}
 
@@ -31,39 +31,39 @@ The fits are carried out in three stages combining the Control Region, Validatio
 
 \section{Fit Implementation and Model Definition}
 %Poisson likelihood
-The fitting framework is provided by the \url{HiggsCombine} tool which generates datacards that encode all the components of the fit into a standard format, which is then processed by \url{CombineHarvester} and RooFit/RooStats packages \cite{Antcheva:2009zz}\cite{moneta2011roostats}. The fit can be represented by a Poisson likelihood defined as:
+The fitting framework is provided by the CMS \url{HiggsCombine} tool which generates datacards that encode all the components of the fit into a standard format, which is then processed by the CMS \url{CombineHarvester} and RooFit/RooStats packages \cite{Antcheva:2009zz}\cite{moneta2011roostats}. The fit can be represented by a Poisson likelihood defined as:
 \begin{equation}
 \label{eq:fit}
-\mathcal{L}(\vec{\alpha}|\vec{x}) = \bigg[ \prod_i^N \text{Pois}(x_i|\lambda_i(\vec{\alpha})) \bigg] \bigg[\prod_j^M \pi_j(\alpha_j) \bigg]
+\mathcal{L}(\vec{\alpha}|\vec{n}) = \bigg[ \prod_i^N \text{Pois}(n_i|\lambda_i(\vec{\alpha})) \bigg] \bigg[\prod_j^M \pi_j(\alpha_j) \bigg].
 \end{equation}
-Equation \ref{eq:fit} extend over the range of all $N$ analysis bins where each $i$-th bin is composed of a count of observed events $x_i$ and expected events $\lambda_i$. The expected events are subject to the set of nuisance parameters $\vec{\alpha}$, of which some are conditioned by prior probability distributions $\pi_j(\alpha_j)$. The ideal model for $\lambda(\vec{\alpha})$ is found by maximizing the likelihood with the minimal set of nuisance parameters $\vec{\alpha}$ that is sensitive to the signal+background or background only hypothesis.  There are three types of nuisances implemented in the fit: free floating rate parameters, log-normal constrained parameters, and shape parameters.  Freely floating parameters contribute to a factor $\kappa$, with a starting value of one, that is multiplied against the expected bin yield $\lambda$, adjusting the yield by some fraction with respect to the nominal value. The free parameters have no associated penalty with their adjustment and are fully determined by data. Individual bins $i$ are mapped together by common processes, $k$, which are all associated under a common nuisance $j$. The selection of processes associated to a nuisance parameter can either be  from a non-fake background process or flavor and source separated fake leptons background process. The definition of a free rate parameter can then be defined as 
+Equation \ref{eq:fit} extends over the range of all $N$ analysis bins where each $i$-th bin is composed of a count of observed events $n_i$ and expected events $\lambda_i$. The expected events are subject to the set of nuisance parameters $\vec{\alpha}$, of which some are conditioned by prior probability distributions $\pi_j(\alpha_j)$. The best fit model for $\lambda(\vec{\alpha})$ is found by maximizing the likelihood with the minimal set of nuisance parameters $\vec{\alpha}$ that is sensitive to the signal+background or background only hypothesis.  There are three types of nuisance parameters implemented in the fit: freely floating rate parameters, log-normal constrained parameters, and shape parameters.  Freely floating parameters contribute to a factor $\kappa$, with a starting value of one, that is multiplied by the expected bin yield $\lambda$, adjusting the yield by some fraction with respect to the nominal value. The free parameters have no associated penalty with their adjustment and are fully determined by data. Individual bins $i$ are mapped together by common processes, $k$, which are all associated under a common nuisance parameter $j$. The selection of processes associated to a nuisance parameter can either be  from a non-fake background process or flavor and source separated fake leptons background processes. The definition of a free rate parameter can then be defined as 
 \begin{equation}
 \label{eq:rateparam}
 \kappa_{ijk}(\alpha_j) = \alpha_j
 \end{equation}  
-The log-normal parameters also use a $\kappa$ factor that is applied to the expected events of the associated bin. The log-normal parameters are different from the freely floating parameters in such that they are penalized for moving from the nominal value with a normally distributed prior $\pi(\alpha_j)$. The prior uncertainty associated with a process $j$ and nuisance $k$, is written as $\sigma_{jk}$. The log-normal definition follows with:
+The log-normal parameters also use a $\kappa$ factor that is applied to the expected events of the associated bin. The log-normal parameters are different from the freely floating parameters in such that they are penalized for moving from the nominal value with a normally distributed prior $\pi(\alpha_j)$. The prior uncertainty associated with a process $j$ and nuisance parameter $k$, is written as $\sigma_{jk}$. The log-normal definition follows with:
 \begin{equation}
 \label{eq:logparam}
 \kappa_{ijk}(\alpha_j) = (1+\sigma_{ijk})^{\alpha_j}
 \end{equation}
 
-The third type of nuisance is different from the first two because it adjusts expected bin yields based on the underlying shapes of the $R_{ISR}$ and $M_\perp$ distributions. The $\kappa$ factor for shapes is then a function of up and down variations of one of the kinematic variables and is encoded with a normally distributed prior $\pi(\alpha_j)$. The $\kappa$ definition is based on the interpolation $-1<\alpha_j<1$ and is written as following based on a predefined shape treatment \cite{Conway:2011in}
+The third type of nuisance parameter is different from the first two because it adjusts expected bin yields based on the underlying shapes of the $R_{ISR}$ and $M_\perp$ distributions. The $\kappa$ factor for shapes is then a function of up and down variations of one of the kinematic variables and is encoded with a normally distributed prior $\pi(\alpha_j)$. The $\kappa$ definition is based on the interpolation $-1<\alpha_j<1$ and is written as follows based on a predefined shape treatment \cite{Conway:2011in}
 \begin{equation}
 \label{eq:shapeparam}
 \kappa_{ijk}(\alpha_j)= 1 + \frac{1}{2}((\delta^+ - \delta^-)\alpha_j + \frac{1}{8}(\delta^+ + \delta^-)(3\alpha_j^6-10\alpha_j^4+15\alpha_j^2))
 \end{equation}
 the $\delta^\pm$ components are ratios of the up and down shape variations of the nominal shape $\lambda^{nominal}$ such that $\delta^+ = \lambda^{up}/(\lambda^{nominal}-1)$ and $\delta^- = \lambda^{down}/(\lambda^{nominal}-1).$
 
-The Likelihood Equation \ref{eq:fit} combines the three types of nuisances from equations \ref{eq:rateparam}, \ref{eq:logparam}, \ref{eq:shapeparam}. Each nuisance is mapped to either a set of processes or shapes in conjunction with a mapping to a set bins. The fit adjusts the three $\kappa$ factors to maximize the agreement between the observed data $\vec{x}$ and $\vec{\lambda}$. 
+The Likelihood Equation \ref{eq:fit} combines the three types of nuisance parameters from equations \ref{eq:rateparam}, \ref{eq:logparam}, and \ref{eq:shapeparam}. Each nuisance parameter is mapped to either a set of processes or shapes in conjunction with a mapping to a set of bins. The fit adjusts the three $\kappa$ factors to maximize the agreement between the observed data $\vec{n}$ and the modeled expected events, $\vec{\lambda}$, in a maximum likelihood sense. 
 
 
 \section{Definitions of Modeling Systematics}
-The set of nuisances has gone through an extensive evolution, beginning with very early fits with only 10 nuisances in \cite{erich}. The first fits only used a single nuisance to describe b-tag systematics, one for MET trigger systematics, one for luminosity and one for each background process rate. The final configuration consists of over 200 nuisances which are divided into 5 subcategories: kinematic, process normalizations, lepton fakes, lepton categorization, and b-tagging. The optimizations of these nuisances, that is, their bin association, process mapping, and  allowed degrees of freedom, have undergone extensive study. The complete list of systematics, their type, and prior uncertainties are listed in Tables \ref{tab:kinnuisance}, \ref{tab:btagnuisance}, \ref{tab:lcatnuisance}, \ref{tab:procnuisance}, \ref{tab:fakenuisance}, \ref{tab:svnuisance}, and \ref{tab:othernuisance}.  The kinematic nuisances from Table \ref{tab:kinnuisance} contribute 27 factors which serve the purpose accounting for systematic effects between the high and low $p_T^{ISR}$ and $\gamma_\perp$ for each lepton and jet multiplicity. The kinematic nuisances, and nuisances in general, that appear to be missing (e.g. $\gamma_\perp$ 0L 1J) are merged with neighboring jet multiplicities if they are determined to be extraneous degrees of freedom or are highly correlated with another nuisance. Table \ref{tab:btagnuisance} describes 73 nuisances designed to accommodate systematic effects from categorization of b-tagged jets in either the S or ISR system for each lepton and jet multiplicity. Regions with few b-tags are mapped to all background processes, otherwise, each nuisance process mapping is divided into tt+jets or not tt+jets. There are 21 lepton categorization nuisances which account for systematically different rates in gold categories versus silver or bronze categories. Table \ref{tab:procnuisance} shows the rates for each background process normalizations, which includes a special hierarchy parameterization that will be discussed later. The rule of thumb for splitting background process degrees of freedom is that dominant processes are split by lepton and jet multiplicity, intermediate backgrounds are split by lepton, and rare backgrounds are mapped globally with a single nuisance. The fake lepton nuisances are comprised of global rates for each flavor and source, a single nuisance to account for the global rate of  charge misidentification, and the fake shapes. The fake shapes are split by flavor, lepton multiplicity, and jet multiplicity. The fake shapes were originally split by source but this introduced many extraneous parameters where heavy flavor and light flavor sources were highly correlated. The fake shapes target systematic effects from the shapes of either $R_{ISR}$, $M_\perp$ and are based on $1\sigma$ up and down variations applied to the shape template in Equation \ref{eq:shapeparam} \cite{margaret}. The last two tables \ref{tab:svnuisance} and \ref{tab:othernuisance} account for systematics from SV efficiency and rapidity, as well as, other sources of systematics.
+The set of nuisance parameters has gone through an extensive evolution, beginning with very early fits with only 10 nuisance parameters in \cite{erich}. The first fits only used a single nuisance parameter to describe b-tag systematics, one for MET trigger systematics, one for luminosity and one for each background process rate. The final configuration consists of over 200 nuisance parameters which are divided into 5 subcategories: kinematic, process normalizations, lepton fakes, lepton categorization, and b-tagging. The optimizations of these nuisance parameters, that is, their bin association, process mapping, and  allowed degrees of freedom, have undergone extensive study. The complete list of systematics, their type, and prior uncertainties are listed in Tables \ref{tab:kinnuisance} -- \ref{tab:othernuisance}.  The kinematic nuisance parameters from Table \ref{tab:kinnuisance} contribute 27 factors which serve the purpose of accounting for systematic effects between the high and low $p_T^{ISR}$ and $\gamma_\perp$ for each lepton and jet multiplicity. The kinematic nuisance parameters, and nuisance parameters in general, that appear to be missing (e.g. $\gamma_\perp$ 0L 1J) are merged with neighboring jet multiplicities if they are determined to be extraneous degrees of freedom or are highly correlated with another nuisance parameter. Table \ref{tab:btagnuisance} describes 73 nuisance parameters designed to accommodate systematic effects from categorization of b-tagged jets in either the S or ISR system for each lepton and jet multiplicity. Regions with few b-tags are mapped to all background processes, otherwise, each nuisance parameter process mapping is divided into tt+jets or not tt+jets. There are 21 lepton categorization nuisance parameters which account for systematically different rates in gold categories versus silver or bronze categories. Table \ref{tab:procnuisance} shows the rates for each background process normalizations, which includes a special hierarchy parameterization that will be discussed later. The rule of thumb for splitting background process degrees of freedom is that dominant processes are split by lepton and jet multiplicity, intermediate backgrounds are split by lepton, and rare backgrounds are mapped globally with a single nuisance parameter. The fake lepton nuisance parameters are comprised of global rates for each flavor and source, a single nuisance parameter to account for the global rate of  charge misidentification, and the fake shapes. The fake shapes are split by flavor, lepton multiplicity, and jet multiplicity. The fake shapes were originally split by source but this introduced many extraneous parameters where heavy flavor and light flavor sources were highly correlated. The fake shapes target systematic effects from the shapes of either $R_{ISR}$ or $M_\perp$ and are based on $1\sigma$ up and down variations applied to the shape template in Equation \ref{eq:shapeparam} \cite{margaret}. The last two tables \ref{tab:svnuisance} and \ref{tab:othernuisance} account for systematics from SV efficiency and pseudo-rapidity, as well as, other sources of systematics.
 
 % table of systematics
 \begin{table}
 \centering
-\caption{Kinematic nuisances mappings which are applied to the higher of the two available bins. Bracketed jet mappings indicate all integer jet multiplicities between the listed inclusive edges. All factors are assigned a $20\%$ prior uncertainty.}
+\caption{Kinematic nuisance parameter mappings which are applied to the higher of the two available bins. Bracketed jet mappings indicate all integer jet multiplicities between the listed inclusive edges. All factors are assigned a $20\%$ prior uncertainty.}
 \begin{tabular}{ccc}
 \hline 
 Category Mapping & $N_L$ Mapping & $N_{jets}^S$  Mapping \\ 
@@ -86,7 +86,7 @@ $\gamma_\perp$ (QCD) & 0 & $[2,\geq4]$ \\
 
 \begin{table}
 \centering
-\caption{The log-normal nuisance mapping for all b-tag counting categories. Includes all combinations of Process $\times$ Category $\times$ $(N_\ell,N_{jet}^S)$ multiplicities. All factors are assigned a prior $20\%$ uncertainty.}
+\caption{The log-normal nuisance parameter mapping for all b-tag counting categories. Includes all combinations of Process $\times$ Category $\times$ $(N_\ell,N_{jet}^S)$ multiplicities. All factors are assigned a prior $20\%$ uncertainty.}
 \setlength{\tabcolsep}{10pt} % Default value: 6pt
 \renewcommand{\arraystretch}{1.5} % Default value:
 \begin{tabular}{lc}
@@ -108,7 +108,7 @@ $\gamma_\perp$ (QCD) & 0 & $[2,\geq4]$ \\
 
 \begin{table}
 \centering
-\caption{Lepton category nuisance mapping. The complete set of nuisances is represented by the product of the $N_\ell \times N_{jet}^S$ with an assigned prior uncertainty or $20\%$. The category !Gold indicates the combined Silver and Bronze categories. }
+\caption{Lepton category nuisance parameter mapping. The complete set of nuisance parameters is represented by the product of the $N_\ell \times N_{jet}^S$ with an assigned prior uncertainty or $20\%$. The category !Gold indicates the combined Silver and Bronze categories. }
 \begin{tabular}{cc|ccc}
 
  &  & \multicolumn{3}{c}{$N_\ell$ Mapping} \\  
@@ -135,7 +135,7 @@ $\gamma_\perp$ (QCD) & 0 & $[2,\geq4]$ \\
 
 \begin{table}
 \centering
-\caption{The nuisance mapping split by lepton and jet multiplicity for background processes. The dominant backgrounds W+jets and tt+jets are implemented with a hierarchy parameterization of factors.  Global factors indicate mapping to every bin and $N_{jet}^S$ implies each possible number of jets for a given lepton multiplicity.}
+\caption{The nuisance parameter mapping split by lepton and jet multiplicity for background processes. The dominant backgrounds W+jets and tt+jets are implemented with a hierarchy parameterization of factors.  Global factors indicate mapping to every bin and $N_{jet}^S$ implies each possible number of jets for a given lepton multiplicity.}
  
 \begin{tabular}{ccc}
 \hline 
@@ -162,7 +162,7 @@ global & DB & free floating \\
 
 \begin{table}
 \centering
-\caption{The nuisances associated to fake leptons. The global or silver or bronze rates are split between MC matched source of either Heavy flavor or Light flavor. The shape systematics are applied per lepton and S-jet combinations but combine HF/LF sources and split by flavor only.}
+\caption{The nuisance parameters associated to fake leptons. The global or silver or bronze rates are split between MC matched source of either Heavy flavor or Light flavor. The shape systematics are applied per lepton and S-jet combinations but combine HF/LF sources and split by flavor only.}
 \begin{tabular}{ccc}
 
 Category Mapping & Process Mapping & Parameter Details \\ 
@@ -186,7 +186,7 @@ per $(N_\ell^S,N_{jet}^S)$ & $(e,\mu)\times(R_{ISR}^{shape}, M_\perp^{shape})$ &
 
 \begin{table}
 \centering
-\caption{The set of nuisances associated to the categories that involve tagged SVs. The SV counting rates are mapped globally to every bin and the kinematic $\eta$ separation is split between SVs associated with tt+jets versus SVs associated with anything else.}
+\caption{The set of nuisance parameters associated to the categories that involve tagged SVs. The SV counting rates are mapped globally to every bin and the kinematic $\eta$ separation is split between SVs associated with tt+jets versus SVs associated with anything else.}
 \begin{tabular}{cc}
 Category mapping & process mapping \\ 
 \hline 
@@ -206,7 +206,7 @@ $|\eta_{SV}^f|$ & other \\
 
 \begin{table}
 \centering
-\caption{Additional secondary systematics which account for various scale factors or systematic effects of jet reconstruction and clustering.  The nuisances with a (*) are not currently implemented but will be added in later in the final model. }
+\caption{Additional secondary systematics which account for various scale factors or systematic effects of jet reconstruction and clustering.  The nuisance parameters with a (*) are not currently implemented but will be added in later in the final model. }
 \begin{tabular}{|c|c|}
 \hline 
 Systematic Source and Scale Factors & Parameter Type \\ 
@@ -229,19 +229,19 @@ b-jet FastSim SF & log-normal \\
 \end{table}
 
 %begin hierarchy
-The process normalization hierarchy listed in Table \ref{tab:procnuisance} is a special parameterization of nuisance parameters organized into a tree of factors. This parameterization is implemented separately for the two dominant backgrounds W+jets and tt+jets. The factor at the top of the hierarchy is the root factor and is the region with the highest statistical power and purity for that process. This factor, for a particular lepton and S jet multiplicity, informs neighboring jet multiplicity factors and in turn those neighbors then inform their neighbors. This allows for the root parameters for each process to be interpreted as an estimate of a singular normalization scale factor for that group of processes, while also allowing for independent factors in different multiplicities to be interpreted and constrained relative to the higher factor. 
+The process normalization hierarchy listed in Table \ref{tab:procnuisance} is a special parameterization of nuisance parameters organized into a tree of factors. This parameterization is implemented separately for the two dominant backgrounds W+jets and tt+jets. The factor at the top of the hierarchy is the root factor and is the region with the highest statistical power and purity for that process. This factor, for a particular lepton and S jet multiplicity, informs neighboring jet multiplicity factors and in turn those neighbors then inform their neighbors. This allows for the root parameters for each process to be interpreted as an estimate of a single normalization scale factor for that group of processes, while also allowing for independent factors in different multiplicities to be interpreted and constrained relative to the higher factor. 
 
-For example: the root factor for W+jets is 1L 0J, chosen because it is $14\%$ of the total process yield and $93\%$ of the total background for that particular region. 0L 2J, 1L 1J, and 1L 2J have comparable stats with up to $20\%$ more events but loses $20\%$ purity (the fraction of W+jets to other backgrounds). The $\kappa^{Wjets}_{1L, 0J}$ ``root'' scale factor maps to every analysis bin for the W+jets process and governs the overall rate. This means that the root factor is multiplied against every other scale factor in each lepton multiplicity. An example low level parameter would be $\kappa^{Wjets}_{1L, 4J}$, which is multiplied by $\kappa^{Wjets}_{1L, 0J}$, $\kappa^{Wjets}_{1L, 1J}$, $\kappa^{Wjets}_{1L ,2J}$, $\kappa^{Wjets}_{1L, 3J}$ and interpreted as relative to each preceding nuisance at a higher level in the hierarchy.  A similar hierarchical parameterization is evaluated for tt+jets, and both hierarchy trees are shown in Figure \ref{fig:hier}. The 0L hierarchy for W+jets is special, due to very high correlations with the ZDY process from the similarities between $W$ and $Z(\rightarrow\nu\nu)$ decays. Here, the process mapping combines the backgrounds ZDY and W+jets while the ZDY, DB factor for 0L has been removed. 
+For example: the root factor for W+jets is 1L 0J, chosen because it is $14\%$ of the total process yield and $93\%$ of the total background for that particular region. 0L 2J, 1L 1J, and 1L 2J have comparable statistics with up to $20\%$ more events but with $20\%$ less purity (the fraction of W+jets to other backgrounds). The $\kappa^{Wjets}_{1L, 0J}$ ``root'' scale factor maps to every analysis bin for the W+jets process and governs the overall rate. This means that the root factor is multiplied by every other scale factor in each lepton multiplicity. An example low level parameter would be $\kappa^{Wjets}_{1L, 4J}$, which is multiplied by $\kappa^{Wjets}_{1L, 0J}$, $\kappa^{Wjets}_{1L, 1J}$, $\kappa^{Wjets}_{1L ,2J}$, $\kappa^{Wjets}_{1L, 3J}$ and interpreted as relative to each preceding nuisance parameter at a higher level in the hierarchy.  A similar hierarchical parameterization is evaluated for tt+jets, and both hierarchy trees are shown in Figure \ref{fig:hier}. The 0L hierarchy for W+jets is special, due to very high correlations with the ZDY process from the similarities between $W$ and $Z(\rightarrow\nu\nu)$ decays. Here, the process mapping combines the  ZDY and W+jets backgrounds while the ZDY, DB factor for 0L has been removed. 
 %hier diagrams
-\FigTwoScale{Model_figs/wjets_hierarchy.png}{Model_figs/ttbar_hierarchy.png}{Pair of k-nary trees that illustrate the hierarchical organization of background rates for W+jets and tt+jets.}{fig:hier}{0.49}{0.49}
+\FigTwoScale{Model_figs/wjets_hierarchy.png}{Model_figs/ttbar_hierarchy.png}{Pair of k-nary trees illustrating the hierarchical organization of background rates for W+jets and tt+jets.}{fig:hier}{0.49}{0.49}
 %end hierarchy
 
 \section{Development of Modeling Systematics}
 
 
-The optimization of each group of systematics was conducted primarily on CR fits to 2016 data and then expanded to include multiple years accounting for systematic effects induced from different run conditions in each year. The statistical evaluation of each fit is performed by comparing metrics such as the $\log\mathcal{L}$, $\chi^2$, z-score, and impacts. The impacts are a series of separate fits that independently vary all of the nuisance parameters to assess their impact of each on the POI and is a tool provided by \url{CombineHarvester}. Multiple definitions of z-scores are used, with the primary one being $ (O-E)/(E+\sigma_{\text{post-fit}})$, where the $O$ is the observed data, $E$ is the expected events post-fit, the denominator includes the expected post-fit events acting as the Poisson variance. The total error of the denominator is the sum of the Poisson variance and the post-fit variance, $\sigma_{\text{post-fit}}$. Similar z-score definitions are used such as the same evaluation without the post-fit variance or evaluated with respect to the pre-fit values. The fit evaluation is performed on all bins and subsets of each individual lepton multiplicity,or gold, silver, or bronze. The statistical errors for each bin are assumed to be Gaussian with sufficient number of events. The cases with bins having very few events are assumed to be Poisson distributed. This distinction is important when combining different bins varying in events by orders of magnitude, into a distribution of z-scores. If a deviation of a few observed events were to occur in a bin with only a few expected events, the z-score would be a significant outlier when it is not. To correct this issue, each bin is given the ``Poisson treatment.'' A new z-score is calculated from the Poisson probability of the original observation given the expectation. The recipe for calculating the adjusted z-scores is as follows
+The optimization of each group of systematics was conducted primarily on CR fits to 2016 data and then expanded to include multiple years accounting for systematic effects induced from different run conditions in each year. The statistical evaluation of each fit is performed by comparing metrics such as the $\log\mathcal{L}$, $\chi^2$, z-score, and impacts. The impacts are a series of separate fits that independently vary all of the nuisance parameters to assess the impact of each on the POI and is a tool provided by \url{CombineHarvester}. Multiple definitions of z-scores are used, with the primary one being $ (O-E)/\sqrt{(E+\sigma_{\text{post-fit}}^2)}$, where the $O$ is the observed data, $E$ is the expected events post-fit, and the denominator includes the expected post-fit events acting as the Poisson variance. The total error of the denominator is the sum of the Poisson variance, $E$, and the post-fit variance, $\sigma_{\text{post-fit}}^2$. Similar z-score definitions are used such as the same evaluation without the post-fit variance or evaluated with respect to the pre-fit values. The fit evaluation is performed on all bins and subsets of each individual lepton multiplicity, or gold, silver, or bronze. The statistical errors for each bin are assumed to be Gaussian with sufficient number of events. The cases with bins having very few events are assumed to be Poisson distributed. This distinction is important when combining different bins varying in events by orders of magnitude, into a distribution of z-scores. If a deviation of a few observed events were to occur in a bin with only a few expected events, the z-score would be a significant outlier when it is not. To correct this issue, each bin is given the ``Poisson treatment.'' A new z-score is calculated from the Poisson probability of the original observation given the expectation. The recipe for calculating the adjusted z-scores is as follows
 \begin{itemize}
-\item[1.] Generate N trials, each with new expectation $E_i' \sim \mathcal{N}(E,1)$
+\item[1.] Generate N trials, each with new expectation $E_i' \sim \mathcal{N}(E,\sigma_{\text{post-fit}}^2)$
 \item[2.] Generate new observations $O_i'\sim \text{Poisson}(E_i')$
 \item[3.] Count $k$ successes such that $O',E'$ follow the original observation $(O<E \,\, \text{or} \, \, O>E)$
 \item[4.] Compute the Poisson probability $P=k/N$ 
@@ -250,13 +250,13 @@ The optimization of each group of systematics was conducted primarily on CR fits
 \item[7.] Sign the new z-score based on $O-E$ convention
 \end{itemize} 
 
-The effect of the Poisson treatment is that the z-score significance is reduced in low statistics cases where $O>E$ and increased in cases with $O<E$ due to the asymmetry of the Poisson distribution having a long tail tending to higher values. Comparisons of the final fit model with and without the Poisson treatment is shown Figure \ref{fig:comparePoissonPull}. Example pull distributions that compare the early fit model with the most final model are shown in Figure \ref{fig:compareBuildPull}. The progression of the fit model's likelihood and nuisances development is summarized Figure \ref{fig:likes} and accompanied by Table \ref{tab:builds} with brief descriptions of each milestone in the fit configurations. 
+The effect of the Poisson treatment is that the z-score significance is reduced in low statistics cases where $O>E$ and increased in cases with $O<E$ due to the asymmetry of the Poisson distribution having a long tail tending to higher values. Comparisons of the final fit model with and without the Poisson treatment is shown Figure \ref{fig:comparePoissonPull}. Example pull distributions that compare the early fit model with the most final model are shown in Figure \ref{fig:compareBuildPull}. The progression of the fit model's likelihood and nuisance parameter development is summarized Figure \ref{fig:likes} and accompanied by Table \ref{tab:builds} with brief descriptions of each milestone in the fit configurations. 
  
 %build 62 no poisson vs build 62 w/ poisson
-\FigTwoScale{Model_figs/build62_pull_run2_nopoisson.pdf}{Model_figs/build62_pull_run2_poisson.pdf}{Comparison of Run II CR fits with Build 62 of \ref{tab:builds} without Poisson treatment (left) and with Poisson treatment (right). The improvement by implementing the Poisson treatment is shown in the RMS and fitted $\sigma$ of the right distribution, by reducing the number of large outliers due to bins with low statistics. }{fig:comparePoissonPull}{0.49}{0.49}
+\FigTwoScale{Model_figs/build62_pull_run2_nopoisson.pdf}{Model_figs/build62_pull_run2_poisson.pdf}{Comparison of Run II CR fits with Build 62 of Table \ref{tab:builds} without Poisson treatment (left) and with Poisson treatment (right). The improvement by implementing the Poisson treatment is shown in the RMS and fitted $\sigma$ of the right distribution, by reducing the number of large outliers due to bins with low statistics. }{fig:comparePoissonPull}{0.49}{0.49}
  
 %build 8 pull with last 16 build no poisson\
-\FigTwoScale{Model_figs/build8_pull_2016.pdf}{Model_figs/build62_pull_2016.pdf}{A comparison of the Poisson corrected builds from \ref{tab:builds} with the first Build 8 on the left and the final Build 62 on the right. Both distributions use only 2016 data and MC scaled to 138 fb$^{-1}$. }{fig:compareBuildPull}{0.49}{0.49}
+\FigTwoScale{Model_figs/build8_pull_2016.pdf}{Model_figs/build62_pull_2016.pdf}{A comparison of the Poisson corrected builds from Table \ref{tab:builds} with the first Build 8 on the left and the final Build 62 on the right. Both distributions use only 2016 data and MC scaled to 138 fb$^{-1}$. }{fig:compareBuildPull}{0.49}{0.49}
 
 
 
@@ -265,52 +265,52 @@ The effect of the Poisson treatment is that the z-score significance is reduced 
 
 %table of builds
 \begin{table}
-\caption{Listing of all the model verison milestones with a brief description of each build, its Id number and number of nuisances. }
+\caption{Listing of all the model verison milestones with a brief description of each build, its Id number and number of nuisance parameters. }
 \begin{tabular}{ll}
 \hline 
-Build 8 & N Nuisances = 186 \\ 
+Build 8 & N Nuisance Parameters = 186 \\ 
 \hline
  & \makecell[l]{Used 3 shape systematics for W+jets, QCD, Fakes. All other backgrounds \\ are grouped together under ``other'' and split by $(N_\ell^S,N_{jet}^S)$} \\ 
  & \\
 \hline 
-Build 17 & N Nuisances = 179 \\
+Build 17 & N Nuisance Parameters = 179 \\
 \hline
  &\makecell[l]{Removed W+jets and QCD shapes due to over fitting. Added in W+jets \\ hierarchy.  Split up ``other'' into 3 groups \{(tt+jets, ST),(ZDY),(DB,TB)\}\\ each split by $(N_\ell^S,N_{jet}^S)$} \\
  & \\
 \hline
-Build 23 & N Nuisances = 193 \\
+Build 23 & N Nuisance Parameters = 193 \\
 \hline
  & \makecell[l]{Added a simplified b-tag configuration with a splitting by $(N_{b-tag}^S,N_{b-tag}^{ISR})$\\ and further split by $(N_\ell^S,N_{jet}^S)$ }\\
  & \\ 
 \hline
-Build 24 & N Nuisances = 194 \\
+Build 24 & N Nuisance Parameters = 194 \\
 \hline
  & \makecell[l]{Added a nuisance to adjust the rate of same-sign lepton pairs.}  \\
  & \\
 \hline
-Build 25 & N Nuisances = 194 \\
+Build 25 & N Nuisance Parameters = 194 \\
 \hline
  & \makecell[l]{Added tt+jets hierarchy. Reconfigured background process grouping to \\ \{(ZDY, DB),(ST,TB)\} with full $(N_\ell^S,N_{jet}^S)$ splitting } \\
  & \\
 \hline
-Build 30 & N Nuisances = 229 \\
+Build 30 & N Nuisance Parameters = 229 \\
 \hline
  & \makecell[l]{Implemented lepton category nuisances from Table \ref{tab:lcatnuisance} and the Bronze \\ and Silver global fake rates from Table \ref{tab:fakenuisance} } \\
  & \\
 \hline
-Build 37 & N Nuisances = 209 \\
+Build 37 & N Nuisance Parameters = 209 \\
 \hline
  & \makecell[l]{Reworked background process grouping to the final configuration in Table \\ \ref{tab:procnuisance}  and consolidated extraneous degrees of freedom. \\Consolidated Fake shapes to no longer split between HF and LF. } \\
  & \\
 \hline 
-Build 62 & N Nuisances = 227 \\
+Build 62 & N Nuisance Parameters = 227 \\
 \hline
  & \makecell[l]{Reworked b-tagging parameters to include process splitting from Table \ref{tab:btagnuisance}. \\ This build reflects the final configuration of all previously described nuisances \\ and those implemented from Table \ref{tab:othernuisance}. } \\
 \end{tabular} 
 \label{tab:builds}
 \end{table}
 \section{Control Region and Validation Region Fit Results}
-The results of the control region fit and the control region plus validation region fit using the fit model described in the previous section lead to good agreement between data and MC. Distributions summarizing the effects of the various nuisances, with simplified categorization splitting over a targeted category and integrated over sub categories, are shown in Figures \ref{fig:01crsummary}, \ref{fig:23crsummary}, \ref{fig:crprockin}, \ref{fig:cr2lsummary}, and \ref{fig:crbtagsummary}. Figures \ref{fig:01crsummary} and \ref{fig:23crsummary} show a summary of the data and MC agreement for each lepton multiplicity. This demonstrates the benefit of the jet multiplicity splitting, and also the effect of kinematic factors in 2L and 3L. The following figure Figure \ref{fig:crprockin} shows splitting by $p_T^{ISR}$, $\gamma_\perp$, and the region with the W+jets root factor. Figure \ref{fig:cr2lsummary} shows the lepton category splitting and a fake dominated bronze category. The final CR summary in Figure \ref{fig:crbtagsummary} illustrates the splitting by SV and b-tag counting.
+The results of the control region fit and the control region plus validation region fit using the fit model described in the previous section lead to good agreement between data and MC. Distributions summarizing the effects of the various nuisance parameters, with simplified categorization splitting over a targeted category and integrated over sub categories, are shown in Figures \ref{fig:01crsummary}, \ref{fig:23crsummary}, \ref{fig:crprockin}, \ref{fig:cr2lsummary}, and \ref{fig:crbtagsummary}. Figures \ref{fig:01crsummary} and \ref{fig:23crsummary} show a summary of the data and MC agreement for each lepton multiplicity. This demonstrates the benefit of the jet multiplicity splitting, and also the effect of kinematic factors in 2L and 3L. Figure \ref{fig:crprockin} shows splitting by $p_T^{ISR}$, $\gamma_\perp$, and the region with the W+jets root factor. Figure \ref{fig:cr2lsummary} shows the lepton category splitting and a fake dominated bronze category. The final CR summary in Figure \ref{fig:crbtagsummary} illustrates the splitting by SV and b-tag counting.
 
 %0L jet split plot
 %1L 2L 3L
@@ -333,9 +333,9 @@ In addition to the control region only fit, a control region combined with the v
 \FigTwo{Model_figs/1L_B_0J_b-fit.pdf}{Model_figs/2L_B_2J_b-fit.pdf}{The Bronze only category fit with fake dominated 1 lepton and 2 lepton bronze categories.}{fig:crvrsummary}
 \section{Bias tests}
 
-One possible danger of having a fit with two many degrees of freedom is that the model would be too flexible and fit away potential signal. Testing for over-fitting we perform an ensemble of pseudo-experiments with and without signal injection to test if the fit model recovers the correct hypothesis.  If the fit is unbiased and sensitive to various signals then the signal strength parameter, $r$, should be evaluated as $r=0$ in a background only fit and $r=1$ when signal is injected.  The hypotheses are tested by generating observed data in each bin centered on the MC expectation, fitting all regions simultaneously, and extracting the $r$ value. Each pseudo-experiment is performed with a handful of points around the edge of the expected mass limits for T2tt, TChiWZ, and TSlepSlep. The results are shown in Figure \ref{fig:biasstudy}, which show no fit bias by recovering of the correct hypothesis. This means that the final set of nuisances is sufficiently small and the does not affect the fit's sensitivity to discovery.
+One possible danger of having a fit with too many degrees of freedom is that the model would be too flexible and fit away potential signal. In testing for over-fitting, we perform an ensemble of pseudo-experiments with and without signal injection to test if the fit model recovers the correct hypothesis.  If the fit is unbiased and sensitive to various signals then the signal strength parameter, $r$, should be evaluated as $r=0$ in a background only fit and $r=1$ when signal is injected.  The hypotheses are tested by generating observed data in each bin centered on the MC expectation, fitting all regions simultaneously, and extracting the $r$ value. Each pseudo-experiment is performed with a handful of points around the edge of the expected mass limits for T2tt, TChiWZ, and TSlepSlep. The results are shown in Figure \ref{fig:biasstudy}. These show no fit bias given that the correct hypothesis is recovered. This means that the final set of nuisance parameters is sufficiently small and does not affect the fit's sensitivity to discovery.
 
-\FigThreeScale{Model_figs/T2tt_7500670_r0_r1.pdf}{Model_figs/TChiWZ_3250315_r0_r1.pdf}{Model_figs/TSlepSlep_2500245_r0_r1.pdf}{Signal injection and bias test for three different signal grid points. The top left is T2tt with $m_{\tilde{t}}=750$ and $m_{\tilde{\chi}_1^0}=670$. The top right is TChiWZ with $m_{\tilde{\chi}_2^0}=325$ and $m_{\tilde{\chi}_1^0}=315$. The bottom figure uses TSlepSlep with $m_{\tilde{\ell}}=250$ and $m_{\tilde{\chi}_1^0}=245$ \textit{Source R. Salvatico} \cite{AN}}{fig:biasstudy}{0.49}{0.49}{0.49}
+\FigThreeScale{Model_figs/T2tt_7500670_r0_r1.pdf}{Model_figs/TChiWZ_3250315_r0_r1.pdf}{Model_figs/TSlepSlep_2500245_r0_r1.pdf}{Signal injection and bias test for three different signal grid points. The top left is T2tt with $m_{\tilde{t}}=750$ GeV and $m_{\tilde{\chi}_1^0}=670$ GeV. The top right is TChiWZ with $m_{\tilde{\chi}_2^0}=325$ GeV and $m_{\tilde{\chi}_1^0}=315$ GeV. The bottom figure uses TSlepSlep with $m_{\tilde{\ell}}=250$ GeV and $m_{\tilde{\chi}_1^0}=245$ GeV \cite{AN}}{fig:biasstudy}{0.49}{0.49}{0.49}
  
 
 
