@@ -12,3 +12,11 @@
 	- Updated figure 1.1 elementary particles to have h instead of H for SM higgs boson
 	
 	- Added comments from Graham and Alice to Comments directory
+	
+### Updates to v2
+
+	- Added comments from Ian to Comments directory
+	- Addressed comments from Alice part 1 and half of part 2
+	- Addressed all of Grahams comments
+	- Started on Ians comments in chapter 1
+	- submitting this version with incomplete edits to proquest to meet graduation deadline, will update remaining comments and resubmit later
