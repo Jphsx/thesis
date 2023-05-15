@@ -79,7 +79,12 @@
 \section{Lepton Object Definitions}
 
 
-Electrons and muons are selected according to the minimum requirement ``VeryLoose'' which depends on kinematic and topological quantities in Table \ref{tab:veryloose}. The electrons use an additional loose requirement, the MVA VLooseFO Id \cite{elecMVA}. The set of VeryLoose leptons are further subdivided by quality into three mutually exclusive categories: Gold, Silver, and Bronze. Each category has a measure of three main quantities, the first is the quality of the pre-determined Id. The Id's differ per flavor and are the standard working points defined by the corresponding physics object group. The muons use the Medium Id \cite{muMediumId} and electrons use a more strict selection with the Tight Id \cite{eTightID}. The second quantity is the ``promptness'' or distance of the lepton production point from the primary vertex. Promptness is measured by the significance of the 3D impact parameter (SIP3D) defined as the impact parameter normalized by its measured error. The last component is the isolation, a measure of the density of particles in a cone around the lepton. Two similar but complimentary absolute isolations are used: PFIso \cite{murun2baseline} and MiniIso \cite{miniIso}. Both isolations are an energy sum of neighboring particles inside a cone, but, PFIso has a fixed cone size of $R=0.4$ cm  and miniIso cone sizes varies inversely with lepton \pt as shown in Equation \ref{isoeq}.
+Electrons and muons are selected according to the minimum requirement ``VeryLoose'' which depends on kinematic and topological quantities in Table \ref{tab:veryloose}. The electrons use an additional loose requirement, the MVA VLooseFO Id \cite{elecMVA}. The set of VeryLoose leptons are further subdivided by quality into three mutually exclusive categories: Gold, Silver, and Bronze. Each category has a measure of three main quantities, the first is the quality of the pre-determined Id. The Id's differ per flavor and are the standard working points defined by the corresponding physics object group.  Id's range from Loose to Medium to Tight gaining stricter requirements for each tighter requirement. From Loose to Tight the selection efficienies and misidentification probabilities also decrease. The muons use the Medium Id \cite{muMediumId} and electrons use a more strict selection with the Tight Id \cite{eTightID}. The second quantity is the ``promptness'' or distance of the lepton production point from the primary vertex. Promptness is measured by the significance of the 3D impact parameter (SIP3D) defined as the impact parameter normalized by its measured error. The impact parameter is the distance of the 3D fitted track's point of closest approach to the primary vertex. The last component is isolation, a measure of the density of particles in a cone around the lepton. Two similar but complimentary absolute isolations are used: PFIso \cite{murun2baseline} and MiniIso \cite{miniIso}. Both isolations are an energy sum of neighboring particles inside a cone, but, PFIso has a fixed cone size of $R=0.4$ cm. PFIso is defined in Equation \ref{pfiso} where $p_{T,\text{ch. had} }^{PV}$ is the transverse momentum of tracks associated with the primary vertex that are inside the cone, $E_{T,\text{neut. had}}$ is the transverse energy from energy deposits not associated with tracks that are inside the cone, and $p_{T, \text{ch. had}}^{PU}$ is the transverse momentum of tracks not associated with the primary vertex that are inside the cone. Unlike PFIso, MiniIso uses the same cone-based particle summation strategy, but the cone sizes varies inversely with lepton \pt as shown in Equation \ref{isoeq}.
+
+\begin{equation}\label{pfiso}
+\sum p_{T,\text{ch. had} }^{PV} + \text{max}(0, \sum E_{T,\text{neut. had}}) - 0.5*\sum p_{T, \text{ch. had}}^{PU}
+\end{equation}
+
 \begin{equation}
 R_{\text{miniIso}}=
     \begin{cases}
@@ -90,7 +95,8 @@ R_{\text{miniIso}}=
     \label{isoeq}
 \end{equation}
 
-Mini isolation also includes effective area pile-up corrections provided in a look up table of bins of \pt and $\eta$ in the CMSSW Producer/Ntuplizing stage. The implementation of mini-isolation and their corrections utilize the same IsoValueMap producer as used in NANO AOD as of \url{CMSSW_10_6_X}.
+
+%Mini isolation also includes effective area pile-up corrections provided in a look up table of bins of \pt and $\eta$ in the CMSSW Producer/Ntuplizing stage. The implementation of mini-isolation and their corrections utilize the same IsoValueMap producer as used in NANO AOD as of \url{CMSSW_10_6_X}.
 
 
 The explicit flavor independent formulas for Gold, Silver, and Bronze can be generalized by the product of three components which are the measured efficiencies of the three previously mentioned quantities. The efficiencies take the form of conditional probabilities to be measured independently in sequence relative to each other:
@@ -110,7 +116,7 @@ The subscript for an efficiency, e.g. $\epsilon_{\Prompt|(\ID \cap \Isolated)}$,
 
 \begin{table}[htbp]
 \centering
-\caption{\label{tab:veryloose} The criteria that define the minimum requirements for an accepted lepton. The electron and muon requirements are equivalent in terms of pseudo-rapidity, vertexing, and isolation but vary in \pt threshold and the MVA VLooseFO working point. The MVA VLooseFO ID also varies between years.}
+\caption{\label{tab:veryloose} The criteria that define the minimum requirements for an accepted lepton. The electron and muon requirements are equivalent in terms of pseudo-rapidity, vertexing, and isolation but vary in \pt threshold and the MVA VLooseFO working point. The MVA VLooseFO ID also varies between years. The parameters $d_{xy}$ and $d_{z}$ are the transverse and longitudinal impact parameters, respectively.}
 
 \begin{tabular}{c|c|c}
 \hline
@@ -138,13 +144,15 @@ MVA VLooseFO ID & \checkmark  & --\\
 
 
 The advantage of having multiple lepton quality categories allows for robust sensitivity to a wide range of signal processes. This strategy boosts the overall statistics and provides control regions for multiple scenarios. %but also provide fake rich selection in control region that helps stabilize the overall fit and extract fake rates into the sensitive regions.  
-The populations of different truth matched objects per quality are shown in Figure \ref{andresPurity} and the MC efficiency for Gold, Silver, and Bronze with truth matched objects is shown in Figure \ref{andresEff}.  The gold region is mainly populated by prompt and isolated leptons that are produced within the primary vertex. This region also coincides with the signature of many targeted electroweakino models. The silver selection accommodates both leptonically decaying taus, providing an ideal region for stau's, and assists in recovering efficiency of isolated b decays. The bronze selection is rich in fake leptons and provides the best regions to extract fake rates and anchor the fit through a surplus of events. 
+The populations of different truth matched objects per quality are shown in Figure \ref{andresPurity} and the MC efficiency for Gold, Silver, and Bronze with truth matched objects is shown in Figure \ref{andresEff}.  The Gold region is mainly populated by prompt and isolated leptons that are produced within the primary vertex. This region also coincides with the signature of many targeted electroweakino models. The Silver selection accommodates both leptonically decaying taus, providing an ideal region for stau's, and assists in recovering efficiency of isolated b decays. The Bronze selection is rich in fake leptons and provides the best regions to extract fake rates and anchor the fit through a surplus of events. 
 
 
 
-\FigureThree{gold_ele_TTJets_Fall17.pdf}{silver_ele_TTJets_Fall17.pdf}{bronze_ele_TTJets_Fall17.pdf}{Gold (Top-Left), Silver (Top-Right) and Bronze (Bottom) MC truth matching in $t\bar{t}$ sample 2017. Signal is defined here as prompt electrons from a $W$ decay. \textit{Source A. Abreu} \cite{AN}}{andresPurity}
+\FigThreeScale{Lep_Obj_plots/gold_ele_TTJets_Fall17.pdf}{Lep_Obj_plots/silver_ele_TTJets_Fall17.pdf}{Lep_Obj_plots/bronze_ele_TTJets_Fall17.pdf}{Gold (Top-Left), Silver (Top-Right) and Bronze (Bottom) MC truth matching in $t\bar{t}$ sample for 2017. Each figure demonstrates the MC truth composition of each electron quality where a reconstructed electron is $\Delta R$ matched to a either a signal electron from a prompt $W$ boson decay, a leptonic tau decay, b-quark jet, c-quark jet, or light quark jet \cite{AN}.}{andresPurity}{0.49}{0.49}{0.49}
 
-\FigureOne{sigEff_ele_TTJets_Fall17.pdf}{Gold, Silver, and Bronze efficiency on truth matched prompt electrons as signal and secondary electrons as Fakes. \textit{Source A. Abreu} \cite{AN}}{andresEff}
+
+\FigTwoScale{Lep_Obj_plots/sigEff_ele_TTJets_Fall17.pdf}{Lep_Obj_plots/sigEff_mu_TTJets_Fall17.pdf}{Gold, Silver, and Bronze efficiency on truth matched prompt signal leptons from $W$ bosons in tt+jets. The fake efficiencies are also shown for each lepton quality with leptons truth matched to any other source \cite{AN}.}{andresEff}{0.49}{0.49}
+
 
 \FloatBarrier
 
@@ -237,7 +245,7 @@ veto $ 1.4442 \leq |\eta_{SC}| \leq 1.566 $ & $E_{ECAL}\sin(\theta_{SC}) > 5.0 $
 
 
 %\end{center}
-The measurements of the gold, silver, and bronze efficiencies components, and VeryLoose, are shown in Figure \ref{fig:el2deff}. The relative efficiencies per component range from approximately $75\%$ to $95\%$ with a slight dependence on $|\eta|$. The largest combined systematic and statistical errors are $O(4\%)$ and occur in data with the lowest \pt bins. The data and MC agreement is within a few percent for both the Id, Isolation, and SIP3D. The efficiency components combined into gold, silver, and bronze is shown in Figure \ref{fig:elgsb}. The range of efficiencies for each quality ranking are $(50-70)\%$, $(10-20)\%$, and $(10-30)\%$ for gold, silver, and bronze respectively. The gold, silver, and bronze data to MC ranges around a few percent, but large discrepancies can be seen at the highest and lowest \pt bins. More granular Id measurements could be obtained by using a different resonance such as $J/\psi \rightarrow ee$ for the lower \pt ranges, however, data triggers with electrons for $J/\psi$ are not available.
+The measurements of the Gold, Silver, and Bronze efficiencies components, and VeryLoose, are shown in Figure \ref{fig:el2deff}. The relative efficiencies per component range from approximately $75\%$ to $95\%$ with a slight dependence on $|\eta|$. The largest combined systematic and statistical errors are $O(4\%)$ and occur in data with the lowest \pt bins. The data and MC agreement is within a few percent for both the Id, Isolation, and SIP3D. The efficiency components combined into Gold, Silver, and Bronze is shown in Figure \ref{fig:elgsb}. The range of efficiencies for each quality ranking are $(50-70)\%$, $(10-20)\%$, and $(10-30)\%$ for Gold, Silver, and Bronze respectively. The Gold, Silver, and Bronze data to MC ranges around a few percent, but large discrepancies can be seen at the highest and lowest \pt bins. More granular Id measurements could be obtained by using a different resonance such as $J/\psi \rightarrow ee$ for the lower \pt ranges, however, data triggers with electrons for $J/\psi$ are not available.
 
 \FigFour{Lep_Obj_plots/h_2017_0_redo4-16-23_eleff.pdf}{Lep_Obj_plots/h_2017_1_redo4-16-23_eleff.pdf}{Lep_Obj_plots/h_2017_2_redo4-16-23_eleff.pdf}{Lep_Obj_plots/h_2017_3_redo4-16-23_eleff.pdf}{The 2017 individually measured electron efficiencies for Very Loose, ID, Isolation, and Impact parameter in bins of $p_T$ and $|\eta|$.}{fig:el2deff}
 
@@ -375,7 +383,7 @@ The muon data will also has an implicit selection due to triggering. To reflect 
 
 
 
- The gold, silver, and bronze efficiency definitions used the same bin ranges $J/\psi^L$, $Z^L$, and $Z^H$ shown in Table \ref{tab:mubin}. The explicit form for Gold Silver and Bronze based on $p_T$ range and as a function of conditional efficiency components of ID, Isolation, and SIP3D are shown in table \ref{tab:gsbeqs}. The low \pt muons include the Id measured by $J/\psi$ as well as the extrapolated efficiencies from SIP3D and isolation fits in $Z_{L}$. The high \pt muons are composed of all the factors directly measured in $Z_H$.
+ The Gold, Silver, and Bronze efficiency definitions used the same bin ranges $J/\psi^L$, $Z^L$, and $Z^H$ shown in Table \ref{tab:mubin}. The explicit form for Gold Silver and Bronze based on $p_T$ range and as a function of conditional efficiency components of ID, Isolation, and SIP3D are shown in table \ref{tab:gsbeqs}. The low \pt muons include the Id measured by $J/\psi$ as well as the extrapolated efficiencies from SIP3D and isolation fits in $Z_{L}$. The high \pt muons are composed of all the factors directly measured in $Z_H$.
 \begin{table}
 \caption{The formulation of Gold, Silver, and Bronze efficiencies as a function of conditional Tag-and-Probe efficiency components.} 
 \label{tab:gsbeqs}
