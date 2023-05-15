@@ -18,7 +18,7 @@
 
 \section{Asymptotic Limits}
 
-This search is designed to be generically sensitive to SUSY with an emphasis on compressed scenarios. The consequence is sensitivity to a wide variety of models and final states, so, we present expected upper limits on the cross sections for stop, electroweakino, and slepton processes. The results use the full Run II data-set alongside the full SM MC background combined with the data driven fit model described in the previous chapter. The limits are calculated using the asymptotic method for profile-likelihood the test statistic \cite{Cowan:2010js}.
+This search is designed to be generically sensitive to SUSY with an emphasis on compressed scenarios. The consequence is sensitivity to a wide variety of models and final states, so, we present expected upper limits on the cross sections for stop, electroweakino, and slepton processes. The results use the full Run II data-set alongside the full SM MC background combined with the data driven fit model described in the previous chapter. The limits are calculated using the asymptotic method for profile-likelihood test statistic \cite{Cowan:2010js}.
 
 \FigOneScale{Results_figs/allyear_limit_t2tt_138.pdf}{Run II expected cross section upper limits for di stop production, T2tt, excluding stop masses to the left of the 95\% CL line. }{fig:limt2tt}{0.6}
 
@@ -27,7 +27,7 @@ This search is designed to be generically sensitive to SUSY with an emphasis on 
 
 \FigOneScale{Results_figs/TChiWZ161718_138_lim1.pdf}{Run II expected cross section upper limits for Neutralino and Chargino production, TChiWZ, which excludes chargino masses to the left of the line with 95\% CL. Shown as a function of the chargino mass and chagino-LSP mass difference. The simplified model uses the Wino-like cross-section and assumes that the initial sparticle pair are mass degenerate $m_{\tilde{\chi}_2^0}=m_{\tilde{\chi}_1^\pm}$}{fig:limtchiwz}{0.58}
 
-\FigOneScale{Results_figs/TChiWW_limit_corrected4-24-23.pdf}{2017 expected cross section upper limits scaled to the full Run II integrated luminosity of 138 fb$^{-1}$ for chargino pairs decaying to an oppositely signed W boson pair. Chargino masses are excluded to the left of the line with 95\% CL. Limits are based on wino corss-sections and a sample which is filtered to purely leptonic decays. }{fig:limtchiww}{0.58}
+\FigOneScale{Results_figs/TChiWW_limit_corrected4-24-23.pdf}{2017 expected cross section upper limits scaled to the full Run II integrated luminosity of 138 fb$^{-1}$ for chargino pairs decaying to an oppositely signed W boson pair. Chargino masses are excluded to the left of the line with 95\% CL. Limits are based on wino cross-sections and a sample which is filtered to purely leptonic decays. }{fig:limtchiww}{0.58}
 
 
 \FigOneScale{Results_figs/allyear_limit_tslepslep_138.pdf}{Run II expected cross section upper limits that exclude slepton masses to the left of the line at 95\% CL. Shown as a function of slepton mass and slepton-LSP mass splitting. The L/R indicates the super partners of the SM left or right handed partner which are assumed to be degenerate in mass.}{fig:limslep}{0.58}
@@ -37,7 +37,7 @@ This search is designed to be generically sensitive to SUSY with an emphasis on 
 \FloatBarrier
 
 \section{Model Dependent Interpretation}
-The TChiWZ limits from the previous section use a simplified model which is described in Chapter 1. The decay kinematics in this simplified model  use a flat matrix element resulting in $W$ and $Z$ boson 3 body uniform phase space decays. However, the 3 body decays phase space depends on the sign of the eigenstates of the neutralino mass matrix. A reweighting of events in the simplified TChiWZ model is performed to assess the difference in kinematics of the Z decay. This model reinterpretation has been done by other analyses in ATLAS and CMS \cite{CMS:2021edw}\cite{ATLAS:2019lng} but are restricted to $Z(\rightarrow \ell\ell)$. We extend the reweighting strategy to the more general case of di-fermion pairs where neutralino A undergoes a three body decay to a di fermion pair and neutralino B. 
+The TChiWZ limits from the previous section use a simplified model which is described in Chapter 1. The decay kinematics in this simplified model  use a flat matrix element resulting in $W$ and $Z$ boson 3 body uniform phase space decays. However, the 3 body decay phase space depends on the sign of the eigenstates of the neutralino mass matrix. A reweighting of events in the simplified TChiWZ model is performed to assess the difference in kinematics of the Z decay. This model reinterpretation has been done by other analyses in ATLAS and CMS \cite{CMS:2021edw}\cite{ATLAS:2019lng}, but are restricted to $Z(\rightarrow \ell\ell)$. We extend the reweighting strategy to the more general case of di-fermion pairs where neutralino A undergoes a three body decay to a di fermion pair and neutralino B. 
 \begin{equation}
 \label{eq:3bd}
 A \rightarrow f \bar{f} B
@@ -70,15 +70,15 @@ r_B^2 \leq x \leq 1 \\
 z(xy-r_B^2) \geq 0
 \end{split}
 \end{equation}
-we can generate the four momentum of all particles in the 3 body decay according to the two eigenstate cases, OS ($\Gamma^-$) and SS ($\Gamma^+$). Using the model dependent $(x,z)$ distribution a weight can be calculated mapping the original phase space of the simplified model to the OS or SS case. The  Dalitz distributions which fully describe the differences in Z decays in terms of $x$ and $z$ is shown in Figure \ref{fig:dalitzplot} for a TChiWZ grid point with $m_A = 300$ GeV and $m_B= 270$ GeV.
+we can generate the four momentum of all particles in the 3 body decay according to the two eigenstate cases, OS ($\Gamma^-$) and SS ($\Gamma^+$). Using the model dependent $(x,z)$ distribution a weight can be calculated mapping the original phase space of the simplified model to the OS or SS case. The  Dalitz distributions, which fully describe the differences in Z decays in terms of $x$ and $z$ are shown in Figure \ref{fig:dalitzplot} for a TChiWZ grid point with $m_A = 300$ GeV and $m_B= 270$ GeV.
 
-\FigThree{Results_figs/ThreeBody-PS.png}{Results_figs/ThreeBody-OS.png}{Results_figs/ThreeBody-SS.png}{Dalitz distributions of the phase space parameters x and z. Compares the uniform phase space simplified model against the model dependent scenarios OS and SS which distribute the four momenta of the decay components differently. }{fig:dalitzplot}
+\FigThree{Results_figs/ThreeBody-PS.png}{Results_figs/ThreeBody-OS.png}{Results_figs/ThreeBody-SS.png}{Dalitz distributions of the phase space parameters x and z. The heatmap compares the uniform phase space simplified model against the model dependent scenarios OS and SS which distribute the four momenta of the decay components differently. }{fig:dalitzplot}
 
 The relative differences in the final state kinematics for each model is shown in Figure \ref{fig:rwt} which uses the same TChiWZ grid point.
 
 \FigTwoScale{Results_figs/DifermionMass.png}{Results_figs/Plot1DpNeutralino.png}{The reweighed difermion invariant masses (left) and an illustration of the momentum partitioning for each reweighting scenario (right)}{fig:rwt}{0.49}{0.49}
 
-The resulting limits for the  model dependent cases are shown in Figure \ref{fig:rwtlim}. The exclusion boundary between the two model dependent cases are similar but the OS scenario is able to exclude higher masses likely due to the momentum enhancement of $A$ (LSP) which produces a larger missing momentum signature as seen on the red curve in Figure \ref{fig:rwt} right.
+The resulting limits for the  model dependent cases are shown in Figure \ref{fig:rwtlim}. The exclusion boundary, between the two model dependent cases, are similar but the OS scenario is able to exclude higher masses likely due to the momentum enhancement of $A$ (LSP) which produces a larger missing momentum signature as seen on the red curve in Figure \ref{fig:rwt} right.
 
 \FigTwoScale{Results_figs/OS16_lim.pdf}{Results_figs/SS16_lim.pdf}{The expected cross section upper limits for 2016 MC scaled to 138 fb$^{-1}$. Compares the OS reweighting (top) and SS reweighting (bottom). }{fig:rwtlim}{0.75}{0.75}
 
