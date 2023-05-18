@@ -32,7 +32,10 @@ PFMHT is expected to trigger on events with significant jet activity which are l
 %insert trigger turn ons
 \FigOneScale{Analysis_figs/SF_Plot_HT-Le600--SingleMuontrigger-E1--Nmu-E1_SingleMuon_2016.pdf}{Example MET trigger efficiency comparison for Single Muon triggers between data and MC  \cite{AN}.}{fig:metsf}{0.75}
 
-The preselection is a set of carefully studied criteria to remove background and mismodeled events while selecting events with objects associated with signals. The preselection consists of the criteria listed in Table \ref{tab:presel} and introduces three quantities $p_T^{\text{CM}}$ which is the vector sum of the transverse momentum of the CM frame, $\Delta \phi_{\vec{p}_T^{\text{miss}}, V}$ the angle between the visible and invisible system, and $\Delta\phi_{CM,I}$ the angle between $p_T^{\text{CM}}$ and the invisible system.
+The preselection is a set of carefully studied criteria to remove background and mismodeled events while selecting events with objects associated with signals. The preselection consists of the criteria listed in Table \ref{tab:presel} and introduces three quantities $p_T^{\text{CM}}$ which is the vector sum of the transverse momentum of the CM frame, $\Delta \phi_{\vec{p}_T^{\text{miss}}, V}$ the angle between the visible and invisible system, and $\Delta\phi_{CM,I}$ the angle between $p_T^{\text{CM}}$ and the invisible system. There is an additional  parabolic cleaning cut which vetoes events outside of the curves:
+\begin{equation}
+\pm2.777\Delta\phi_{CM,I}^2+1.388\Delta\phi_{CM,I}+0.8264
+\end{equation}
 
 %insert preselection table  
 \begin{table}
