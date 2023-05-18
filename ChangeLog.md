@@ -20,3 +20,7 @@
 	- Addressed all of Grahams comments
 	- Started on Ians comments in chapter 1
 	- submitting this version with incomplete edits to proquest to meet graduation deadline, will update remaining comments and resubmit later
+	
+### Updates to v3
+	
+	- Addressed all remaining comments from committee
