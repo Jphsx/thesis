@@ -99,9 +99,9 @@ Once an event passes the preselection and the leptons are classified, the event 
 Aside from jet counting, there is lepton and kinematic categorization. The electrons and muons are separated by flavor, charge, quality, and $Z/\text{no} Z$ candidate.  A $Z$ candidate is defined as an opposite sign, same flavor pair (OSSF) in events with 0 S jets and OSSF in the same A or B hemisphere in events with S jets. A compressed scenario expects an off-shell $Z$ so there is no mass requirement on the OSSF lepton pair in a $Z$ category. The complementary compressed kinematic observables $p_T^{ISR}$ and $\gamma_\perp$ both have a high and low category. A complete table of all the categories is included in Table \ref{tab:cats}. 
 
 \begin{table}
-\caption{Organization of categories across all lepton multiplicities. The bracketed jet ranges imply counting for all integer numbers of jets within the inclusively listed edges. The b-tag counting is limited based on the allowed number of jets in the category. The SV and $\gamma_\perp$ splitting indicates two categories of either forward and central $\eta$ or low and high, respectively. The numbers listed in $p_T^{ISR}$ define the low $p_T^{ISR}$ category edges while the high $p_T^{ISR}$ bin is inclusive for everything above the low bin upper edge. The checkmarks indicate regions that are split by either $\gamma_\perp$ or $SV_\eta$. }
-\begin{adjustwidth}{-0.7in}{-1in}
-
+\caption{Organization of categories across all lepton multiplicities. The bracketed jet ranges imply counting for all integer numbers of jets within the inclusively listed edges. The b-tag counting is limited based on the allowed number of jets in the category. The SV and $\gamma_\perp$ splitting indicates two categories of either forward and central $\eta$ or low and high, respectively. The numbers listed in $p_T^{ISR}$ define the low $p_T^{ISR}$ category edges while the high $p_T^{ISR}$ bin is inclusive for everything above the low bin upper edge. The checkmarks indicate regions that are split by either $\gamma_\perp$ or $SV_\eta$ and G/S/B refer to Gold, Silver, and Bronze, respectively. }
+%\begin{adjustwidth}{-0.7in}{-1in}
+\small
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 \multicolumn{7}{c|}{Obj. Combinatorics} & \multicolumn{3}{c}{Obj. Kinematics} \\
 \hline 
@@ -113,24 +113,25 @@ $N_\ell$ &  $\ell$ Type & $\ell$ Quality & $N_{jets}^{S}$ & $N_{b-tag}^{S}$ & $N
 0 & - & - & 1 & - &  0       &    - &  -           & - & $[400,\geq 550]$ \\
 0 & - & - & $[2,\geq 5]$ & $[0,\geq 2]$ & 0 & $[0,\geq 1]$ & - & $\checkmark$ & $[350,\geq500]$ \\
 \hline 
-1 & $e^+,e^-,\mu^+,\mu^-$& Gold & 0 & 0 & 0 & $[0,\geq 1]$ & - & $\checkmark$ & $[350, \geq 500]$ \\
-1 & $\ell^+, \ell^-$  & Gold & 0 & 0 & 1 & - & $\checkmark$ & - & $\geq 350$ \\
-1 & $e, \mu$ & Gold & 1 & 0 &  $\geq 1$ & - & $\checkmark$ & - & $\geq 350$ \\
-1 & $\ell$ & Gold & $[1,\geq 4]$ & $[0,\geq 2]$ & 0 & $[0,\geq 1]$ & - & $\checkmark$ & $[350, \geq 500]$ \\
-1 & $e, \mu$ & Silver/Bronze & $[0,\geq 1]$ & 0 & 1 & - & $\checkmark$ & - & $\geq 350$ \\
-1 & $e, \mu$ & Silver/Bronze & $[2, \geq 4]$ & - & - & - & - & $\checkmark$ & $[350, \geq 500]$ \\
+1 & $e^+,e^-,\mu^+,\mu^-$& G & 0 & 0 & 0 & $[0,\geq 1]$ & - & $\checkmark$ & $[350, \geq 500]$ \\
+1 & $\ell^+, \ell^-$  & G & 0 & 0 & 1 & - & $\checkmark$ & - & $\geq 350$ \\
+1 & $e, \mu$ & G & 1 & 0 &  $\geq 1$ & - & $\checkmark$ & - & $\geq 350$ \\
+1 & $\ell$ & G & $[1,\geq 4]$ & $[0,\geq 2]$ & 0 & $[0,\geq 1]$ & - & $\checkmark$ & $[350, \geq 500]$ \\
+1 & $e, \mu$ & S/B & $[0,\geq 1]$ & 0 & 1 & - & $\checkmark$ & - & $\geq 350$ \\
+1 & $e, \mu$ & S/B & $[2, \geq 4]$ & - & - & - & - & $\checkmark$ & $[350, \geq 500]$ \\
 \hline
-2 & $e^\pm e^\mp, \mu^\pm \mu^\mp, e^\pm \mu^\mp $ & Gold & 0 & 0 & 0 & $[0,\geq 1]$ & - & $\checkmark$ & $[250,\geq350]$  \\
-2 & $Z, no Z$ & Gold & $[1,\geq 2]$ & $[0, \geq 1]$& - & $[0,\geq 1]$ & - & $\checkmark$ & $[250,\geq350]$  \\
-2 & $\ell^\pm \ell^\pm$ & Gold & $[0,\geq 2]$ & - & - &  - & - & - & $[250,\geq350]$ \\
-2 & $ee, \mu\mu, e\mu$ & Silver/Bronze & $[0,\geq 2]$ & - & - & - & - & - & $\geq350$ \\
-2 & $\ell \ell$ & Gold/Silver/Bronze & 0 & 0 & $\geq 1 $ & - & $\checkmark$ & - & $\geq 250$\\
+2 & $e^\pm e^\mp, \mu^\pm \mu^\mp $ & G & 0 & 0 & 0 & $[0,\geq 1]$ & - & $\checkmark$ & $[250,\geq350]$  \\
+2 & $e^\pm \mu^\mp $ & G & 0 & 0 & 0 & $[0,\geq 1]$ & - & $\checkmark$ & $[250,\geq350]$  \\
+2 & $Z, no Z$ & G & $[1,\geq 2]$ & $[0, \geq 1]$& - & $[0,\geq 1]$ & - & $\checkmark$ & $[250,\geq350]$  \\
+2 & $\ell^\pm \ell^\pm$ & G & $[0,\geq 2]$ & - & - &  - & - & - & $[250,\geq350]$ \\
+2 & $ee, \mu\mu, e\mu$ & S/B & $[0,\geq 2]$ & - & - & - & - & - & $\geq350$ \\
+2 & $\ell \ell$ & G/S/B & 0 & 0 & $\geq 1 $ & - & $\checkmark$ & - & $\geq 250$\\
 \hline
-3 & $Z, no Z$ & Gold/Silver/Bronze & $[0,\geq 1]$ & - & - & - & - & - & $\geq 250$ \\
-3 & $\ell^\pm \ell^\pm \ell^\pm$ & Gold/Silver/Bronze & - & - & -& - & - & -& $\geq 250$ \\
+3 & $Z, no Z$ & G/S/B & $[0,\geq 1]$ & - & - & - & - & - & $\geq 250$ \\
+3 & $\ell^\pm \ell^\pm \ell^\pm$ & G/S/B & - & - & -& - & - & -& $\geq 250$ \\
 \hline
 \end{tabular} 
-\end{adjustwidth}
+%\end{adjustwidth}
 \label{tab:cats}
 \end{table}
 
@@ -141,8 +142,9 @@ Each category is divided into a 2D set of $(R_{ISR}, M_\perp)$ bins. The number 
 
 % insert RISR MP bins table here
 \begin{table}
+\footnotesize
 \caption{The complete set of $R_{ISR}$ and $M_\perp$ bin edges. A set of 2D bins have been designed for each allowed lepton and jet multiplicity.}
-\begin{adjustwidth}{-0.5in}{-1in}
+%\begin{adjustwidth}{-0.5in}{-1in}
 %\begin{singlespace}
 \begin{tabular}{c|cc|cc|cc|cc|}
 - & \multicolumn{2}{c}{0L} & \multicolumn{2}{c}{1L} & \multicolumn{2}{c}{2L} & \multicolumn{2}{c}{3L}   \\
@@ -184,7 +186,7 @@ $N_{jets}^S$ & $R_{ISR}$ & $M_\perp$ & $R_{ISR}$ & $M_\perp$ & $R_{ISR}$ & $M_\p
 5 & [0.8,1] & [$\geq 0$]  &  &   &   &   &  &   \\
 \hline
 \end{tabular}
-\end{adjustwidth}
+%\end{adjustwidth}
 \label{tab:allkinbin}
 \end{table}
 

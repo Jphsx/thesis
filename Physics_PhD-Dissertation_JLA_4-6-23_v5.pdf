@@ -1,0 +1,264 @@
+%% LyX 2.3.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,english,letterpaper]{kuthesis}
+%\usepackage{mathptmx}
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+%\usepackage{color}
+\usepackage{babel}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{setspace}
+%\usepackage{esint}
+\usepackage{chngpage}
+\usepackage{multirow}
+\usepackage{gensymb}
+
+
+%% packages ripped from AN
+\usepackage{xspace}
+\usepackage{xcolor}
+%\usepackage{cancel}
+%\usepackage{graphicx}
+%%\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage[section]{placeins}
+%\usepackage{hepnames}
+%\usepackage{hyperref}
+%\usepackage{cite}
+%\usepackage{makecell}
+%\usepackage{ulem}
+%\usepackage{epstopdf}
+%\usepackage{multirow}
+%\usepackage{longtable}
+%%
+\usepackage{booktabs}% http://ctan.org/pkg/booktabs
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{tabularx}
+
+\usepackage{makecell}
+%\renewcommand{\cellalign}{vh}
+%\renewcommand{\theadalign}{vh}
+
+\input{stylefiles/mymathdefns}
+%\input{stylefiles/sparticledefns}
+\usepackage[authoryear]{natbib}
+\doublespacing
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=true,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true]
+ {hyperref}
+\hypersetup{pdftitle={University of Kansas Thesis Template},
+ pdfauthor={Anonymous},
+ pdfsubject={A Thesis},
+ urlcolor={black},citecolor={black},allcolors={black}}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%\providecommand{\LyX}{\texorpdfstring%
+%  {L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+%  {LyX}}
+%% Because html converters don't know tabularnewline
+%\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+%%%FUNCTIONS
+
+\newcommand\FigOne[3]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=0.6\textwidth]{fig/#1}\hfill
+\caption{#2}
+\label{#3}
+\end{figure}}
+
+\newcommand\FigOneScale[4]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=#4\textwidth]{fig/#1}\hfill
+\caption{#2}
+\label{#3}
+\end{figure}}
+
+\newcommand\FigTwo[4]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=0.45\textwidth]{fig/#1}
+\includegraphics[width=0.45\textwidth]{fig/#2}\hfill
+\caption{#3}
+\label{#4}
+\end{figure}}
+
+\newcommand\FigTwoScale[6]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=#5\textwidth]{fig/#1}
+\includegraphics[width=#6\textwidth]{fig/#2}\hfill
+\caption{#3}
+\label{#4}
+\end{figure}}
+
+\newcommand\FigThree[5]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=0.45\textwidth]{fig/#1}
+\includegraphics[width=0.45\textwidth]{fig/#2}\hfill
+\includegraphics[width=0.45\textwidth]{fig/#3}\hfill
+\caption{#4}
+\label{#5}
+\end{figure}}
+
+\newcommand\FigThreeScale[8]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=#6\textwidth]{fig/#1}
+\includegraphics[width=#7\textwidth]{fig/#2}\hfill
+\includegraphics[width=#8\textwidth]{fig/#3}\hfill
+\caption{#4}
+\label{#5}
+\end{figure}}
+
+
+\newcommand\FigFour[6]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=0.49\textwidth]{fig/#1}
+\includegraphics[width=0.49\textwidth]{fig/#2}\hfill
+\includegraphics[width=0.49\textwidth]{fig/#3}
+\includegraphics[width=0.49\textwidth]{fig/#4}\hfill
+\caption{#5}
+\label{#6}
+\end{figure}}
+
+
+\newcommand\FigFive[7]{%
+\begin{figure}[!htbp]%
+\centering
+\includegraphics[width=0.45\textwidth]{fig/#1}
+\includegraphics[width=0.45\textwidth]{fig/#2}\hfill
+\includegraphics[width=0.45\textwidth]{fig/#3}
+\includegraphics[width=0.45\textwidth]{fig/#4}\hfill
+\includegraphics[width=0.45\textwidth]{fig/#5}\hfill
+\caption{#6}
+\label{#7}
+\end{figure}}
+%%% END FUNC
+
+
+
+%used to align decimals in tables according to APA style
+\usepackage{dcolumn}
+\usepackage{booktabs}
+\usepackage{placeins}
+% Set the title and author info
+\title{Search for Weak Scale Supersymmetric Particles in Compressed Scenarios }
+\author{Justin Anguiano}
+
+% Following is OPTIONAL list of previous degrees earned. 
+% If there are more than 5 or so, then title pagelayout may become too crowded,
+% depending on the number of committee members. 
+\priorcreds{B.S. Engineering Physics, University of Kansas, 2015}{M.S. Computational Physics and Astronomy, University of Kansas, 2017}
+% It is acceptable to delete \priorcreds if it is not desired on title page
+
+
+\dept{the Department of Physics and Astronomy}
+\degreetitle{Doctor of Philosophy}
+\papertype{Dissertation} %or Thesis (Choose whatever word you want to put on p.2)
+
+%% Committee member names are required for the title page. We make space
+%% for as many as 7 members, with various roles/titles.
+%% It is required to have 7 entries, even if some are empty for committee and role
+\committee{Graham Wilson}{Alice Bean}{Christopher Rogan}{Ian Lewis}{Zsolt Talata}{}{}
+\role{Chairperson}{}{}{}{External Reviewer}{}{}
+%At Most 7 members allowed, last here is blank on purpose to demonstrate
+%flexibility
+
+%%BOTH dates must be included. 
+\@printd@testrue
+\datedefended{May 04, 2023}
+\dateapproved{May 12, 2023}
+
+%% These settings are now in the kuthesis.cls file, but users are free
+% to customize. listings has great documentation online
+%% When listings are used, break lines
+%\lstset{
+ %    breaklines=true,  % sets automatic line breaking
+ %    breakindent=2em,
+ %    breakatwhitespace=true,  % sets if automatic breaks should
+ %   breakautoindent=true
+%}
+
+\@ifundefined{showcaptionsetup}{}{%
+ \PassOptionsToPackage{caption=false}{subfig}}
+\usepackage{subfig}
+\makeatother
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{\inputencoding{latin9}Listing}
+
+\begin{document}
+\begin{romanpages}
+
+\maketitle
+
+\begin{abstractlong}
+
+A generic search for supersymmetric particles with an emphasis on compressed scenarios is performed with $\sqrt{s} = 13$ TeV proton-proton collisions at the CMS detector using a data sample with integrated luminosity of 138 fb$^{-1}$. Potential supersymmetric events with initial-state-radiation recoiling against a massive invisible sparticle system are organized using the Recursive Jigsaw Reconstruction method. Events are  further categorized by physics object counts such as jet multiplicity, lepton multiplicity, b-tags, and kinematic variables that are sensitive to generic compressed sparticle topologies. This work focuses on the following pieces of a larger analysis: the selection of leptons,  their efficiency measurement and calibration, and the implementation and optimization of the data-driven fit. Finally, expected limits with a 95\% C.L. are placed on processes that include the production of electroweakinos, sleptons, and stops. 
+
+\end{abstractlong}
+
+\begin{acknowledgementslong}
+%%if you want a "quote" environment for acknowledgements,
+%% use acknowledgements instead of acknowledgementslong
+First I would like to acknowledge the collaborative effort and work done by my research group. This work would not be possible without the extensive work of my advisors and peers which has been included alongside my own for completeness. Much of the content is based on, or modeled after, our internal Analysis Note \cite{AN}, so thanks to everyone that has contributed to this massive analysis.  
+I am also extremely grateful to my supervisor, Professor Graham Wilson, for his invaluable mentorship and patience that has pushed me to be the best version of myself. I'm also grateful for everyone in my research group and their excellent advice and support, with a special thanks to the students who are always happy to team up and solve problems. I would be much worse off without the community we've developed. Finally, I would like to express my gratitude to my parents which have been essential in helping me survive the final stretch of grad school.
+
+
+\end{acknowledgementslong}
+
+\tableofcontents{}
+
+\listoffigures
+
+\listoftables
+
+\end{romanpages}
+
+\include{Chapter_Theory/theory}
+
+\include{Chapter_Motivation/motivation}
+
+\include{Chapter_Detector/detector}
+
+\include{Chapter_RJR/RJR}
+
+\include{Chapter_Analysis/Analysis}
+
+\include{Chapter_TnP/TnP}
+
+\include{Chapter_Modeling/model}
+
+\include{Chapter_Results/results}
+
+\include{Chapter_Summary/summary}
+
+  
+\global\long\def\bibname{References}%
+
+%%%%%\bibliographystyle{plain}
+\bibliographystyle{unsrt}
+\bibliography{Biblio/allcites}
+
+
+%\appendix
+%\include{Appendix1/Appendix1}
+\end{document}

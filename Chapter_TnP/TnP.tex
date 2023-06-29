@@ -191,22 +191,22 @@ The electron Tag-and-Probe is performed with the $Z$ resonance over a range of b
 \caption{ Data and MC samples for each year used by the electron Tag-and-Probe. }
 \label{tab:electronTnPSamples}
 \scriptsize
-\begin{adjustwidth}{-0.5in}{-1in}
+%\begin{adjustwidth}{-0.5in}{-1in}
 \begin{tabular}{cc|c}
 \hline
 Type & Year & Sample Name \\ 
 \hline
 \hline 
-Data & 2016 & \tiny \url{/SingleElectron/Run2016-17Jul2018_ver2-v1/MINIAOD}  \\  
-Data & 2017 & \tiny \url{/SingleElectron/Run2017-31Mar2018-v1/MINIAOD} \\  
-Data & 2018 & \tiny \url{/EGamma/Run2018-17Sep2018-v2/MINIAOD} \\ 
+Data & 2016 &   \url{/SingleElectron/Run2016-17Jul2018_ver2-v1/MINIAOD}  \\  
+Data & 2017 &  \url{/SingleElectron/Run2017-31Mar2018-v1/MINIAOD} \\  
+Data & 2018 &  \url{/EGamma/Run2018-17Sep2018-v2/MINIAOD} \\ 
 \hline 
-MC & 2016 & \tiny \url{/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext2-v2/MINIAODSIM} \\ 
-MC & 2017 & \tiny \url{/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAODv2-PU2017RECOSIMstep_12Apr2018_94X_mc2017_realistic_v14_ext1-v1/MINIAODSIM} \\ 
-MC & 2018 & \tiny \url{/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v1/MINIAODSIM} \\
+MC & 2016 &   \makecell{ \url{/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8}\\ \url{/RunIISummer16MiniAODv3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext2-v2/MINIAODSIM}} \\ 
+MC & 2017 &  \makecell{ \url{/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8} \\ \url{/RunIIFall17MiniAODv2-PU2017RECOSIMstep_12Apr2018_94X_mc2017_realistic_v14_ext1-v1/MINIAODSIM}} \\ 
+MC & 2018 &  \makecell{ \url{/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8 } \\ \url{/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v1/MINIAODSIM}} \\
 \hline
 \end{tabular} 
-\end{adjustwidth}
+%\end{adjustwidth}
 \end{table}
 
 
@@ -216,21 +216,22 @@ A general selection is applied for electron TnP candidates that differs between 
 
 \begin{table}
 \caption{Kinematic requirements for the electron Tag-and-Probe components.}
+\small
 \label{tab:eleTnPSelect}
-\begin{adjustwidth}{-0.45in}{-1in}
+%\begin{adjustwidth}{-0.45in}{-1in}
 \begin{tabular}{|c|c|c|c|}
 \hline 
 \multicolumn{4}{|c|}{Tag-and-Probe Electron Candidate Selection Criteria} \\ 
 \hline 
 Tag & Probe & Super Cluster & Pair \\ 
 \hline 
-$|\eta_{SC}| \leq 2.1$ & $|\eta_{SC}| \leq 2.5$  & $|\eta|<2.5 $ & $50 \text{GeV} < m_{ee} < 130 \text{GeV} $ \\
-veto $ 1.4442 \leq |\eta_{SC}| \leq 1.566 $ & $E_{ECAL}\sin(\theta_{SC}) > 5.0 $ GeV & $E_T > 5.0 $ GeV &  \\
+$|\eta_{SC}| \leq 2.1$ & $|\eta_{SC}| \leq 2.5$  & $|\eta|<2.5 $ & $m_{ee} > 50\, \text{GeV} $  \\
+veto $ 1.4442 \leq |\eta_{SC}| \leq 1.566 $ & $E_{ECAL}\sin(\theta_{SC}) > 5.0 $ GeV & $E_T > 5.0 $ GeV & $m_{ee} < 130\, \text{GeV} $  \\
  $\pt \geq 30.0$ GeV &  &  &  \\
  Passes Tight Id &  &  & \\
 \hline 
 \end{tabular} 
-\end{adjustwidth}
+%\end{adjustwidth}
 \end{table}
 
 
@@ -262,22 +263,22 @@ The muon Tag-and-Probe tools also use the same centrally curated CMSSW PhysicsTo
 \caption{Data and MC samples for each year used by the electron Tag-and-Probe.}
 \label{tab:mutnpsamples}
 \scriptsize
-\begin{adjustwidth}{-0.5in}{-1in}
+%\begin{adjustwidth}{-0.5in}{-1in}
 \begin{tabular}{cc|c}
 \hline 
 Type & Year & Sample Name \\ 
 \hline 
 \hline
-Data & 2016 & \tiny \url{/SingleMuon/Run2016-17Jul2018-v1/MINIAOD}  \\  
-Data & 2017 & \tiny \url{/SingleMuon/Run2017-31Mar2018-v1/MINIAOD} \\  
-Data & 2018 & \tiny \url{/SingleMuon/Run2018-17Sep2018-v2/MINIAOD} \\ 
+Data & 2016 &  \url{/SingleMuon/Run2016-17Jul2018-v1/MINIAOD}  \\  
+Data & 2017 &  \url{/SingleMuon/Run2017-31Mar2018-v1/MINIAOD} \\  
+Data & 2018 &  \url{/SingleMuon/Run2018-17Sep2018-v2/MINIAOD} \\ 
 \hline 
-MC & 2016 & \tiny \url{/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext2-v2/MINIAODSIM} \\ 
-MC & 2017 & \tiny \url{/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAODv2-PU2017RECOSIMstep_12Apr2018_94X_mc2017_realistic_v14_ext1-v1/MINIAODSIM} \\ 
-MC & 2018 & \tiny \url{/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v1/MINIAODSIM} \\ 
+MC & 2016 & \makecell{  \url{/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8} \\ \url{/RunIISummer16MiniAODv3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext2-v2/MINIAODSIM}} \\ 
+MC & 2017 &  \makecell{ \url{/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/} \\ \url{RunIIFall17MiniAODv2-PU2017RECOSIMstep_12Apr2018_94X_mc2017_realistic_v14_ext1-v1/MINIAODSIM}} \\ 
+MC & 2018 &  \makecell{ \url{/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/} \\ \url{RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v1/MINIAODSIM}} \\ 
 \hline
 \end{tabular} 
-\end{adjustwidth}
+%\end{adjustwidth}
 \end{table}
 
 \begin{table}
